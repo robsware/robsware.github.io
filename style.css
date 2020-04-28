@@ -19,9 +19,13 @@ h1, h2, h3, h4, h5, h6
   margin: 0 0 15px 0;
   padding: 15px 0 5px 0;}
 
-h2
+h1
 { font: normal 170% 'century gothic', arial, sans-serif;
-  color: #0AB6F6;}
+  color: #569abb;}
+
+h2
+{ font: normal 150% 'century gothic', arial, sans-serif;
+  color: #FC9C04;}
 
 h3
 { font: normal 125% 'century gothic', arial, sans-serif;}
@@ -30,7 +34,7 @@ h4, h5, h6
 { margin: 0;
   padding: 0 0 5px 0;
   font: normal 120% arial, sans-serif;
-  color: #0AB6F6;}
+  color: #FC9C04;}
 
 h5, h6
 { font: italic 95% arial, sans-serif;
@@ -186,8 +190,8 @@ ul#menu li a:hover
   overflow: hidden;
   margin: 0 auto 0 auto;
   padding: 10px 20px 20px 20px;
-  background: #F6F6F0 url(back.png) repeat-y;
-  border: 15px solid #FFF;} 
+  background: #f9f9ea url(back.png) repeat-y;
+  border: 15px solid #f9f9ea;} 
 
 .sidebar
 { float: right;
