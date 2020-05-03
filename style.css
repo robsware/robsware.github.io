@@ -190,8 +190,8 @@ ul#menu li a:hover
   overflow: hidden;
   margin: 0 auto 0 auto;
   padding: 10px 20px 20px 20px;
-  background: #f9f9ea url(back.png) repeat-y;
-  border: 15px solid #f9f9ea;} 
+  background: #FFF url(back.png) repeat-y;
+  border: 15px solid #FFF;} 
 
 .sidebar
 { float: right;
