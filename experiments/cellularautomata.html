@@ -22,31 +22,18 @@
       <div id="menubar">
         <ul id="menu">
           <!-- put class="selected" in the li tag for the selected page - to highlight which page you're on -->
-          <li class="selected"><a href="index.html">Home</a></li>
-          <li><a href="examples.html">Walkthroughs</a></li>
-          <li><a href="page.html">Experiments</a></li>
-          <li><a href="another_page.html">Rants</a></li>
-          <li><a href="contact.html">Harass me on social media</a></li>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../walkthroughs.html">Walkthroughs</a></li>
+          <li class="selected"><a href="../experiments.html">Experiments</a></li>
+          <li><a href="../rants.html">Rants</a></li>
+          <li><a href="../contact.html">Harass me on social media</a></li>
         </ul>
       </div>
     </div>
     <div id="site_content">
-      <div class="sidebar">
-        <h1>Latest News</h1>
-        <h4>New Website Launched</h4>
-        <h5>January 1st, 2077</h5>
-        <p>How to live with the pain.<br /><a href="#">Read more</a></p>
-        <h1>Useful Links</h1>
-        <ul>
-          <li><a href="#">link 1</a></li>
-          <li><a href="#">link 2</a></li>
-          <li><a href="#">link 3</a></li>
-          <li><a href="#">link 4</a></li>
-        </ul>
-      </div>
       <div id="content">
-        <h1>Examples</h1>
-        <p>Inspired by Stephen Wolfram's book, which I finally got around reading now under lockdown, I decided to spend my week trying an experiment with CA and crypto markets. My hope was that there was some sort of pattern matching with a CA rule in the minute to minute movement. Markets are interesting because, while not quite Turing Complete, they do seem to follow the law of Computational Irreducibility, which states the only way to determine the answer to a computationally irreducible question is to perform, or simulate, the computation. 
+        <h1>Cellular Automatas</h1>
+        <p>Inspired by Stephen Wolfram's book, which I finally got around reading now under lockdown, I decided to spend my week trying an experiment with Cellular Automata (CA) and crypto markets. My hope was that there was some sort of pattern matching with a CA rule in the minute to minute movement. Markets are interesting because, while not quite Turing Complete, they do seem to follow the law of Computational Irreducibility, which states the only way to determine the answer to a computationally irreducible question is to perform, or simulate, the computation. 
         <br><br>
         I won't dwell too much on what a CA is, there are other way better sources explaining that. But if you've ever seen one of those pictures or played Conway's Game of Life, those are CAs.
         </p>
@@ -55,7 +42,7 @@
         <span class="center"><img src="marketCA.png" alt="market CA" /></span><br>
         <p>So I wrote some code to take various increments of the minute to minute movement and generate all CA rules with that size and find matches. As an example, taking 30 minutes of market data meant generating all CAs with a width of 30 and depth 10.000, changing the market data to 1s and 0s (1 if the price went up, 0 if the price went down), and then trying to identify matches. And while I've been able to find matches, especially in rule 45 that happened to contain all the market data if split in increments up to 20 minutes, they're completely random and follow no set pattern. I've tried plugging the results into <a href="https://oeis.org">https://oeis.org</a> but still didn't get anything. For the most part I avoided using any of the rules that involved a high degree of randomness, such as rules part of class 4 (rule 110) and class 3 (rule 30, 90, 135, 184). <br><br>
 
-        So, the results are that <span style="color: #FC9C04">I didn't find anything.</span> Or to be more scientific, I failed to reject the null hypothesis. And that's a good thing, because in retrospect I realized that my hypothesis was flawed, at least a degree. CAs are defined by the rules that instruct the cells how to act. I aimed for a low hanging fruit by simply attempting to find a CA that would match market data by brute forcing possibilities. Instead, as someone more observant than I am pointed out, I think I should've focused on formulating the market as a CA. To move away from the crypto space, let's consider that many raw materials are priced in dollars. U.S. Dollar depreciation typically increases the price of raw materials while a dollar appreciation decreases commodity prices. <a href="https://www.investopedia.com/articles/basics/12/portfolio-currency-exposure.asp">More details in investopedia.</a>
+        So, the results are that <span style="color: #FC9C04">I didn't find anything.</span> Or to be more scientific, I failed to reject the null hypothesis. And that's a good thing, because in retrospect I realized that my hypothesis was flawed, at least a degree. CAs are defined by the rules that instruct the cells how to act. I aimed for a low hanging fruit by simply attempting to find a CA that would match market data by brute forcing possibilities. Instead, as someone more observant than I am pointed out, I think I should've focused on formulating the market as a CA. To move away from the crypto space, let's consider that many raw materials are priced in dollars. U.S. Dollar depreciation typically increases the price of raw materials while a dollar appreciation decreases commodity prices. <a href="https://www.investopedia.com/articles/basics/12/portfolio-currency-exposure.asp">More details on investopedia.</a>
         Letss also add the S&P500 into the mix as a barometer for the health of the market. Here, the rising prices of commodities would lead people away from the stock market, and the inverse would apply too.
 
         Let's put it into a CA format: <br><br>
@@ -107,7 +94,7 @@
       </div>
     </div>
     <div id="footer">
-      <p><a href="index.html">Home</a> | <a href="examples.html">Examples</a> | <a href="page.html">A Page</a> | <a href="another_page.html">Another Page</a> | <a href="contact.html">Contact Us</a></p>
+      <p><a href="../index.html">Home</a> | <a href="../page.html">Walkthroughs</a> | <a href="../experiments.html">Experiments</a> | <a href="../another_page.html">Rants</a> | <a href="../contact.html">Social Media</a></p>
 
     </div>
   </div>
