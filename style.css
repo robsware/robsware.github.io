@@ -108,7 +108,7 @@ ol li
 { padding-bottom: 40px;}
 
 #header
-{ background: transparent url(logo.jpg) no-repeat;}
+{ background: transparent no-repeat;}
 
 #logo
 { width: 860px;
@@ -190,7 +190,7 @@ ul#menu li a:hover
   overflow: hidden;
   margin: 0 auto 0 auto;
   padding: 10px 20px 20px 20px;
-  background: #FFF url(back.png) repeat-y;
+  background: #FFF repeat-y;
   border: 15px solid #FFF;} 
 
 .sidebar
@@ -210,7 +210,7 @@ ul#menu li a:hover
 .sidebar li a, .sidebar li a:hover
 { padding: 0 0 0 35px;
   display: block;
-  background: transparent url(link.png) no-repeat left center;
+  background: transparent no-repeat left center;
   border: 0;} 
 
 .sidebar li a.selected
