@@ -323,3 +323,12 @@ table tr td
 { background: #E5E5DB;
   color: #47433F;
   border-top: 1px solid #FFF;}
+
+
+@media screen and (min-width: 321px) and (max-width: 480px) {
+
+  body { 
+    font-size: 2em; 
+  }
+
+  }
