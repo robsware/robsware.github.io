@@ -1,4 +1,5 @@
-html{height: 100%;}
+html{height: 100%;
+  font-size: min(max(10px, 4vw), 20px);}
 
 body
 { font-family: "lucida sans", arial, sans-serif;
@@ -12,6 +13,12 @@ p
 { margin: 0px;
   padding: 0px 0px 16px 0px;
   line-height: 1.7em;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  hyphens: auto;
 }
 
 h1, h2, h3, h4, h5, h6 
@@ -327,17 +334,3 @@ table tr td
 
 
 
-@media handheld, only screen and (max-width: 767px) {
-    #homemain {
-    line-height: 15px;
-    background-color: transparent;
-    height: 500px;
-    width:600px;
-    max-width: 320px; /* or whatever size you want */
-    float: left;
-    padding: 10px;
-    font-size: 100%;
-    margin: 10px;
-    word-wrap: break-word;
-    }
-}
