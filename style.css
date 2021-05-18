@@ -82,42 +82,43 @@ code {
 
 
 #menubar
-{ width: 870px;
-  height: 50px;
-  padding-top: 4px;
+{ 
+  height: 60px;
+  padding-top: 6px;
   padding-left: 0px;} 
 
 
 ul#menu
-{ 
-  margin: 0px;}
+{ list-style-type: none;
+  margin: 0;
+  padding: 0;
+  margin: 0px;
+}
 
-ul#menu li
-{ float: left;
-  margin: 5px 0 0 0;
-  list-style: none;}
+ul#menu li {
+  display: inline;
+}
 
 ul#menu li a
 { letter-spacing: 0.1em;
   font-family: sans-serif;
   font-size: 120%;
   display: block; 
+  float: left; 
   height: 20px;
   text-decoration: none; 
-  padding: 9px 15px 5px 15px;
+  padding: 9px 25px 10px 0px;
+  text-align: left;
   color: #FFF;
   border: none;} 
 
-
 ul#menu li.selected a
-{ height: 20px;
-  padding: 7px 15px 4px 15px;}
-
-ul#menu li.selected
-{ margin: 7px 0 0 0;}
-
+  { height: 20px;
+    }
+  
+  
 ul#menu li.selected a, ul#menu li.selected a:hover
-{ color: #FC9C04;}
-
+  { color: #FC9C04;}
+  
 ul#menu li a:hover
-{ color: #FC9C04;}
+  { color: #FC9C04;}
