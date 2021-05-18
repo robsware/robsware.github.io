@@ -11,7 +11,8 @@ body
 p
 { margin: 0px;
   padding: 0px 0px 16px 0px;
-  line-height: 1.7em;}
+  line-height: 1.7em;
+}
 
 h1, h2, h3, h4, h5, h6 
 { font: normal 179% 'century gothic', arial, sans-serif;
@@ -325,10 +326,18 @@ table tr td
   border-top: 1px solid #FFF;}
 
 
-@media screen and (min-width: 321px) and (max-width: 480px) {
 
-  body { 
-    font-size: 2em; 
-  }
-
-  }
+@media handheld, only screen and (max-width: 767px) {
+    #homemain {
+    line-height: 15px;
+    background-color: transparent;
+    height: 500px;
+    width:600px;
+    max-width: 320px; /* or whatever size you want */
+    float: left;
+    padding: 10px;
+    font-size: 100%;
+    margin: 10px;
+    word-wrap: break-word;
+    }
+}
