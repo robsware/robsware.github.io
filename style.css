@@ -83,7 +83,6 @@ code {
 
 #menubar
 { 
-  height: 60px;
   padding-top: 6px;
   padding-left: 0px;} 
 
@@ -103,8 +102,7 @@ ul#menu li a
 { letter-spacing: 0.1em;
   font-family: sans-serif;
   font-size: 120%;
-  display: block; 
-  float: left; 
+  display: inline-block; 
   height: 20px;
   text-decoration: none; 
   padding: 9px 25px 5px 0px;
@@ -112,9 +110,7 @@ ul#menu li a
   color: #FFF;
   border: none;} 
 
-ul#menu li.selected a
-  { height: 20px;
-    }
+
   
   
 ul#menu li.selected a, ul#menu li.selected a:hover
