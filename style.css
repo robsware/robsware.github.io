@@ -42,24 +42,6 @@ code {
 }
 
 
-@media (prefers-color-scheme: light) {
-	body {
-		background: white ;
-		color: black ;
-	}
-	a {
-		color: blue ;
-	}
-	a:visited {
-		color: purple ;
-	}
-	h2 {
-		color: inherit ;
-	}
-	code {
-		color: forestgreen ;
-	}
-}
 
 @media print {
 	a[href] {
