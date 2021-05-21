@@ -41,8 +41,6 @@ code {
 	color: lime ;
 }
 
-
-
 @media print {
 	a[href] {
 		text-decoration: none ;
@@ -58,10 +56,8 @@ code {
 	#artlist { column-count: 3 ;}
 }
 
-
 #logo_text h1 a .logo_colour
 { color: #FC9C04;}
-
 
 #menubar
 { 
@@ -92,9 +88,6 @@ ul#menu li a
   color: #FFF;
   border: none;} 
 
-
-  
-  
 ul#menu li.selected a, ul#menu li.selected a:hover
   { color: #FC9C04;}
   
