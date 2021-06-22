@@ -16,7 +16,7 @@
       <div id="logo">
         <div id="logo_text">
           <!-- class="logo_colour", allows you to change the colour of the text -->
-          <h1><a href="../index.html"><span class="logo_colour">robsware</span></a></h1>
+          <h1><a href="../index.html"><span class="logo_colour">robsware</span><br></a></h1>
           <h2>Writeups. Projects. Rants.</h2>
         </div>
       </div>
@@ -44,38 +44,38 @@
 
         I have a private discord server for a few friends to <strike>talk about ideas, current events and projects</strike> shitpost together. I've already made a chatbot previously (writeup coming before the heat death of the universe) that was pretty successful and also a good avenue to practice my javascript. With access to GPT3, I figured a chatbot designed to assist in our technical tasks would be a great project. While we're not all programmers, all of us work in a STEM related field. <br><br>
         GPT3 works based on prompts. You provide a prompt, set the stop sequences, and submit it via an API call to get a generated response back. There are a few parameters to tweak, but the only real learning curve is figuring out how to use the stop sequences.<br><br>
-        Enter November, or 11 for short. Named so because I made the first commit on this project in November. OpenAI has an example for a chatbot with a personality, so I decided to add one too and wrote the prompt in an attempt to create a brainy and smug android.<br><br>
+        Enter November, or 11 for short. Named so because I made the first commit on this project in November. All the code used is available <a href="https://github.com/robsware/Discord-GPT3-BOT"> on my github here.</a> OpenAI has an example for a chatbot with a personality, so I decided to add one too and wrote the prompt in an attempt to create a brainy and smug android.<br><br>
         Since the discord.py functions are quite strict, I made a function that would send the Discord message to GPT 3 together with the prompt and imported it into the main bot code as a function called ask().<br><br>
 
-        <span class="center"><img src="images/1.png" alt="Ask Function" /></span>
+        <span class="center"><img src="images/1.png" alt="Ask Function" /></span><br>
 
         Main code:<br><br>
 
-        <span class="center"><img src="images/2.png" alt="main.py" /></span>
+        <span class="center"><img src="images/2.png" alt="main.py" /></span><br>
 
         Let's give it a whirl: <br><br>
 
-        <span class="center"><img src="images/hello.PNG" alt="Hello World" /></span>
+        <span class="center"><img src="images/hello.PNG" alt="Hello World" /></span><br>
 
 
         Wonderful. Time for some field testing. I've asked my friends to ask questions about something they're knowledgeable about. <br><br>
 
-        <span class="center"><img src="images/OSI.PNG" alt="OSI Stack" /></span><br>
-        <span class="center"><img src="images/ERA.PNG" alt="ERA" /></span><br>      
-        <span class="center"><img src="images/HEAT.PNG" alt="HEAT" /></span><br>  
-        <span class="center"><img src="images/slope.PNG" alt="Slope" /></span><br>  
-        <span class="center"><img src="images/anthro.PNG" alt="Anthropology related questions" /></span><br>
-        <span class="center"><img src="images/assessment.PNG" alt="Security assessment" /></span><br>
+        <span class="center"><img src="images/OSI.PNG" alt="OSI Stack" /></span><br><br>
+        <span class="center"><img src="images/ERA.PNG" alt="ERA" /></span><br><br>      
+        <span class="center"><img src="images/HEAT.PNG" alt="HEAT" /></span><br><br>  
+        <span class="center"><img src="images/slope.PNG" alt="Slope" /></span><br><br>  
+        <span class="center"><img src="images/anthro.PNG" alt="Anthropology related questions" /></span><br><br>
+        <span class="center"><img src="images/assessment.PNG" alt="Security assessment" /></span><br><br>
 
         Even knowledge about some more obscure projects:<br><br>
 
-        <span class="center"><img src="images/dark winter.PNG" alt="Dark Winter Project" /></span><br>  
-        <span class="center"><img src="images/deusex.PNG" alt="Games" /></span><br>  
+        <span class="center"><img src="images/dark winter.PNG" alt="Dark Winter Project" /></span><br><br>  
+        <span class="center"><img src="images/deusex.PNG" alt="Games" /></span><br><br>  
 
         Some python code, despite it not being included in the prompt:<br><br>
 
-        <span class="center"><img src="images/python.PNG" alt="Python code" /></span><br>  
-        <span class="center"><img src="images/stuxnet.PNG" alt="Suxnet" /></span><br>  
+        <span class="center"><img src="images/python.PNG" alt="Python code" /></span><br><br>  
+        <span class="center"><img src="images/stuxnet.PNG" alt="Suxnet" /></span><br><br>  
 
         Pretty impressive, isn't it?<br><br>
 
@@ -107,21 +107,21 @@
         <p>
           The main complaint from the entitled server users was the lack of persistence. Given how the prompt system worked, GPT3 would consider each query in a vacuum. People demanded persistence and I looked for a way to do it that wouldn't blow through my remaining tokens.<br><br>
           So I decided I'd use a cache system. Once someone interacted with 11, a cache of the dialogue would start being built and sent alongside the prompt and the query. This allowed 11 to discuss the same topic in depth and appear more human. The real issue came from integrating this system. Since the discord.py library is very strict with what parameters its functions can accept, I had to resort to using global variables.<br><br>
-          <span class="center"><img src="images/3.png" alt="Globals" /></span>
+          <span class="center"><img src="images/3.png" alt="Globals" /></span><br>
           A new problem came up now, namely token usage. Given that traffic was rather heavy, the cache would quickly balloon in size and end up burning through a ton of tokens. So I decided to implement a timer. If you'd stop interacting with 11 for more than 2 hours, the cache would get emptied. A generous timeline, but I figured it'd be enough to keep a conversation going and account for lulls in it. To implement this, I had to use a timer. Given the nature of the discord.py library, it had to be asynchronous, so I decided to use the elegant solution and use multi threading. First define a time function to use a new thread with the threading.Timer function:<br><br>
-          <span class="center"><img src="images/4.png" alt="Timer" /></span>
+          <span class="center"><img src="images/4.png" alt="Timer" /></span><br>
           Next, simply call it after every query:<br><br>
-          <span class="center"><img src="images/5.png" alt="Cache" /></span>
+          <span class="center"><img src="images/5.png" alt="Cache" /></span><br>
           Done and done. The AI is now ready to roll. Let's test it.<br><br>
-          <span class="center"><img src="images/cats.PNG" alt="persistence" /></span><br>  
+          <span class="center"><img src="images/cats.PNG" alt="persistence" /></span><br><br>  
           It works! I wonder what in depth conversations will users have with it now tha-<br><br>
-          <span class="center"><img src="images/limit.PNG" alt="ouch" /></span><br>  
+          <span class="center"><img src="images/limit.PNG" alt="ouch" /></span><br><br>  
           Well, this is unfortunate. Checking my quota usage on OpenAI, it reveals that I've used almost all of it:<br><br>
-          <span class="center"><img src="images/quota.PNG" alt="ouch" /></span><br> 
+          <span class="center"><img src="images/quota.PNG" alt="ouch" /></span><br><br> 
           I won't lie, it was a real bummer. I had more features in mind, such as it being able to differentiate between users. I also tested some other ideas in the playground, such as static code analysis and sentiment analysis and I was planning to integrate them into some other projects. Unfortunately, I've had to put a stop to it for the foreseeable future.<br><br>
           <h3>Conclusion - It's solid </h3>
           Much like me during university, GPT3 may appear extremely intelligent but deeper probing reveals how mindless it really is. It is an extraordinary achievement, and with adequate tweaking it can have some incredible results. It's user friendly and very fast to prototype and "train". It won't replace programmers anytime soon, but I can certainly see Elon Musk's point that AI can augment people's work instead of replacing it. You can certainly use OpenAI to automate away dreary tasks and quickly too. It's not general artificial intelligence, but it has certain moments when it makes you forget it's just a bot.<br><br>
-          <span class="center"><img src="images/fun.PNG" alt="almost human" /></span><br> 
+          <span class="center"><img src="images/fun.PNG" alt="almost human" /></span><br><br> 
           Downsides aside, it's an amazing step towards Artificial General Intelligence, suddenly increasing the feeling of urgency in the need to talk about AI ethics. OpenAI have knocked it out of the park by making it affordable for small scale developers and easy to use to companies with deep pockets and I think we're gonna see some really neat projects as more and more people are granted access to the API. At the end of this week, I only wish I had more tokens.
 
         </p>
