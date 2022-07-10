@@ -1,11 +1,11 @@
-site: Gesko
-title: Gesko
-greetings: Hi 👋
+site: robsware
+title: robsware
+greetings: robsware
 description: >-
   just a minimalist, personal blog
 lang: en-US
-timezone:  Europe/Rome
-repo: https://github.com/DavideBrie/Gesko # site repo [optional]
+timezone:  Europe/London
+repo: https://robsware.github.io/ # site repo [optional]
 data-theme: dark # default theme "dark" | "light"
 discus-identifier: powex # replace with your disqus shortname
 
