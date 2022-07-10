@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
- <title>Gesko</title>
+ <title>robsware</title>
  <link href="https://localhost:4000/atom.xml" rel="self"/>
  <link href="https://localhost:4000/"/>
- <updated>2022-07-10T14:16:46+02:00</updated>
+ <updated>2022-07-10T17:17:53+01:00</updated>
  <id>https://localhost:4000</id>
  <author>
    <name>gesko</name>
@@ -13,40 +13,713 @@
 
  
  <entry>
+   <title>Gpt3</title>
+   <link href="https://localhost:4000/2020/12/27/gpt3"/>
+   <updated>2020-12-27T00:00:00+00:00</updated>
+   <id>https://localhost:4000/2020/12/27/GPT3</id>
+   <content type="html">
+&lt;p&gt;&amp;lt;!DOCTYPE HTML&amp;gt;&lt;/p&gt;
+&lt;html&gt;
+
+&lt;head&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+  &lt;div id=&quot;main&quot;&gt;
+    &lt;div id=&quot;header&quot;&gt;
+      &lt;div id=&quot;menubar&quot;&gt;
+        &lt;ul id=&quot;menu&quot;&gt;
+          &lt;li&gt;&lt;a href=&quot;../index.html&quot;&gt;Home&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;../walkthroughs.html&quot;&gt;Walkthroughs&lt;/a&gt;&lt;/li&gt;
+          &lt;li class=&quot;selected&quot;&gt;&lt;a href=&quot;../experiments.html&quot;&gt;Experiments&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;../rants.html&quot;&gt;Rants&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;../contact.html&quot;&gt;Social Media&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div id=&quot;site_content&quot;&gt;
+      &lt;div id=&quot;content&quot;&gt;
+        &lt;h1&gt;A week with GPT3&lt;/h1&gt;
+        &lt;p&gt;Posted on December 27, 2020 &lt;br /&gt;&lt;br /&gt; On the 19th of December, I woke up bleary eyed on a Saturday after another late night of doing CTFs and reached for my phone to check the time, expecting a lazy weekend ahead to cool down and I noticed an email from OpenAI. Suffice to say that woke me faster than any amount of binge drinking Monster energy drinks would. The email just said I now have a trial access to GPT3, either through March or until I hit my quota, whichever comes first. So I jumped right out of bed and to my PC to read the docs.
+        &lt;br /&gt;&lt;br /&gt;
+        &lt;/p&gt;
+        &lt;h3&gt;The Project - Discord Technical Helper&lt;/h3&gt;
+        &lt;p&gt;
+        I have a private discord server for a few friends to &lt;strike&gt;talk about ideas, current events and projects&lt;/strike&gt; shitpost together. I&apos;ve already made a chatbot previously (writeup coming before the heat death of the universe) that was pretty successful and also a good avenue to practice my javascript. With access to GPT3, I figured a chatbot designed to assist in our technical tasks would be a great project. While we&apos;re not all programmers, all of us work in a STEM related field. &lt;br /&gt;&lt;br /&gt;
+        GPT3 works based on prompts. You provide a prompt, set the stop sequences, and submit it via an API call to get a generated response back. There are a few parameters to tweak, but the only real learning curve is figuring out how to use the stop sequences.&lt;br /&gt;&lt;br /&gt;
+        Enter November, or 11 for short. Named so because I made the first commit on this project in November. All the code used is available &lt;a href=&quot;https://github.com/robsware/Discord-GPT3-BOT&quot;&gt; on my github here.&lt;/a&gt; OpenAI has an example for a chatbot with a personality, so I decided to add one too and wrote the prompt in an attempt to create a brainy and smug android.&lt;br /&gt;&lt;br /&gt;
+        Since the discord.py functions are quite strict, I made a function that would send the Discord message to GPT 3 together with the prompt and imported it into the main bot code as a function called ask().&lt;br /&gt;&lt;br /&gt;
+
+        &lt;span class=&quot;center&quot;&gt;&lt;img src=&quot;/assets/images/1.png&quot; alt=&quot;Ask Function&quot; /&gt;&lt;/span&gt;&lt;br /&gt;
+
+        Main code:&lt;br /&gt;&lt;br /&gt;
+
+        &lt;span class=&quot;center&quot;&gt;&lt;img src=&quot;/assets/images/2.png&quot; alt=&quot;main.py&quot; /&gt;&lt;/span&gt;&lt;br /&gt;
+
+        Let&apos;s give it a whirl: &lt;br /&gt;&lt;br /&gt;
+
+        &lt;span class=&quot;center&quot;&gt;&lt;img src=&quot;/assets/images/hello.PNG&quot; alt=&quot;Hello World&quot; /&gt;&lt;/span&gt;&lt;br /&gt;
+
+
+        Wonderful. Time for some field testing. I&apos;ve asked my friends to ask questions about something they&apos;re knowledgeable about. &lt;br /&gt;&lt;br /&gt;
+
+        &lt;span class=&quot;center&quot;&gt;&lt;img src=&quot;/assets/images/OSI.PNG&quot; alt=&quot;OSI Stack&quot; /&gt;&lt;/span&gt;&lt;br /&gt;&lt;br /&gt;
+        &lt;span class=&quot;center&quot;&gt;&lt;img src=&quot;/assets/images/ERA.PNG&quot; alt=&quot;ERA&quot; /&gt;&lt;/span&gt;&lt;br /&gt;&lt;br /&gt;      
+        &lt;span class=&quot;center&quot;&gt;&lt;img src=&quot;/assets/images/HEAT.PNG&quot; alt=&quot;HEAT&quot; /&gt;&lt;/span&gt;&lt;br /&gt;&lt;br /&gt;  
+        &lt;span class=&quot;center&quot;&gt;&lt;img src=&quot;/assets/images/slope.PNG&quot; alt=&quot;Slope&quot; /&gt;&lt;/span&gt;&lt;br /&gt;&lt;br /&gt;  
+        &lt;span class=&quot;center&quot;&gt;&lt;img src=&quot;/assets/images/anthro.PNG&quot; alt=&quot;Anthropology related questions&quot; /&gt;&lt;/span&gt;&lt;br /&gt;&lt;br /&gt;
+        &lt;span class=&quot;center&quot;&gt;&lt;img src=&quot;/assets/images/assessment.PNG&quot; alt=&quot;Security assessment&quot; /&gt;&lt;/span&gt;&lt;br /&gt;&lt;br /&gt;
+
+        Even knowledge about some more obscure projects:&lt;br /&gt;&lt;br /&gt;
+
+        &lt;span class=&quot;center&quot;&gt;&lt;img src=&quot;/assets/images/dark winter.PNG&quot; alt=&quot;Dark Winter Project&quot; /&gt;&lt;/span&gt;&lt;br /&gt;&lt;br /&gt;  
+        &lt;span class=&quot;center&quot;&gt;&lt;img src=&quot;/assets/images/deusex.PNG&quot; alt=&quot;Games&quot; /&gt;&lt;/span&gt;&lt;br /&gt;&lt;br /&gt;  
+
+        Some python code, despite it not being included in the prompt:&lt;br /&gt;&lt;br /&gt;
+
+        &lt;span class=&quot;center&quot;&gt;&lt;img src=&quot;/assets/images/python.PNG&quot; alt=&quot;Python code&quot; /&gt;&lt;/span&gt;&lt;br /&gt;&lt;br /&gt;  
+        &lt;span class=&quot;center&quot;&gt;&lt;img src=&quot;/assets/images/stuxnet.PNG&quot; alt=&quot;Suxnet&quot; /&gt;&lt;/span&gt;&lt;br /&gt;&lt;br /&gt;  
+
+        Pretty impressive, isn&apos;t it?&lt;br /&gt;&lt;br /&gt;
+
+        &lt;h3&gt;The Good - Impressive results&lt;/h3&gt;
+
+        Even with a fairly short prompt, the results were really impressive. The responses were articulate and had a twinge of personality added to them. GPT3 proved to be knowledgeable across all fields that we probed it for, even being snarky when we made typos or sent the message before we finished writing it. It was also incredibly fast, most responses taking less than 1 second to be processed and sent back even over Discord.&lt;br /&gt;&lt;br /&gt;
+
+        The real magic came from those little personality touches. The occasional snarky response or burn over a typo got us laughing, and some of its replies were so insightful that for a second we forgot we were talking to an API, instilling a sense of somber.&lt;br /&gt;&lt;br /&gt;
+
+        The trial is also reasonably generous, with 300k tokens being enough to get a good idea about what you&apos;re dealing with, although you can definitely burn through them surprisingly fast.&lt;br /&gt;&lt;br /&gt;
+        &lt;/p&gt;
+
+        &lt;h3&gt;The bad - It&apos;s expensive&lt;/h3&gt;
+        &lt;p&gt;While very flexible in terms of pricing, the fact that for every request you have to send the whole prompt can drive the cost up significantly. Our queries together with the prompt and response were around 500 tokens, and while using the &quot;best of&quot; parameter and the davinci engine, the cost would be somewhere between 3 and 5 cents per question. Not a lot at first glance, but 20â€“30 questions can get you to a dollar and that&apos;s not a huge number. A dollar per day is 30 dollars per month. Not a huge sum, but consider all the other things you could get for less than 30 dollars. Your own domain, a HackTheBox sub and a Netflix sub. The flexible pricing is great, it allows me to run the chatbot for 20â€“30 dollars a month without needing to go for the 100 dollar option that offers about 2 million tokens. You can also downgrade the quality of the responses to cut down the price. The flexibility is there and it&apos;s good. The issue is that you can burn through tokens prohibitively fast during initial testing, as even requests using the playground count towards your cap.&lt;br /&gt;&lt;br /&gt;
+        
+        Being an invite only program, there&apos;s not a lot of documentation available on the web. OpenAI has some examples on their website, but it might take you a moment to get your head around it. Also, some of the responses were cherry picked. While about 90% of the responses were good to great, 10% were complete nonsense.
+        
+        &lt;/p&gt;
+
+        &lt;h3&gt;The Great - It just works&lt;/h3&gt;
+        &lt;p&gt;
+          Once you figure out how the prompt system works and plug it into something else, it just works and with great results.The responses themselves involve 0 coding and anyone can start playing around with it regardless of how much experience they have.&lt;br /&gt;&lt;br /&gt;
+
+          OpenAI&apos;s website automatically loads your API key in their documentation, while also providing great guidelines and examples. The playground prompts can be exported as Python code or curl requests, making integration really painless. You can quite literally go from 0 to a working prototype in a matter of hours and that&apos;s remarkable. And best of it all, you don&apos;t have to spend time training anything. The prompt that gets submitted is the training, so keeping the dataset intact is easy.
+
+        &lt;/p&gt;
+
+        &lt;h3&gt;Upgrades people, upgrades&lt;/h3&gt;
+        &lt;p&gt;
+          The main complaint from the entitled server users was the lack of persistence. Given how the prompt system worked, GPT3 would consider each query in a vacuum. People demanded persistence and I looked for a way to do it that wouldn&apos;t blow through my remaining tokens.&lt;br /&gt;&lt;br /&gt;
+          So I decided I&apos;d use a cache system. Once someone interacted with 11, a cache of the dialogue would start being built and sent alongside the prompt and the query. This allowed 11 to discuss the same topic in depth and appear more human. The real issue came from integrating this system. Since the discord.py library is very strict with what parameters its functions can accept, I had to resort to using global variables.&lt;br /&gt;&lt;br /&gt;
+          &lt;span class=&quot;center&quot;&gt;&lt;img src=&quot;/assets/images/3.png&quot; alt=&quot;Globals&quot; /&gt;&lt;/span&gt;&lt;br /&gt;
+          A new problem came up now, namely token usage. Given that traffic was rather heavy, the cache would quickly balloon in size and end up burning through a ton of tokens. So I decided to implement a timer. If you&apos;d stop interacting with 11 for more than 2 hours, the cache would get emptied. A generous timeline, but I figured it&apos;d be enough to keep a conversation going and account for lulls in it. To implement this, I had to use a timer. Given the nature of the discord.py library, it had to be asynchronous, so I decided to use the elegant solution and use multi threading. First define a time function to use a new thread with the threading.Timer function:&lt;br /&gt;&lt;br /&gt;
+          &lt;span class=&quot;center&quot;&gt;&lt;img src=&quot;/assets/images/4.png&quot; alt=&quot;Timer&quot; /&gt;&lt;/span&gt;&lt;br /&gt;
+          Next, simply call it after every query:&lt;br /&gt;&lt;br /&gt;
+          &lt;span class=&quot;center&quot;&gt;&lt;img src=&quot;/assets/images/5.png&quot; alt=&quot;Cache&quot; /&gt;&lt;/span&gt;&lt;br /&gt;
+          Done and done. The AI is now ready to roll. Let&apos;s test it.&lt;br /&gt;&lt;br /&gt;
+          &lt;span class=&quot;center&quot;&gt;&lt;img src=&quot;/assets/images/cats.PNG&quot; alt=&quot;persistence&quot; /&gt;&lt;/span&gt;&lt;br /&gt;&lt;br /&gt;  
+          It works! I wonder what in depth conversations will users have with it now tha-&lt;br /&gt;&lt;br /&gt;
+          &lt;span class=&quot;center&quot;&gt;&lt;img src=&quot;/assets/images/limit.PNG&quot; alt=&quot;ouch&quot; /&gt;&lt;/span&gt;&lt;br /&gt;&lt;br /&gt;  
+          Well, this is unfortunate. Checking my quota usage on OpenAI, it reveals that I&apos;ve used almost all of it:&lt;br /&gt;&lt;br /&gt;
+          &lt;span class=&quot;center&quot;&gt;&lt;img src=&quot;/assets/images/quota.PNG&quot; alt=&quot;ouch&quot; /&gt;&lt;/span&gt;&lt;br /&gt;&lt;br /&gt; 
+          I won&apos;t lie, it was a real bummer. I had more features in mind, such as it being able to differentiate between users. I also tested some other ideas in the playground, such as static code analysis and sentiment analysis and I was planning to integrate them into some other projects. Unfortunately, I&apos;ve had to put a stop to it for the foreseeable future.&lt;br /&gt;&lt;br /&gt;
+          &lt;h3&gt;Conclusion - It&apos;s solid &lt;/h3&gt;
+          Much like me during university, GPT3 may appear extremely intelligent but deeper probing reveals how mindless it really is. It is an extraordinary achievement, and with adequate tweaking it can have some incredible results. It&apos;s user friendly and very fast to prototype and &quot;train&quot;. It won&apos;t replace programmers anytime soon, but I can certainly see Elon Musk&apos;s point that AI can augment people&apos;s work instead of replacing it. You can certainly use OpenAI to automate away dreary tasks and quickly too. It&apos;s not general artificial intelligence, but it has certain moments when it makes you forget it&apos;s just a bot.&lt;br /&gt;&lt;br /&gt;
+          &lt;span class=&quot;center&quot;&gt;&lt;img src=&quot;/assets/images/fun.PNG&quot; alt=&quot;almost human&quot; /&gt;&lt;/span&gt;&lt;br /&gt;&lt;br /&gt; 
+          Downsides aside, it&apos;s an amazing step towards Artificial General Intelligence, suddenly increasing the feeling of urgency in the need to talk about AI ethics. OpenAI have knocked it out of the park by making it affordable for small scale developers and easy to use to companies with deep pockets and I think we&apos;re gonna see some really neat projects as more and more people are granted access to the API. At the end of this week, I only wish I had more tokens.
+        &lt;/p&gt;   
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div id=&quot;footer&quot;&gt;
+      &lt;p&gt;&lt;a href=&quot;../index.html&quot;&gt;Home&lt;/a&gt; | &lt;a href=&quot;../walkthroughs.html&quot;&gt;Walkthroughs&lt;/a&gt; | &lt;a href=&quot;../experiments.html&quot;&gt;Experiments&lt;/a&gt; | &lt;a href=&quot;../rants.html&quot;&gt;Rants&lt;/a&gt; | &lt;a href=&quot;../contact.html&quot;&gt;Social Media&lt;/a&gt;&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Oswp</title>
+   <link href="https://localhost:4000/2020/12/05/oswp"/>
+   <updated>2020-12-05T00:00:00+00:00</updated>
+   <id>https://localhost:4000/2020/12/05/oswp</id>
+   <content type="html">&lt;html&gt;
+
+&lt;head&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+  &lt;div id=&quot;main&quot;&gt;
+    &lt;div id=&quot;header&quot;&gt;
+    &lt;/div&gt;
+    &lt;div id=&quot;site_content&quot;&gt;
+      &lt;div id=&quot;content&quot;&gt;
+        &lt;h1&gt;The OWSP experience: &lt;strike&gt;#TryHarder&lt;/strike&gt; #TryAgain&lt;/h1&gt;
+        &lt;p&gt;Posted on December 5, 2020 &lt;br /&gt;&lt;/p&gt;
+        &lt;p&gt;It&apos;s been almost 1 month since I attempted and passed my OSWP. Here are my thoughts about the famous &quot;meme&quot; certification.&lt;/p&gt;
+        
+
+        &lt;h3&gt;The Good - The Information&lt;/h3&gt;
+        &lt;p&gt;As someone with only a vague knowledge of how wireless communication works, the course was extremely informative in explaining and detailing how things work and the history of wireless communication. 
+        If I were to judge the course as an informative/historical book, it would be a great book. Unfortunately, things start to fall apart when it gets to the practical part.
+
+        The self built lab is a double edged sword. On one hand, I loved not feeling the time pressure of the regular OffSec labs and being able to take my time. Setting it up and pulling all the power and ethernet cables around made feel like an old school sysadmin.
+        On the other hand... &lt;/p&gt;
+
+         
+        &lt;h3&gt;The Bad - The Lab&lt;/h3&gt;
+
+        &lt;p&gt;The suggested hardware for the lab is ancient and you&apos;ll really struggle to find it. If you don&apos;t live in a place with a large second hand market, you might be entirely out of luck, like I was. 
+        I asked around if people had any old router that supporter WEP and borrowed a DIR 300 from a friend. As for WiFi NIC, I used a tp-link tl-wn722n v3 from a previous project. With the spare ethernet cables I had lying around, I was able to set up my lab without spending any money.
+        OffSec suggests using their backtrack image, but I couldn&apos;t get it to recognize or install my WiFi NIC drivers. I didn&apos;t really have the hardware available to just install it on a new laptop, so after a lot of frustration and headscratching I ended up installing kali on a rasPi and connecting to it via SSH.
+        I figured this would match the exam environment quite nicely. Most of the tools used in the exercises work on rasPi kali, and the ones that don&apos;t aren&apos;t really relevant.&lt;br /&gt;&lt;br /&gt;
+
+        The second bad part is the content. It is &lt;b&gt;old.&lt;/b&gt; Very old. I&apos;ve personally never seen a WEP network in my entire life, and I&apos;m 26 for the record. I couldn&apos;t even get my router into all the WEP configs the lab described. So the lab experience was half lived at best.
+      &lt;/p&gt;
+        &lt;h3&gt;The Great - Everything you need&lt;/h3&gt;
+
+        &lt;p&gt;This is probably the only OffSec certification that teaches you everything you need to pass the exam, so that&apos;s convenient. If you just really focus on the exercises, you should be in great shape for the exam.
+        Setting up the lab took me about a week, and it took me another 2 weeks to go through the videos and the practice labs.&lt;/p&gt;
+
+        &lt;h3&gt;The Exam&lt;/h3&gt;
+        
+        &lt;p&gt;
+        The exam takes 4 hours. Given my luck, all the lab exercises that I couldn&apos;t set up were on my exam. Regardless, after going back to my notes, I was able to complete the exam in under 2 hours so I used the remaining time to have lunch and go over the exercises again and take proper screenshots.
+        One peculiar thing about the exam is that things might not... work. Even if you did everything right, it might not work on first attempt. Or second attempt. Third attempt usually does it. So all I can say is: double check your commands and.. Try Again. Inconvenient and can be a cause of lots of unwanted stress.&lt;/p&gt;
+
+        &lt;h3&gt;Final Thoughts&lt;/h3&gt;
+
+        &lt;p&gt;As a disclaimer, my employer paid for the exam. I originally only planned to get my CRTP during 2020, but I was able to pass with just one month of lab time and had some training funds left over. On a whim I decided to get my OSWP after a coworker got his recently too. 
+            I regret the headaches I got while trying to get Backtrack and some of the labs exercises to work, but overall I feel I learned some very crucial concepts about WiFi. I&apos;m not quite sure I&apos;d recommend the course, it is a tad expensive for what it is and it is quite outdated. 
+            You still get the OffSec brand quality though which evens the offer a bit. If you don&apos;t know much about WiFi and have some cash to burn, then consider it, it&apos;s not a major time investment and you&apos;ll learn some cool stuff. Otherwise, prioritize other certifications. 
+            As an alternative, I heard good things about the WiFi course on Pentester Academy, although I personally haven&apos;t attempted it: &lt;a href=&quot;https://www.pentesteracademy.com/course?id=9&quot;&gt;https://www.pentesteracademy.com/course?id=9&lt;/a&gt;
+
+            WiFi hasn&apos;t really changed that much over the years. I wouldn&apos;t say that OSWP prepared me for a WiFi engagement, but it did provide a foundation solid enough so that I could build my own toolkit and methodology. Unfortunately, most Wifi assessments are capturing the WPA2 handshakes, tossing them into hashcat and praying for the best.
+            I&apos;d like to see an updated version cover stuff like BlueTooth and Zigbee, more focused on IoT communications, but right now I can only hope.&lt;/p&gt;
+       
+
+
+
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div id=&quot;footer&quot;&gt;
+      &lt;p&gt;&lt;a href=&quot;../index.html&quot;&gt;Home&lt;/a&gt; | &lt;a href=&quot;../walkthroughs.html&quot;&gt;Walkthroughs&lt;/a&gt; | &lt;a href=&quot;../experiments.html&quot;&gt;Experiments&lt;/a&gt; | &lt;a href=&quot;../rants.html&quot;&gt;Rants&lt;/a&gt; | &lt;a href=&quot;../contact.html&quot;&gt;Social Media&lt;/a&gt;&lt;/p&gt;
+
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Oscp</title>
+   <link href="https://localhost:4000/2020/10/02/oscp"/>
+   <updated>2020-10-02T00:00:00+01:00</updated>
+   <id>https://localhost:4000/2020/10/02/oscp</id>
+   <content type="html">&lt;html&gt;
+
+&lt;head&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+  &lt;div id=&quot;main&quot;&gt;
+    &lt;div id=&quot;header&quot;&gt;
+    &lt;/div&gt;
+    &lt;div id=&quot;site_content&quot;&gt;
+      &lt;div id=&quot;content&quot;&gt;
+        &lt;h1&gt;My OSCP Journey: From zero to one&lt;/h1&gt;
+        &lt;p&gt;Posted on October 2, 2020 &lt;br /&gt;&lt;/p&gt;
+        &lt;p&gt;Today marks one year since I got my OSCP, and a year and 6 months since I started learning about infosec. A little over 2 years since I got into tech. 6 months since I started on a pentester position. This is my story, mostly the interesting bits.
+
+        Feel free to use any of the links below for navigation:
+        &lt;li&gt;&lt;a href=&quot;https://robsware.github.io/2020/10/02/oscp.html#background&quot;&gt;Background&lt;/a&gt;&lt;/li&gt; 
+        &lt;li&gt;&lt;a href=&quot;https://robsware.github.io/2020/10/02/oscp.html#prep&quot;&gt;The OSCP Prep&lt;/a&gt;&lt;/li&gt; 
+        &lt;li&gt;&lt;a href=&quot;https://robsware.github.io/2020/10/02/oscp.html#good&quot;&gt;The Good - The Lab&lt;/a&gt;&lt;/li&gt; 
+        &lt;li&gt;&lt;a href=&quot;https://robsware.github.io/2020/10/02/oscp.html#bad&quot;&gt;The Bad - The Forums&lt;/a&gt;&lt;/li&gt; 
+        &lt;li&gt;&lt;a href=&quot;https://robsware.github.io/2020/10/02/oscp.html#great&quot;&gt;The Great - The grassroots community&lt;/a&gt;&lt;/li&gt; 
+        &lt;li&gt;&lt;a href=&quot;https://robsware.github.io/2020/10/02/oscp.html#schedule&quot;&gt;Study Schedule and Boxes&lt;/a&gt;&lt;/li&gt; 
+        &lt;li&gt;&lt;a href=&quot;https://robsware.github.io/2020/10/02/oscp.html#exam&quot;&gt;Exam day&lt;/a&gt;&lt;/li&gt; 
+        &lt;li&gt;&lt;a href=&quot;https://robsware.github.io/2020/10/02/oscp.html#learningPath&quot;&gt;Learning path&lt;/a&gt;&lt;/li&gt; 
+        &lt;li&gt;&lt;a href=&quot;https://robsware.github.io/2020/10/02/oscp.html#tools&quot;&gt;Tools and recommendations&lt;/a&gt;&lt;/li&gt; 
+        &lt;li&gt;&lt;a href=&quot;https://robsware.github.io/2020/10/02/oscp.html#finalThoughts&quot;&gt;Final Thoughts&lt;/a&gt;&lt;/li&gt; 
+        &lt;li&gt;&lt;a href=&quot;https://robsware.github.io/2020/10/02/oscp.html#postOscp&quot;&gt;Post OSCP&lt;/a&gt;&lt;/li&gt; 
+
+        &lt;/p&gt;
+        
+        &lt;h3&gt;&lt;a name=&quot;background&quot;&gt;Background&lt;/a&gt;&lt;/h3&gt;
+        &lt;p&gt;
+          I graduated from a French university in 2016 with a degree in Finance and Statistics and a minor in Information Systems. University was overall an academically dissatisfactory experience, when most of my dreams were hit by the harsh reality of academia politics. By the time I graduated, I ended up in London in full Brexit uncertainty with my employment opportunities suddenly taking a turn for the worse. I ended up hopping countries a few times and finally secured one of those highly desired Investment Banking positions. I hated it. If I had some mixed feelings about finance before getting a job, this experience definitely helped me realize I was in the wrong industry. I had dabbled in programming before to automate some Excel workloads (even to the point where I automated myself out of a job!), so I decided to take a leap of faith and get into tech. Leveraging every single aspect of tech I knew, I crafted a CV and started applying.  After a few weeks of applying for jobs during lunch breaks and after 12+ hour workdays and not getting call backs, a company finally got back to me for a DevOps role.&lt;br /&gt;&lt;/p&gt;
+
+          &lt;p&gt;During my uni days, I ended up speaking in front of the  Council of British Chambers of Commerce in Europe. It was a terrifying experience. This interview felt worse. Thankfully, the coding challenge was fairly simple (think fizz-buzz level) and the hiring manager was very understanding of my circumstances, so they decided to take me onboard. I remember getting the call during a lunch break where a coworker was trying to convince me not to quit without something lined up. The timing couldn&apos;t have been better. I got back to the office and told my manager I&apos;m quitting, as politely as I could. I wish I&apos;d remember this part better, but I was so stressed and stretched thin, that it&apos;s all a haze, but I distincly remember the feeling of weightlessness when I left my office for the last time. &lt;br /&gt;&lt;/p&gt;
+
+          &lt;p&gt;I spent about 9 months in that DevOps role and I met some great people, learned a lot, and met my current service manager, another great guy, through some internal innovation programs. After coming in 3rd place in the company wide infosec challenge and befriending some of the core team members, I had the opportunity to join the infosec team as a Security Engineer. This role was very different compared to my previous one, with considerably less handholding and more challenges, but I managed through. And I wanted more.&lt;br /&gt;&lt;/p&gt;
+
+          &lt;p&gt;Initially, after getting more comfortable in my DevOps role, I started dreaming about the OSCP. It seemed like an immeasurable goal at the time and I gave myself 3 years of study before attempting it. Less than 6 months later I was passing my CEH exam and another 6 months later I was enrolled in the OSCP.&lt;br /&gt;&lt;/p&gt;
+
+        &lt;h3&gt;&lt;a name=&quot;prep&quot;&gt;The OSCP Prep&lt;/a&gt;&lt;/h3&gt;
+
+        &lt;p&gt;I got my confirmation email saying that I&apos;ll start the lab in about a month&apos;s time. This is the moment where the panic started setting in. Bear in mind that by this point I had about a year and a half of working in tech and 6 months of working in infosec, but I had not completed a single CTF or rooted a single box by that point. Getting this email from OffSec didn&apos;t help either. &lt;/p&gt; 
+
+        &lt;span class=&quot;center&quot;&gt;&lt;img src=&quot;too_hard.png&quot; alt=&quot;git gud&quot; /&gt;&lt;/span&gt;&lt;br /&gt;
+
+        &lt;p&gt;So, disguising my panic with smugness and ingesting enough caffeine to kill a lesser man, I started doing CTFs. I completed Bandit and Leviathan CTF levels on overthewire.org in about 2 weeks. Then I started looking up the OSCP Lab format and if there&apos;s anything else similar. I found vulnhub and hackthebox. I managed to register to HTB, picked the easiest machine and failed. Spent five days on it and only got the user flag. So I went on to vulnhub, found a OSCP like boxes list and started working through them with a walkthrough on my other screen. I managed to complete a few of them, but the process was entirely mechanical and not much stuck with me. Or so I thought. With 2 days left before the lab, I went back to HTB and managed to secure the root flag on that box. It was enough of a confidence boost to keep the imposter syndrome at bay.&lt;br /&gt;&lt;/p&gt;
+
+        &lt;h3&gt;&lt;a name=&quot;good&quot;&gt;The Good - The Lab&lt;/a&gt;&lt;/h3&gt;
+
+        &lt;p&gt;So, the big day is here. I took about a week off from work and started by spending some hours reading the PDF and watching the videos, eager to dive in. So I started sequentially, trying the first 5 boxes in the network range. I couldn&apos;t do any of them. Hello Imposter Syndrome! I went back to the videos, thinking there must be something in there to help. A few days later, halfway through the exercises and videos, I decided to attempt the boxes again. I managed to get one with metasploit, but no dice on the others. Not great, not terrible. I spend the next week on the PDF and the videos and manage to finish all the exercises that didn&apos;t require a lab box. Back to the lab, and I started making progress. My technique wasn&apos;t anything to write home about, I&apos;d just google every service with a port open and look for an exploit. But it was working and I managed to get about half the student network this way. &lt;/p&gt;
+
+        &lt;span class=&quot;center&quot;&gt;&lt;img src=&quot;crawling.png&quot; alt=&quot;it works!&quot; /&gt;&lt;/span&gt;&lt;br /&gt;
+
+        &lt;p&gt;The provided PDF and videos are great for easing you into the course, although I really wish we could get them a week or so in advance. I&apos;d recommend spending your first week or two just going through them before diving into the lab. Don&apos;t be afraid to go back to them if you get stuck, they are a solid reference material. &lt;br /&gt;&lt;/p&gt;
+
+
+        &lt;h3&gt;&lt;a name=&quot;bad&quot;&gt;The Bad - The Forums&lt;/a&gt;&lt;/h3&gt;
+
+        &lt;p&gt;
+          After about 20 boxes I&apos;m stuck again. I tried checking out the OffSec forums, but it felt like a trip to the early 2000&apos;s, with power tripping mods (please lay off the delete button Harbringer) and tons of unhelpful posts. Since they&apos;re so overzealous with the delete button, they could at least clear out some of those pointless and meme posts. I know OffSec has made some efforts towards community reach, but the forums are mainly a dead cause. &lt;br /&gt;
+
+        &lt;/p&gt;
+
+        &lt;span class=&quot;center&quot;&gt;&lt;img src=&quot;online_problems.png&quot; alt=&quot;An exercise in frustration&quot; /&gt;&lt;/span&gt;&lt;br /&gt;
+
+        &lt;h3&gt;&lt;a name=&quot;great&quot;&gt;The Great - The grassroots community&lt;/a&gt;&lt;/h3&gt;
+          &lt;p&gt;
+            But hackers have a way of solving problems anyway, so I checked the /r/oscp reddit (which is mostly a cesspool), and noticed a discord link to a server:
+            &lt;a href=&quot;https://discordapp.com/invite/BUjnWps&quot;&gt;https://discordapp.com/invite/BUjnWps&lt;/a&gt;
+            &lt;br /&gt;&lt;br /&gt;
+            And I struck gold. The server was still fairly small when I joined (I was there for the 4.99 boxes meme.), and the people were incredibly helpful - and still are. Not by giving away answers, but by helping you find them out yourself (shoutout to Tiberius and plaverty9 among others!). Not only that I was starting to progress again, but I was actually understanding things and not relying on metasploit. &lt;/p&gt; 
+
+
+            &lt;h3&gt;&lt;a name=&quot;schedule&quot;&gt;Study Schedule and Boxes&lt;/a&gt;&lt;/h3&gt;
+            &lt;p&gt;
+            As I gradually neared the time to start the labs, I started waking up earlier and earlier. The job I had around that time involved a lot of stress due to various factors and I was too tired to really take in the material after work. So I had to do it before. I started by waking up at 6 am and I gradually dialed it back by about 30 minutes per week until I was getting up at 3 AM. To forcewake my brain up, I&apos;d usually jump out of bed, have a tall glass of water and play a quick Starcraft game. With that done I&apos;d pick whichever box was next in the IP range and spend about 2-3 hours on it. If I couldn&apos;t make any kind of progress I&apos;d move on to another box, but for the most part I was able to clear all the non-dependency boxes in sequential order. I would do that until around 9 AM when it was time to head to work where I managed to trudge through the day and have all my daily meals until 6 PM when it was time to head home and either try some idea I&apos;ve had over the day or just try to relax a bit. By 7 PM I was asleep. When I started the lab I used to also hit the gym before work, but by the end of it my daily cycling to work and back was my only means of exercise. For note taking, I mainly used CherryTree, making sure to back it up every week or so. I used this template: &lt;a href=&quot;Github link&quot;&gt;https://github.com/devzspy/oscp-certification/tree/master/Note%20Taking%20Tools/CherryTree%20Template&lt;/a&gt; &lt;br /&gt;&lt;br /&gt;
+
+            Following this rather intense schedule, I finished the entire lab with about two weeks to spare, so I went back and redid some of the boxes with my newly gained knowledge. Noteworthy is the Dev network range, which is an absolute pain. The big 4 are fun and not as impossible as they seem. Jack is by far the hardest box in the lab and you start feeling like a god once you get foothold. I also schedule my exam about 4 weeks ahead on a Wednesday and request 2 days off from work for it. Looking back at my experience, this was probably the worst decision I made throughout the course. I was exhausted from the grind and I still felt like my knowledge was a bit hazy, so I decided to head back to hackthebox. Back then the VIP didn&apos;t allow you to roll your own box, so I had to make do with whatever was up at that point. With the help of ippsec, I went through most of the windows boxes and I felt like I had a better chance. This turned out to be an excellent idea. With 3 days left until the exam and feeling absolutely wrecked, I decide to rest. 
+            &lt;br /&gt;
+          &lt;/p&gt;
+
+          &lt;h3&gt;&lt;a name=&quot;exam&quot;&gt;Exam day&lt;/a&gt;&lt;/h3&gt;
+          &lt;p&gt;Big day is here. I&apos;d feel nervous if I weren&apos;t so damn exhausted. Anyway, I go through the setup process. Word of advice here, I&apos;d get a good webcam before the exam. I borrowed a 720p webcam from work and it was a bit fuzzy at showing the contents of my room. The proctors are very cool and understanding, so don&apos;t worry about that. Exam started and I launched AutoRecon on all the boxes while working on the BOF. It took me about an hour to finish the BOF after a small hiccup. Checked the scans and noticed that I got a mix of Windows and Linux boxes, all pretty new. I start with the 25pt windows boxes and get user pretty quickly. I try to root but no dice. I switch to the 20 pt linux box and get user on it too. By now I had up to 47.5 points, 3 hours into the exam. I try to root the linux box but no luck there either, lots of rabbit holes. I turn to the last 20pt box, and after some struggles, I manage to get user on it and root too in about 3 hours. I&apos;m 7 hours into the exam and I have 67.5 points if users are half the points. I&apos;m starting to relax, I even take a short break. My happiness was short lived, as that&apos;s where my progress halted. I spent the next 10 hours trying to root the 10 point box, and then the other 7 hours trying to root the previous boxes. Nothing. I should&apos;ve taken a break and slept for a few hours, but I was too hyped and on way too much caffeine. There is no good ending. All the points I got were in the first 7 hours of the exam, and that seems to be the norm among other exam takers. I slept for a few hours and spent most of the next day writing the report and hoping the exam points and the exercise report points added up to enough to pass. Again, I would&apos;ve felt stressed if I weren&apos;t so exhausted. &lt;br /&gt;&lt;br /&gt;I spent the following week in a daze, just trying to catch up with the stuff I missed at work. I received the email that I passed on a Tuesday, but my mail filter moved it to spam so it took another 2 days until I found it. Needless to say, the feeling was surreal. Definitely one of the happiest days in my life. &lt;b&gt;From practically 0 IT knowledge and even less infosec knowledge to OSCP is just about a year, I felt proud of myself.&lt;/b&gt; &lt;/p&gt;
+
+          &lt;span class=&quot;center&quot;&gt;&lt;img src=&quot;huzzah.png&quot; alt=&quot;Try Harder&quot; /&gt;&lt;/span&gt;&lt;br /&gt;
+
+          &lt;h3&gt;&lt;a name=&quot;learningPath&quot;&gt;Learning path&lt;/a&gt;&lt;/h3&gt;
+          &lt;p&gt;Plenty of tools got added in the past year, to the point where we are spoiled for choice. Regardless of what you do, there&apos;ll be a lot of learning by doing. If you are entirely new to linux, consider doing bandit at &lt;a href=&quot;https://overthewire.org/wargames/bandit/&quot;&gt;https://overthewire.org/wargames/bandit/&lt;/a&gt; . Once you have the basics down, you can move on to HackTheBox (HTB) or TryHackMe (THM). VulnHub is also a great and free alternative, especially since it got acquired by OffSec. Personally, I haven&apos;t used THM yet but I heard a lot of great things about it. I&apos;ll stick with HTB for now.&lt;br /&gt;&lt;br /&gt;
+
+          TJNull has compiled a great list of OSCP-like boxes from both HTB and VulnHub which can be found here:
+          &lt;a href=&quot;https://docs.google.com/spreadsheets/d/1dwSMIAPIam0PuRBkCiDI88pU3yzrqqHkDtBngUHNCw8/edit#gid=0&quot;&gt;https://docs.google.com/spreadsheets/d/1dwSMIAPIam0PuRBkCiDI88pU3yzrqqHkDtBngUHNCw8/edit#gid=0&lt;/a&gt;
+          Feel free to rely on &lt;a href=&quot;https://www.youtube.com/channel/UCa6eh7gCkpPo5XXUDfygQQA&quot;&gt;ippsec for any retired HTB boxes. For vulnhub, you&apos;ll have to find the writeups yourself.&lt;br /&gt;&lt;br /&gt;
+
+          Once you feel like you can tackle most Easy boxes from that list and a few Medium ones, you can stop by the OffSec proving grounds here: &lt;a href=&quot;https://www.offensive-security.com/labs/&quot;&gt;https://www.offensive-security.com/labs/&lt;/a&gt; &lt;br /&gt;&lt;br /&gt;
+
+          At this point you should be more than ready to sign up for the OSCP labs. I&apos;d suggest going for 90 days and allocating about 4-5 hours/day on average. There&apos;s a lot of content, but your priority should be clearing all the non dependency hosts in the public network. Try to refrain from spamming metasploit and keep it for boxes you&apos;re stuck on.&amp;lt;/p&amp;gt;
+
+          &lt;h3&gt;&lt;a name=&quot;tools&quot;&gt;Tools and recommendations&lt;/a&gt;&lt;/h3&gt;
+
+          &lt;p&gt;Join for the infosec prep discord:
+          &lt;a href=&quot;https://discordapp.com/invite/BUjnWps&quot;&gt;https://discordapp.com/invite/BUjnWps&lt;/a&gt;  &lt;br /&gt;
+
+          Remember to respect the rules and ask questions in the appropriate channels. People will be happy to share their knowledge and answer your questions and you might make some great friends!&lt;br /&gt;&lt;br /&gt;
+
+          While OffSec will supply you with a kali VM, I&apos;ve only used it for the exercises and then used my own. I&apos;d suggest getting used to tmux, as it can greatly help managing your terminals. You can find my tmux conf here: &lt;a href=&quot;https://github.com/robsware/tmux-config/blob/master/.tmux.conf&quot;&gt;https://github.com/robsware/tmux-config/blob/master/.tmux.conf &lt;/a&gt;
+          I mainly designed it to work with my pok3r vortex mechanical keyboard, but it works reasonably well with standard keyboards too.&lt;br /&gt;&lt;br /&gt;
+
+          Start doing write-ups for your boxes as you go. Not only this will help you for future reference, but they&apos;ll also be good practice for the final exam.&lt;br /&gt;&lt;br /&gt;
+
+          You may also consider doing some mock exams. Pick any 3 random Medium boxes, 1 easy one and any BOF exercise of choice (I used brainpan from vulnhub) and see how far you can get in 12 hours. Going for the full 24 hours can be daunting and most people make most of their progress in the first 12 hours regardless. &lt;br /&gt;&lt;br /&gt;
+
+          Lastly, take snapshots! Take them often! I bought a spare HDD that I used just to store the snapshots and I&apos;d take one every two days. Probably overkill, but it came in handy a few times when I managed to brick or damage my kali box beyond repair. &lt;/p&gt;
+
+          &lt;h3&gt;&lt;a name=&quot;finalThoughts&quot;&gt;Final Thoughts&lt;/a&gt;&lt;/h3&gt;
+
+          &lt;p&gt;Offsec have managed something quite remarkable in making a course that&apos;ll teach you how to think like a hacker. The course can often feel like it&apos;s not going very deep and you&apos;ll often hear people say it&apos;s an &quot;entry level&quot; cert. As much as you may feel like decking those people, try to understand they use a different frame of reference and/or are exceptionally skilled. While the exam price hike left a bit of a sour taste, you still shouldn&apos;t be afraid to fail the exam. I went in fully expecting that I&apos;d fail but somehow passed on my first attempt. There&apos;s plenty of stories out there of people that failed multiple times and still came up on top. &lt;br /&gt;&lt;br /&gt;
+
+          At the risk of going full nerd, I&apos;ll say that the OSCP is the Dark Souls of infosec certifications. It&apos;s  well made and fair, designed to help you grow stronger, and it only hurts you because it loves you. Just like Dark Souls, it had a large community to help you and taunt you with &quot;tRy HaRdEr&quot; until you feel like quitting. Remember to take breaks when you feel overwhelmed, the OSCP is a marathon, not a sprint. One that might just change your life, as it certainly has changed mine. &lt;br /&gt;&lt;br /&gt;
+
+          The OSCP is a tough exam that will make you suffer. It is designed to test your entire arsenal, your ability to manage your time, energy, to think outside the box, to prioritize and triage findings, to pay attention to details and recognize rabbit holes and to present your findings in an easy to understand report. Passing it will leave you in an elevated state of being, with a solid knowledge of the main skills required for pentesting and with substantially better career prospects. &lt;br /&gt;&lt;br /&gt;
+
+          Remember, Try Harder!&lt;/p&gt;
+
+          &lt;h3&gt;&lt;a name=&quot;postOscp&quot;&gt;Post OSCP&lt;/a&gt;&lt;/h3&gt;
+
+          &lt;p&gt;Once again, my happiness was cut short by 2 massive work projects that required considerable overtime and weekends of work and took another 3 months to complete. It was at this point, after almost a year of working/studying 120+ hours weeks, that I was completely burnt out. I couldn&apos;t even look at a piece of code or an nmap scan without feeling like throwing up. December rolled around and business slowed down enough to give me time to ponder. Tech was great, but I couldn&apos;t bring myself to even write or read a line of code. It was like my brain was full and refused to accept any more new knowledge. I took this as an opportunity to catch up on some videogames. January rolled in, and I was looking for a more engaging game and stumbled upon Eliza (&lt;a href=&quot;https://store.steampowered.com/app/716500/Eliza/&quot;&gt; https://store.steampowered.com/app/716500/Eliza/&lt;/a&gt;). I fired it up, my interest piqued by a Zachatronics game that wasn&apos;t some sort of puzzle. &lt;/p&gt;
+
+          &lt;span class=&quot;center&quot;&gt;&lt;img src=&quot;eliza.jpg&quot; alt=&quot;Eliza&quot; /&gt;&lt;/span&gt;&lt;br /&gt;&lt;br /&gt;
+
+
+          &lt;p&gt;I don&apos;t want to say I was hooked. I didn&apos;t finish Eliza in a day. I finished it in a week (about 6 hours of gameplay). Eliza deals with a lot of interesting themes, but the one that resonated with me was burnout in tech. It forced me to ponder a lot and thing back upon my life so far. As the game progressed, so did my memories spring back into view. I picked up my diaries from across the years and went through all the difficult decisions I had to make and all the risks I had to take to get there. But most importantly, of all the joys and discoveries I made along the way. The protagonist and I had very similar stories, to the point where I joked with a friend the writer must have access to my email account, and as she went through her attempt to figure out her burnout, so did I. Eliza, ironically enough, was very therapeutic for me and reminded me again that videogames are an artform. By the final chapters, I was feeling good. I remembered how fun tech can be and the virtually limitless potential. The cyberpunk novels, the feeling of making something despite having nothing. By the time I finished Eliza, both me and the protagonist were ready to start again. I put the game down and opened VS Code. 2019 was an incredibly difficult year but I still had some fight left in me.
+          &lt;/p&gt;
+
+          &lt;p&gt;Shortly after this &quot;epiphany&quot; I managed to secure a pen-tester role and kept working on a number of side projects, including a smart router, a discord chatbot with ML features, this very page and some experiments with cellular automata. I feel again like a kid discovering all the fun things I can do with a few lines of code. And I&apos;ve been in that state of mind ever since, mindful to take a break every now and then, managing to hit Pro Hacker rank on HTB and consistently be in the port swigger hall of fame. Got my CRTP, currently studying for my OSWP and planning to sign up for the AWAE in a couple of months. Progress certainly gives me some solace from what is happening outside, and I&apos;m already dreaming about tinkering with some other projects after my AWAE/OSWE. Remember that in those strange times more than ever, burnout is real and it can happen to all of us, so keep your head above the water and know when to take a break.
+
+          &lt;br /&gt;&lt;br /&gt;
+          Stay nimble.&lt;/p&gt;
+
+
+
+      &amp;lt;/div&amp;gt;
+    &amp;lt;/div&amp;gt;
+    &lt;div id=&quot;footer&quot;&gt;
+      &lt;p&gt;&lt;a href=&quot;../index.html&quot;&gt;Home&lt;/a&gt; | &lt;a href=&quot;../walkthroughs.html&quot;&gt;Walkthroughs&lt;/a&gt; | &lt;a href=&quot;../experiments.html&quot;&gt;Experiments&lt;/a&gt; | &lt;a href=&quot;../2020/10/02.html&quot;&gt;2020/10/02&lt;/a&gt; | &lt;a href=&quot;../contact.html&quot;&gt;Social Media&lt;/a&gt;&lt;/p&gt;
+
+    &lt;/div&gt;
+  &amp;lt;/div&amp;gt;
+&amp;lt;/body&amp;gt;
+&amp;lt;/html&amp;gt;
+&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Personalizeddata</title>
+   <link href="https://localhost:4000/2020/07/07/personalizeddata"/>
+   <updated>2020-07-07T00:00:00+01:00</updated>
+   <id>https://localhost:4000/2020/07/07/personalizeddata</id>
+   <content type="html">&lt;html&gt;
+
+&lt;head&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+  &lt;div id=&quot;main&quot;&gt;
+    &lt;div id=&quot;header&quot;&gt;
+    &lt;/div&gt;
+    &lt;div id=&quot;site_content&quot;&gt;
+      &lt;div id=&quot;content&quot;&gt;
+        &lt;h1&gt;The conundrum of personalized data&lt;/h1&gt;
+        &lt;p&gt;Posted on July 7, 2020 &lt;br /&gt;&lt;/p&gt;
+        &lt;p&gt;There&apos;s been a lot of debate regarding data ownership and the use of harvested private data. I think we all enjoy personalized products, especially when we discover something new and exciting. The problem arises when the data starts to be tied to our real identity and sold to 3rd parties. To exemplify what I&apos;m referring to, I&apos;ve organized a small tier list based on products I use:&lt;/p&gt;
+        &lt;h3&gt;Tier 1&lt;/h3&gt;
+        &lt;p&gt;
+          Products and services that are not tied to a real identity nor respond to real world events and use data to enhance the product/service. Those products/services generally do not seek you have you spend large amounts of money.&lt;br /&gt;
+          Prime example, Spotify. You&apos;re free to sign up to Spotify with a 10 minute mail address. Spotify gives you music, and it recommends more music as you keep listening. &lt;br /&gt;
+
+          &lt;span style=&quot;color: #FC9C04&quot;&gt;The data is reinvested in the customer. &lt;/span&gt;&lt;br /&gt;
+
+          Note: I am aware that they&apos;ve been involved in some more questionable debacles in the past two years or so. I&apos;m talking more about how hypothetically a tier 1 service would look like.
+        &lt;/p&gt;
+        &lt;h3&gt;Tier 2&lt;/h3&gt;
+        &lt;p&gt;
+          Products and services that are not tied to a real identity nor respond to real world events in any significant way and use data to enhance the product/service. Those products/services generally try to keep you on that platform so you can spend more money on that platform. &lt;br /&gt;
+
+          Steam is a great case. Steam sells games and wants to sell more games (also one VR headset). Steam wants you to keep spending money so they use that data to recommend you games and keep you on hook for sales. These types of platforms may occasionally take proactive action to real world events, such as themed sales and donations.&lt;br /&gt;
+
+          &lt;span style=&quot;color: #FC9C04&quot;&gt;The data is reinvested in the platform.&lt;/span&gt;
+        &lt;/p&gt;
+        &lt;h3&gt;Tier 3&lt;/h3&gt;
+        &lt;p&gt;
+          Products and services that are tied to a real identity or to real world events and use data to enhance the product/service. Those products/services generally try to keep you on that platform so you can spend more money and more time on that platform. Primarily ad based.&lt;br /&gt;
+
+          I was going to use facebook as an example but I haven&apos;t used it in years so I&apos;ll use youtube instead. Youtube tries to maximize the time you spend watching videos so they can serve you more ads. They may also have options to spend money on the platform itself (youtube premium). These types of platforms drastically respond to real world events, changing codes of conduct and often banning people. These platforms often track users even outside the platform and try to hoard as much data as possible (such as physical related data like location and location history).&lt;br /&gt;
+
+          &lt;span style=&quot;color: #FC9C04&quot;&gt;Data is invested into 3rd party advertisers, the user is the product.&lt;/span&gt;&lt;br /&gt;
+
+          I think most people are fine with Tier 1 and more Tier 2 types of services, especially if the data is handled with proper care and anonymized. The problem appears with Tier 3 products that end up being invasive and often enough influencing people. This problem is increased by an order of magnitude once you start involving politics and politicizing issues. 
+
+
+        &lt;/p&gt;
+        &lt;h1&gt;Possible Solutions&amp;lt;/h4&amp;gt;
+          &lt;p&gt;
+            There can be multiple ways this problem is approached, such as governmental intervention and regulations. Since governments don&apos;t exactly have a great track record when it comes to dealing with tech, I&apos;d personally go for decentralization and containerization. Have google not use your gmail data for your Maps recommendations. Stop the borderline surveillance and tracking of people once they leave the platform. Allow the creation of localized forks of the product. Give incentive to people to be products, like Brave does. You can see ads in exchange for a percentage of the money generated by that ad.&lt;br /&gt;
+            In terms of actual technologies that can be used for this, I&apos;ll leave this as an exercise to the reader. I&apos;m not a network/infrastructure engineer, but personally I&apos;m a fan of blockchain and containers. The idea of forking an existing product after it stops being what you want it to be or when you want to make some personal adjustments to it, like to a github project, is very appealing, despite the fact it can often seem infeasible.&lt;br /&gt;
+            As for us users, we can also take steps towards a more decentralized internet. Stop using one account for everything. Don&apos;t sign in with a facebook/google account, set up a new account, and use a password manager to generate a strong and unique password. Even if the product gets compromised, you can minimize your risk this way.&lt;br /&gt;
+          &lt;/p&gt;
+      &amp;lt;/div&amp;gt;
+    &amp;lt;/div&amp;gt;
+    &lt;div id=&quot;footer&quot;&gt;
+      &lt;p&gt;&lt;a href=&quot;../index.html&quot;&gt;Home&lt;/a&gt; | &lt;a href=&quot;../walkthroughs.html&quot;&gt;Walkthroughs&lt;/a&gt; | &lt;a href=&quot;../experiments.html&quot;&gt;Experiments&lt;/a&gt; | &lt;a href=&quot;../rants.html&quot;&gt;Rants&lt;/a&gt; | &lt;a href=&quot;../contact.html&quot;&gt;Social Media&lt;/a&gt;&lt;/p&gt;
+
+    &lt;/div&gt;
+  &amp;lt;/div&amp;gt;
+&amp;lt;/body&amp;gt;
+&amp;lt;/html&amp;gt;
+&lt;/h1&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;
+</content>
+ </entry>
+ 
+ <entry>
    <title>Port Swigger</title>
    <link href="https://localhost:4000/2020/06/28/portswigger-labs"/>
-   <updated>2020-06-28T00:00:00+02:00</updated>
+   <updated>2020-06-28T00:00:00+01:00</updated>
    <id>https://localhost:4000/2020/06/28/portswigger-labs</id>
-   <content type="html">&lt;p&gt;The Post Swigger Academy Labs experience
-Often called the Burp Labs
-Posted on June 28, 2020&lt;/p&gt;
+   <content type="html">&lt;html&gt;
 
-&lt;p&gt;Walkthrough helpers for almost all labs can be found here. In an attempt to further boost and hone my pentesting skills, I decided to spend some time in the Port Swigger Labs. What started as a simple desire to improve on my weaker points turned into a 6 week long journey throughout which I got exposed to some really interesting vectors, learned a lot and finished ranked 7th worldwide in the Hall of Fame (at the time of writing).&lt;/p&gt;
+&lt;head&gt;
+  &lt;title&gt;robsware&lt;/title&gt;
+  &lt;meta name=&quot;description&quot; content=&quot;Walkthroughs, experiments and rants&quot; /&gt;
+  &lt;meta name=&quot;keywords&quot; content=&quot;website keywords, website keywords&quot; /&gt;
+  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot; /&gt;
+  &lt;meta http-equiv=&quot;content-type&quot; content=&quot;text/html; charset=windows-1252&quot; /&gt;
+  &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;../style.css&quot; /&gt;
+&lt;/head&gt;
 
-&lt;p&gt;Actually hella you probably haven’t heard of them quinoa try-hard la croix. Street art schlitz actually hell of pour-over air plant. Post-ironic franzen brunch mumblecore readymade. Food truck photo booth polaroid, gochujang vegan street art yr before they sold out man bun. Tilde selfies chia pitchfork everyday carry post-ironic mumblecore sartorial VHS master cleanse activated charcoal biodiesel williamsburg cronut jean shorts. Poutine helvetica keffiyeh butcher pop-up.&lt;/p&gt;
+&lt;body&gt;
+  &lt;div id=&quot;main&quot;&gt;
+    &lt;div id=&quot;header&quot;&gt;
+    &lt;/div&gt;
+    &lt;div id=&quot;site_content&quot;&gt;
+      &lt;div id=&quot;content&quot;&gt;
+        &lt;h1&gt;The Post Swigger Academy Labs experience&lt;/h1&gt;
+        &lt;h3&gt;Often called the Burp Labs&lt;/h3&gt;
+        &lt;p&gt;Posted on June 28, 2020 &lt;br /&gt;&lt;br /&gt;
+        &lt;a href=&quot;https://github.com/robsware/Burp-Lab-Solutions&quot;&gt;Walkthrough helpers for almost all labs can be found here&lt;/a&gt;.
+        In an attempt to further boost and hone my pentesting skills, I decided to spend some time in the Port Swigger Labs. What started as a simple desire to improve on my weaker points turned into a 6 week long journey throughout which I got exposed to some really interesting vectors, learned a lot and finished ranked 7th worldwide in the &lt;a href=&quot;https://portswigger.net/web-security/hall-of-fame&quot;&gt;Hall of Fame &lt;/a&gt; (at the time of writing).
+        &lt;/p&gt;
+        &lt;br /&gt;
+        &lt;span class=&quot;center&quot;&gt;&lt;img src=&quot;/assets/images/halloffame.png&quot; alt=&quot;Hall of Fame&quot; /&gt;&lt;/span&gt;&lt;br /&gt;&lt;br /&gt;
+        &lt;p&gt;Initially, I started writing down a few thoughts after every week, but I think they clutter the Rants section a bit too much, so I&apos;ll just quick link them here:
+          &lt;h4&gt;&lt;a href=&quot;/assets/old_files/burpweek1.html&quot;&gt;Burp labs week 1: Starting the labs&lt;/a&gt;&lt;/h4&gt;
+          &lt;h4&gt;&lt;a href=&quot;/assets/old_files/burpweek2.html&quot;&gt;Burp labs week 2: Continuining the labs&lt;/a&gt;&lt;/h4&gt;
+          &lt;h4&gt;&lt;a href=&quot;/assets/old_files/burpweek3.html&quot;&gt;Burp labs week 3: Building momentum and my methodology&lt;/a&gt;&lt;/h4&gt;
+          &lt;h4&gt;&lt;a href=&quot;/assets/old_files/burpweek4.html&quot;&gt;Burp labs week 4: Errors in my methodology&lt;/a&gt;&lt;/h4&gt;
+          &lt;h4&gt;&lt;a href=&quot;/assets/old_files/burpweek5.html&quot;&gt;Burp labs week 5: Keeping busy and a screeching halt&lt;/a&gt;&lt;/h4&gt;
+          &lt;h4&gt;&lt;a href=&quot;/assets/old_files/burpweek6.html&quot;&gt;Burp labs week 6: Done!&lt;/a&gt;&lt;/h4&gt;
+        &lt;br /&gt;
+        &lt;/p&gt;
+        &lt;p&gt;
+          The labs have been one of the best, if not the best, kind of infosec related material that I have ever experienced. It keeps the same gamified experience that HackTheBox offers, but the topics are much more constrained in scope. The vast majority of the labs focus on one specific vector and how to achieve it. Generally they are pretty flexible with the payload used, but sometimes the &quot;Lab Complete&quot; prompt doesn&apos;t show up even if you achieved the desired exploit. Feel free to refer to the solution if this happens. 
+        &lt;br /&gt;&lt;br /&gt;
+        A lab instance expires after 15 minutes of inactivity or 1 hour since its creation has passed, whichever occurs first. For Apprentice and a good part of the Practioner labs, you probably won&apos;t hit the 1 hour mark, but once you start dealing with Expert labs, you&apos;ll get very familiar with the &quot;This session has expired&quot; message. Which can be a bit annoying and can straight up prevent you from completing a lab. Such is the case for the &quot;2FA bypass using a brute-force attack&quot; lab. A writeup with the correct answer is available in my &lt;a href=&quot;https://github.com/robsware/Burp-Lab-Solutions/blob/master/2FA%20bypass%20using%20a%20brute-force%20attack.txt&quot;&gt;github repo.&lt;/a&gt;
+        &lt;/p&gt;
+        &lt;h3&gt;The writeups&lt;/h3&gt;
+        &lt;p&gt;
+          Once I started encountering some of the more difficult labs, I figured I&apos;d upload the payloads used in a github repo. I know there is already a video series on most of the labs, but I tend to find video as a less efficient way of doing things. If anything, my writeups will at least complement the video solutions. To the best of my knowledge, none of the labs require Burp Pro, but it does help substantially in some cases - such as the CSRF labs. &lt;br /&gt;
+          The solutions provided by Port Swigger are generally good to very good with some exceptions. I think there are 2 lab solutions that are missing some steps, one of them being the one mentioned above. My Github repo should contain the exact payloads used for almost all the labs, bar some trivial ones that I did in my first week. I hope it helps people, especially those without Burp Pro. &lt;br /&gt;
+          Besides providing a hand to other students, I used the writeups as a way to go over the attack vector again. In a way, &lt;span style=&quot;color: #FC9C04&quot;&gt;I decided to write in order to learn.&lt;/span&gt; This helped solidify the material in my mind, which proved to be useful in many of my real engagements. 
+        &lt;/p&gt;
+        &lt;h3&gt;Recommended for all skill levels&lt;/h3&gt;
+        &lt;p&gt;
+          To reiterate, the labs are fantastic. The quality is fantastic. If you have any interest in pen testing and understanding how web vulnerabilities work, go do them right now. If you already are a pen tester, even an experienced one, I&apos;d still recommend going through at least some of the labs. Have a go at the expert ones and see how that goes. While I haven&apos;t shied away from checking the solution if stuck on a lab, I do intend to return every now and then and try to do some of the labs without checking the solution, just as a way to test my knowledge and gauge my progress.&lt;br /&gt;&lt;br /&gt;
+          For now, it&apos;s time to put my new skills to the test.
+        &lt;/p&gt;
+        &lt;h3&gt;Updated July 2nd 2020&lt;/h3&gt;
+        &lt;p&gt;
+          A new section got added to the labs, deserialization. I managed to complete some of them before the solutions got uploaded, but they were really tough. I was able to snag 7th place in the Hall of Fame!
+        &lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div id=&quot;footer&quot;&gt;
+      &lt;p&gt;&lt;a href=&quot;../index.html&quot;&gt;Home&lt;/a&gt; | &lt;a href=&quot;../walkthroughs.html&quot;&gt;Walkthroughs&lt;/a&gt; | &lt;a href=&quot;../experiments.html&quot;&gt;Experiments&lt;/a&gt; | &lt;a href=&quot;../rants.html&quot;&gt;Rants&lt;/a&gt; | &lt;a href=&quot;../contact.html&quot;&gt;Social Media&lt;/a&gt;&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Port Swigger</title>
+   <link href="https://localhost:4000/2020/04/27/cellularautomata"/>
+   <updated>2020-04-27T00:00:00+01:00</updated>
+   <id>https://localhost:4000/2020/04/27/cellularautomata</id>
+   <content type="html">&lt;html&gt;
 
-&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;java.util.Scanner&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;// Import the Scanner class&lt;/span&gt;
+&lt;head&gt;
+&lt;/head&gt;
 
-&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Main&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;args&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;nc&quot;&gt;Scanner&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;myObj&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Scanner&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;in&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;// Create a Scanner object&lt;/span&gt;
-    &lt;span class=&quot;nc&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Enter username&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+&lt;body&gt;
+  &lt;div id=&quot;main&quot;&gt;
+    &lt;div id=&quot;header&quot;&gt;
+    &lt;/div&gt;
+    &lt;div id=&quot;site_content&quot;&gt;
+      &lt;div id=&quot;content&quot;&gt;
+        &lt;h1&gt;Cellular Automatas&lt;/h1&gt;
+        &lt;p&gt;Posted on April 27, 2020 &lt;br /&gt;&lt;br /&gt; Inspired by Stephen Wolfram&apos;s book, which I finally got around reading now under lockdown, I decided to spend my week trying an experiment with Cellular Automata (CA) and crypto markets. My hope was that there was some sort of pattern matching with a CA rule in the minute to minute movement. Markets are interesting because, while not quite Turing Complete, they do seem to follow the law of Computational Irreducibility, which states the only way to determine the answer to a computationally irreducible question is to perform, or simulate, the computation. 
+        &lt;br /&gt;&lt;br /&gt;
+        I won&apos;t dwell too much on what a CA is, there are other way better sources explaining that. But if you&apos;ve ever seen one of those pictures or played Conway&apos;s Game of Life, those are CAs.
+        &lt;/p&gt;
+        &lt;span class=&quot;center&quot;&gt;&lt;img src=&quot;/assets/images/rule30.png&quot; alt=&quot;rule 30&quot; /&gt;&lt;/span&gt;&lt;br /&gt;
+        &lt;p&gt;They&apos;re essentially abstract computational systems that can be used as models for complexity. A lot of CA results can be found in nature. For more info I&apos;d greatly recommend reading a New Kind of Science, freely available on the internet. Back to the topic of markets, I had hoped that, as movement over larger periods of time can be attributed to rational actions and reactions, movement on a minute by minute basis could&apos;ve matched some CA rule. Excerpt from A New Kind of Science&lt;/p&gt;
+        &lt;span class=&quot;center&quot;&gt;&lt;img src=&quot;/assets/images/marketCA.png&quot; alt=&quot;market CA&quot; /&gt;&lt;/span&gt;&lt;br /&gt;
+        &lt;p&gt;So I wrote some code to take various increments of the minute to minute movement and generate all CA rules with that size and find matches. As an example, taking 30 minutes of market data meant generating all CAs with a width of 30 and depth 10.000, changing the market data to 1s and 0s (1 if the price went up, 0 if the price went down), and then trying to identify matches. And while I&apos;ve been able to find matches, especially in rule 45 that happened to contain all the market data if split in increments up to 20 minutes, they&apos;re completely random and follow no set pattern. I&apos;ve tried plugging the results into &lt;a href=&quot;https://oeis.org&quot;&gt;https://oeis.org&lt;/a&gt; but still didn&apos;t get anything. For the most part I avoided using any of the rules that involved a high degree of randomness, such as rules part of class 4 (rule 110) and class 3 (rule 30, 90, 135, 184). &lt;br /&gt;&lt;br /&gt;
 
-    &lt;span class=&quot;nc&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;userName&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;myObj&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;nextLine&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;// Read user input&lt;/span&gt;
-    &lt;span class=&quot;nc&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Username is: &quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;userName&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;// Output user input&lt;/span&gt;
-  &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+        So, the results are that &lt;span style=&quot;color: #FC9C04&quot;&gt;I didn&apos;t find anything.&lt;/span&gt; Or to be more scientific, I failed to reject the null hypothesis. And that&apos;s a good thing, because in retrospect I realized that my hypothesis was flawed, at least a degree. CAs are defined by the rules that instruct the cells how to act. I aimed for a low hanging fruit by simply attempting to find a CA that would match market data by brute forcing possibilities. Instead, as someone more observant than I am pointed out, I think I should&apos;ve focused on formulating the market as a CA. To move away from the crypto space, let&apos;s consider that many raw materials are priced in dollars. U.S. Dollar depreciation typically increases the price of raw materials while a dollar appreciation decreases commodity prices. &lt;a href=&quot;https://www.investopedia.com/articles/basics/12/portfolio-currency-exposure.asp&quot;&gt;More details on investopedia.&lt;/a&gt;
+        Letss also add the S&amp;amp;P500 into the mix as a barometer for the health of the market. Here, the rising prices of commodities would lead people away from the stock market, and the inverse would apply too.
 
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+        Let&apos;s put it into a CA format: &lt;br /&gt;&lt;br /&gt;
 
-&lt;p&gt;Actually hella you probably haven’t heard of them quinoa try-hard la croix. Street art schlitz actually hell of pour-over air plant. Post-ironic franzen brunch mumblecore readymade. Food truck photo booth polaroid, gochujang vegan street art yr before they sold out man bun. Tilde selfies chia pitchfork everyday carry post-ironic mumblecore sartorial VHS master cleanse activated charcoal biodiesel williamsburg cronut jean shorts. Poutine helvetica keffiyeh butcher pop-up.&lt;/p&gt;
+        &lt;span class=&quot;center&quot;&gt;&lt;img src=&quot;/assets/images/ex1.png&quot; alt=&quot;ex1&quot; /&gt;&lt;/span&gt;&lt;br /&gt;        
+
+        Appreciating dollar lowers material price and increases commodity price: &lt;br /&gt;&lt;br /&gt;
+        &lt;span class=&quot;center&quot;&gt;&lt;img src=&quot;/assets/images/ex2.png&quot; alt=&quot;ex2&quot; /&gt;&lt;/span&gt;&lt;br /&gt;        
+
+        Probably not the best examples as all the values are too anchored to the dollar, but I hope it sketches out the idea a bit. I do intend to investigate this further at some point, but for now I&apos;m taking a break to focus on my pentesting duties.
+
+        Regardless, let&apos;s move on to what I learned.
+
+        &lt;/p&gt;
+        &lt;h1&gt;Lessons learned&lt;/h1&gt;
+        &lt;p&gt;
+        &lt;h3&gt;Cellular Automata, Cellular Automaton and Multithreading&lt;/h3&gt;
+
+        I did learn how to generate them and what makes them work, although I took a shortcut after generating the first 5 rules and used an already existing project on github: 
+
+        &lt;a href=&quot;https://github.com/lantunes/cellpylib&quot;&gt;Cellpylib.&lt;/a&gt;
+
+        In order to save time, I used that project to generate all the relevant CA rules in a 100 x 100.000 matrix. This took about 10 hours on an overclocked 8th gen i5 with multithreading turned to use all 6 cores. The global interpreter lock is a bit annoying but the multiprocessing lib helps to a large degree. It did, however, make me reconsider my skill set, as my main programming language - Python and my secondary one - JS, while immensely useful for my day to day job, have their drawbacks. Actually JS has a lot of drawbacks but I won&apos;t going to get into that now. 
+
+        &lt;h3&gt;Caching, GPU programming and numpy&lt;/h3&gt;
+
+        I was fortunate enough that the cached_property library has been added to the functools standard library in python3.8. While I started by just reading and writing to the previously generated rules, this system stopped working once I attempted to move the code to the GPU with numba. Numba doesn&apos;t support i/o operations in the traditional sense, so I had to resort to caching. 
+
+
+        While numba still strives to maintain the python spirit of not having to explicitly declare data types and structures, this can severely affect performance or straight up prevent you from compiling your functions. To avoid those issues, I had to preload and cache all my rules, convert my parket data to numpy arrays and avoid any string operations. So instead of using &lt;br /&gt;&lt;br /&gt;
+
+        &lt;span class=&quot;center&quot;&gt;&lt;img src=&quot;/assets/images/ex3.png&quot; alt=&quot;ex3&quot; /&gt;&lt;/span&gt;&lt;br /&gt;     
+
+        I had to use something like &lt;br /&gt;&lt;br /&gt;
+
+        &lt;span class=&quot;center&quot;&gt;&lt;img src=&quot;/assets/images/ex4.png&quot; alt=&quot;ex4&quot; /&gt;&lt;/span&gt;&lt;br /&gt;     
+
+        To anyone used to working in lower level languages, this probably seems trivial, but to someone used to flinging code fast and optimizing later, this was a bit tedious.&lt;br /&gt;
+
+        Overall, I think I used my time to learn some useful concepts, and I&apos;ll definitely be returning to this topic in the future. 
+
+
+        &lt;h3&gt;Cool, where&apos;s the code?&lt;/h3&gt;
+
+        As the project was very rushed, the code is not quite up to par. Since I intend to come back to this project, I will update it and put it on my github. Yes, I know I&apos;m breaking the rule of &quot;Less talk, show me code&quot;. I&apos;m a bit short on time, as around this time I was supposed to learn and practice Active Directory pen testing, but I decided to take this detour to test an idea. 
+        &lt;/p&gt;
+
+        
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div id=&quot;footer&quot;&gt;
+      &lt;p&gt;&lt;a href=&quot;../index.html&quot;&gt;Home&lt;/a&gt; | &lt;a href=&quot;../walkthroughs.html&quot;&gt;Walkthroughs&lt;/a&gt; | &lt;a href=&quot;../experiments.html&quot;&gt;Experiments&lt;/a&gt; | &lt;a href=&quot;../rants.html&quot;&gt;Rants&lt;/a&gt; | &lt;a href=&quot;../contact.html&quot;&gt;Social Media&lt;/a&gt;&lt;/p&gt;
+
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Offshore</title>
+   <link href="https://localhost:4000/2020/03/15/offshore"/>
+   <updated>2020-03-15T00:00:00+00:00</updated>
+   <id>https://localhost:4000/2020/03/15/offshore</id>
+   <content type="html">
+&lt;p&gt;&amp;lt;!DOCTYPE HTML&amp;gt;&lt;/p&gt;
+&lt;html&gt;
+
+&lt;head&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+  &lt;div id=&quot;main&quot;&gt;
+    &lt;div id=&quot;header&quot;&gt;
+    &lt;/div&gt;
+    &lt;div id=&quot;site_content&quot;&gt;
+      &lt;div id=&quot;content&quot;&gt;
+        &lt;h1&gt;HackTheBox Offshore review - a mixed experience&lt;/h1&gt;
+        &lt;p&gt;Posted on May 15, 2021 &lt;br /&gt;&lt;/p&gt;
+        &lt;p&gt;After significant struggle, I finally finished Offshore, a prolab offered by HackTheBox. I attempted this lab to improve my knowledge of AD, improve my pivoting skills and practice using a C2. I have achieved all the goals I set for myself and more. For the C2, I picked metasploit and it has been a huge time saver after I got used to it. The lab took me about 6 weeks to finish with a full time job, but I&apos;ve done nothing but work and do Offshore for those 6 weeks. My knowledge before attempting offshore was the CRTP certification from Pentester Academy and about a year of web focused pentesting work experience. I had close to no practical experience in pentesting an internal network outside of the OSCP. I paid for offshore out of my own pocket.
+
+        &lt;!--&lt;li&gt;&lt;a href=&quot;https://robsware.github.io/rants/offshore.html#extra&quot;&gt;Extra bits&lt;/a&gt;&lt;/li&gt;--&gt;
+
+        &lt;/p&gt;
+        
+        &lt;h3&gt;The Premise&lt;/h3&gt;
+        &lt;p&gt;
+          You are a super secret agent tasked with breaching into a secure offshore bank and exposing their money laundering practices. The bank has acquired a number of smaller companies and plugged them into their main network as different domains. I like it when CTFs provide a story and hacking into a bank is a pretty good one. Also gives you an idea of the potential layout and security pitfalls of the company.
+        &lt;br /&gt;&lt;/p&gt;
+
+        &lt;h3&gt;The Lab&lt;/h3&gt;
+        
+          &lt;p&gt;The lab contains 21 machines and 38 flags spread across 4 domains. You will have to pivot at various points. This can occasionally get a bit ridiculous, like being 4 pivots deep and with 3 nested RDP sessions praying that your tools still work, but for the most part is manageable if you do some proper post exploitation. Every box has only one intended path.  &lt;br /&gt;&lt;/p&gt;
+
+          &lt;h3&gt;The Good&lt;/h3&gt;
+
+
+
+          &lt;p&gt;For 90 pounds + 20 pounds/month after, you get a rather sizeable lab with a lot of content in it. The AD related content is good to very good. As a reference, I was able to use my CRTP knowledge as a crutch to get me as far as to the third domain. Once there I had to do some extra research and progress slowed down. Purely for learning and practicing purposes, the lab is good value for the money as long as you don&apos;t go for longer than 5-6 months. 
+            &lt;br /&gt;&lt;br /&gt;
+          You will get to play with bloodhound a lot, deepen your knowledge of kerberos attack vectors, ACL abuse, pass the hash, DCSync and other AD related attack vectors, as well as a few other challenges that will test your scripting ability.
+          &lt;br /&gt;&lt;/p&gt;
+
+          
+          &lt;h3&gt;The Bad&lt;/h3&gt;
+
+        &lt;p&gt;The infamous shared lab experience. You will often encounter other players in the lab, especially until DC03. At peak hours, the lab can slow down considerably. A single box serves as an early pivot to a large part of the lab and can only be accessed via RDP. Expect your shells to drop a lot. Also expect players to leave solutions behind, to change passwords for boxes and to leave some boxes in an unsolvable state until a reset is requested. This can all be immensely frustrating. &lt;/p&gt; 
+
+            &lt;br /&gt;&lt;br /&gt;
+
+        &lt;p&gt;Some side quests are also not quite up to par in terms of their design and can end up being frustrating and immensely time consuming. Do not hesitate to ask for sanity checks from the community!&lt;br /&gt;&lt;/p&gt;
+
+        &lt;h3&gt;The Great&lt;/h3&gt;
+
+        &lt;p&gt;Ippsec&apos;s box is a lot of fun and felt like a really well paced challenge - although it should be worth way more points. Aside from the lab, the people I got to meet and interact along the way were incredible and I will be forever thankful for their patience. This is an instance of the whole being greater than the sum of its parts. The people made this experience great, as they were my teachers and helped when I got stuck, and all for free. Don&apos;t be afraid to look like a fool and ask questions on the discord channel. Often enough I found the solution while trying to word a question. &lt;/p&gt;
+
+        &lt;h3&gt;Prerequisites&lt;/h3&gt;
+
+        &lt;p&gt;The Offshore Path from hackthebox is a good intro. Also use ippsec.rocks to check other AD related boxes from HTB. CRTP knowledge will also get you reasonably far. If you&apos;re not familiar with the HTB discord, also consider lurking in the offshore channel for a bit. &lt;br /&gt;&lt;/p&gt;
+
+        &lt;h3&gt;Conclusion&lt;/h3&gt;
+
+        &lt;p&gt;
+          Offshore can be a very enjoyable experience if you purely focus on the learning aspect and not on the certificate itself, earning it a 4.5/5. It also works as a bridge between something like CRTP, and something more difficult such as OSEP or CRTE. The overall lab track needs some polish and redesign around some of the pivots and side challenges, but getting to practice in a 15+ boxes lab environment for $120 is a really good deal if you can avoid peak times. A lukewarm recommendation if you want to go for the full cert, which I&apos;d personally rate as more of a 3.5/5. 
+
+
+
+        &lt;/p&gt;
+
+        &lt;h3&gt;&lt;a name=&quot;extra&quot;&gt;Should you do offshore?&lt;/a&gt;&lt;/h3&gt;
+        
+        &lt;p&gt;If you want to purely use it to learn and practice AD, and you can stomach the grind to DC1, and about $120 is not much money to you, then yes, the path to DC4 is interesting and outside of the 2nd pivot, not too frustrating from a technical point of view. You will still encounter the shared labs pitfalls. 
+          &lt;br /&gt;&lt;br /&gt;
+          As for the cert, I&apos;m a bit more on the fence here. Many flags feel like padding and some are hidden in really annoying places that don&apos;t serve to teach anything. Having to redo your pivots every day is also somewhat annoying especially in the later domains. The hints for some side quests are also really vague if you&apos;re not used to CTF content, but by far the biggest culprit is the shared labs experience. Which brings me to a new section of the review, the worst.
+          &lt;/p&gt;
+
+          &lt;h3&gt;The Worst&lt;/h3&gt;
+
+          &lt;p&gt;The shared labs experience can be absolutely infuriating. Some examples I&apos;ve personally encountered:
+            &lt;br /&gt;&lt;br /&gt;
+            People using the broadcast on the first pivot box function to spoil the solutions for other boxes as well as yell some obscenities. 
+            &lt;br /&gt;&lt;br /&gt;
+            Someone kicking me off an RDP session and closing all the stuff I had open. We ended up wasting half an hour just kicking each other from the RDP session. 
+            &lt;br /&gt;&lt;br /&gt;
+            Furthermore, the shared labs will lead to something I&apos;ve coined as â€œOffshore dementiaâ€. As an example, the hashes and vectors you used today might not work tomorrow because people changed them. The hashes you get tomorrow might not work the next day for the same reason. Which ones were the right ones? Who knows! Your best bet is to log in early into the morning and see which ones work. 
+            &lt;br /&gt;&lt;br /&gt;
+            Your shells and pivots will also drop constantly. Once you get to DC3 or DC4, I&apos;d recommend doing your pivots from there, they will be significantly more stable. Otherwise consider using 2 shells per box if it&apos;s a pivot box to have one as a backup. 
+            &lt;br /&gt;&lt;br /&gt;
+            
+            There are two particular quests that are absolutely infuriating. The first one is MGMT01, which has a really wonky vector. Once you identify it, I&apos;d suggest you script it because it can take an ungodly amount of attempts to get it running. It took me about 40, but I&apos;ve heard people reach close to 100. Although I have also heard of people say not to script it because that can also lead to failure. Offshore dementia. 
+            &lt;br /&gt;&lt;br /&gt;
+            The other one is the Joe-LPTP sidequest, including the stuff that comes after it. Joe-LPTP itself has only about 1 GB of space left with auto updates on so it tends to brick itself one the HDD fills up. The box after Joe-LPTP also requires multiple attempts and restores. So again, kind of a mix between poor design and what feels like padding. Do not hesitate to ask for sanity checks on the discord channel.	
+            &lt;br /&gt;&lt;br /&gt;
+            There&apos;s also a box on the path between DC3 and DC4 with a rotating hash. It is a bit annoying to have to redo the process every day if you&apos;re stuck for multiple days. 
+            &lt;br /&gt;&lt;br /&gt;
+            The pricicing scheme is also a bit ridiculous. 70 pounds to generate an OpenVPN file and allocate an user to a pool is taking the piss. Having to pay 70 pounds again if you want to take a break from the lab and start again is taking oceanic amounts of piss. 20/month is good value, I&apos;d reckon that even up to 30/m would be good value. If you are able to get it on sale for 35 pounds, then the value proposition is significantly better. I just hope they will reconsider the part where you have to pay the full sum if you take a break. 
+            &lt;/p&gt;&lt;br /&gt;
+
+            &lt;h3&gt;Discord&lt;/h3&gt;
+
+            &lt;p&gt;Most of the people on the channel are great. Some are even fantastic. But the moment you ask for help, you will start getting random DMs from people asking directly for help. Personally I just ignore them and I don&apos;t report them, because that would be silly. Please do not be afraid to ask questions on the public channel instead of random DMs, nobody will think less of you if you do. 
+            &lt;/p&gt;
+
+
+            &lt;h3&gt;Final Thoughts&lt;/h3&gt;
+            &lt;p&gt;Offshore is an experience, and once you&apos;ve experienced it once, you&apos;ll never want to experience it again.It&apos;s good, but it could be great. I think the lab also suffers a bit from bloated design, which is a double edged sword. On one hand, more content. On the other hand, some of this content is not good. I&apos;ve heard similar issues about Rastalabs, although I have also heard that the harder labs are much better. I will be taking a break from HTB pro labs for the foreseeable future as I want to focus on OSEP, but maybe I will attempt those harder ones in the future. 
+            &lt;/p&gt;
+
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div id=&quot;footer&quot;&gt;
+      &lt;p&gt;&lt;a href=&quot;../index.html&quot;&gt;Home&lt;/a&gt; | &lt;a href=&quot;../walkthroughs.html&quot;&gt;Walkthroughs&lt;/a&gt; | &lt;a href=&quot;../experiments.html&quot;&gt;Experiments&lt;/a&gt; | &lt;a href=&quot;../rants.html&quot;&gt;Rants&lt;/a&gt; | &lt;a href=&quot;../contact.html&quot;&gt;Social Media&lt;/a&gt;&lt;/p&gt;
+
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
 </content>
  </entry>
  
  <entry>
    <title>Difference between font formats</title>
    <link href="https://localhost:4000/2019/08/31/difference-between-font-formats"/>
-   <updated>2019-08-31T00:00:00+02:00</updated>
+   <updated>2019-08-31T00:00:00+01:00</updated>
    <id>https://localhost:4000/2019/08/31/difference-between-font-formats</id>
    <content type="html">&lt;h1 id=&quot;h1&quot;&gt;h1&lt;/h1&gt;
 
@@ -86,7 +759,7 @@ Posted on June 28, 2020&lt;/p&gt;
  <entry>
    <title>Staticman comments on a Jekyll site</title>
    <link href="https://localhost:4000/2019/07/23/staticman-comments-on-a-jekyll-site"/>
-   <updated>2019-07-23T00:00:00+02:00</updated>
+   <updated>2019-07-23T00:00:00+01:00</updated>
    <id>https://localhost:4000/2019/07/23/staticman-comments-on-a-jekyll-site</id>
    <content type="html">&lt;p&gt;Lorem ipsum dolor amet tousled viral art party blue bottle single-origin coffee cardigan, selvage man braid helvetica. Banh mi taxidermy meditation microdosing. Selvage cornhole YOLO, small batch vexillologist raclette VHS prism sustainable 8-bit ugh semiotics letterpress disrupt pop-up. Celiac shabby chic ugh, jianbing whatever kitsch tattooed edison bulb kogi irony etsy.&lt;/p&gt;
 
@@ -103,7 +776,7 @@ Posted on June 28, 2020&lt;/p&gt;
  <entry>
    <title>Adding HTTP response headers to a Netlify static website</title>
    <link href="https://localhost:4000/2019/05/23/adding-http-response-headers-to-a-netlify-static-website"/>
-   <updated>2019-05-23T00:00:00+02:00</updated>
+   <updated>2019-05-23T00:00:00+01:00</updated>
    <id>https://localhost:4000/2019/05/23/adding-http-response-headers-to-a-netlify-static-website</id>
    <content type="html">&lt;p&gt;Lorem ipsum dolor amet tousled viral art party blue bottle single-origin coffee cardigan, selvage man braid helvetica. Banh mi taxidermy meditation microdosing. Selvage cornhole YOLO, small batch vexillologist raclette VHS prism sustainable 8-bit ugh semiotics letterpress disrupt pop-up. Celiac shabby chic ugh, jianbing whatever kitsch tattooed edison bulb kogi irony etsy.&lt;/p&gt;
 
@@ -120,7 +793,7 @@ Posted on June 28, 2020&lt;/p&gt;
  <entry>
    <title>Syntax highlight with Rouge in Jekyll</title>
    <link href="https://localhost:4000/2018/12/23/syntax-highlight-with-rouge-in-jekyll"/>
-   <updated>2018-12-23T00:00:00+01:00</updated>
+   <updated>2018-12-23T00:00:00+00:00</updated>
    <id>https://localhost:4000/2018/12/23/syntax-highlight-with-rouge-in-jekyll</id>
    <content type="html">&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;foo&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;bar&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
   &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;bar&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
@@ -144,7 +817,7 @@ Posted on June 28, 2020&lt;/p&gt;
  <entry>
    <title>Page specific assets in Jekyll</title>
    <link href="https://localhost:4000/2018/11/12/page-specific-assets-in-jekyll"/>
-   <updated>2018-11-12T00:00:00+01:00</updated>
+   <updated>2018-11-12T00:00:00+00:00</updated>
    <id>https://localhost:4000/2018/11/12/page-specific-assets-in-jekyll</id>
    <content type="html">&lt;p&gt;Lorem ipsum dolor amet tousled viral art party blue bottle single-origin coffee cardigan, selvage man braid helvetica. Banh mi taxidermy meditation microdosing. Selvage cornhole YOLO, small batch vexillologist raclette VHS prism sustainable 8-bit ugh semiotics letterpress disrupt pop-up. Celiac shabby chic ugh, jianbing whatever kitsch tattooed edison bulb kogi irony etsy.&lt;/p&gt;
 
@@ -161,7 +834,7 @@ Posted on June 28, 2020&lt;/p&gt;
  <entry>
    <title>Jekyll reading time without plugins</title>
    <link href="https://localhost:4000/2018/09/20/jekyll-reading-time-without-plugins"/>
-   <updated>2018-09-20T00:00:00+02:00</updated>
+   <updated>2018-09-20T00:00:00+01:00</updated>
    <id>https://localhost:4000/2018/09/20/jekyll-reading-time-without-plugins</id>
    <content type="html">&lt;p&gt;Lorem ipsum dolor amet tousled viral art party blue bottle single-origin coffee cardigan, selvage man braid helvetica. Banh mi taxidermy meditation microdosing. Selvage cornhole YOLO, small batch vexillologist raclette VHS prism sustainable 8-bit ugh semiotics letterpress disrupt pop-up. Celiac shabby chic ugh, jianbing whatever kitsch tattooed edison bulb kogi irony etsy.&lt;/p&gt;
 
@@ -178,7 +851,7 @@ Posted on June 28, 2020&lt;/p&gt;
  <entry>
    <title>How to add an RSS feed to a Jekyll blog</title>
    <link href="https://localhost:4000/2018/09/11/how-to-add-an-rss-feed-to-a-jekyll-blog"/>
-   <updated>2018-09-11T00:00:00+02:00</updated>
+   <updated>2018-09-11T00:00:00+01:00</updated>
    <id>https://localhost:4000/2018/09/11/how-to-add-an-rss-feed-to-a-jekyll-blog</id>
    <content type="html">&lt;p&gt;Lorem ipsum dolor amet tousled viral art party blue bottle single-origin coffee cardigan, selvage man braid helvetica. Banh mi taxidermy meditation microdosing. Selvage cornhole YOLO, small batch vexillologist raclette VHS prism sustainable 8-bit ugh semiotics letterpress disrupt pop-up. Celiac shabby chic ugh, jianbing whatever kitsch tattooed edison bulb kogi irony etsy.&lt;/p&gt;
 
@@ -195,7 +868,7 @@ Posted on June 28, 2020&lt;/p&gt;
  <entry>
    <title>Top plugins for Wordpress websites</title>
    <link href="https://localhost:4000/2018/08/18/top-plugins-for-wordpress-websites"/>
-   <updated>2018-08-18T00:00:00+02:00</updated>
+   <updated>2018-08-18T00:00:00+01:00</updated>
    <id>https://localhost:4000/2018/08/18/top-plugins-for-wordpress-websites</id>
    <content type="html">&lt;p&gt;Lorem ipsum dolor amet tousled viral art party blue bottle single-origin coffee cardigan, selvage man braid helvetica. Banh mi taxidermy meditation microdosing. Selvage cornhole YOLO, small batch vexillologist raclette VHS prism sustainable 8-bit ugh semiotics letterpress disrupt pop-up. Celiac shabby chic ugh, jianbing whatever kitsch tattooed edison bulb kogi irony etsy.&lt;/p&gt;
 
@@ -212,7 +885,7 @@ Posted on June 28, 2020&lt;/p&gt;
  <entry>
    <title>Install Jekyll on Mac OS</title>
    <link href="https://localhost:4000/2018/06/14/install-jekyll-on-mac-os"/>
-   <updated>2018-06-14T00:00:00+02:00</updated>
+   <updated>2018-06-14T00:00:00+01:00</updated>
    <id>https://localhost:4000/2018/06/14/install-jekyll-on-mac-os</id>
    <content type="html">&lt;p&gt;Lorem ipsum dolor amet tousled viral art party blue bottle single-origin coffee cardigan, selvage man braid helvetica. Banh mi taxidermy meditation microdosing. Selvage cornhole YOLO, small batch vexillologist raclette VHS prism sustainable 8-bit ugh semiotics letterpress disrupt pop-up. Celiac shabby chic ugh, jianbing whatever kitsch tattooed edison bulb kogi irony etsy.&lt;/p&gt;
 
@@ -229,7 +902,7 @@ Posted on June 28, 2020&lt;/p&gt;
  <entry>
    <title>Applying the active class for the current page in Jekyll</title>
    <link href="https://localhost:4000/2018/06/07/applying-the-active-class-for-the-current-page-in-jekyll"/>
-   <updated>2018-06-07T00:00:00+02:00</updated>
+   <updated>2018-06-07T00:00:00+01:00</updated>
    <id>https://localhost:4000/2018/06/07/applying-the-active-class-for-the-current-page-in-jekyll</id>
    <content type="html">&lt;p&gt;Lorem ipsum dolor amet tousled viral art party blue bottle single-origin coffee cardigan, selvage man braid helvetica. Banh mi taxidermy meditation microdosing. Selvage cornhole YOLO, small batch vexillologist raclette VHS prism sustainable 8-bit ugh semiotics letterpress disrupt pop-up. Celiac shabby chic ugh, jianbing whatever kitsch tattooed edison bulb kogi irony etsy.&lt;/p&gt;
 
@@ -246,7 +919,7 @@ Posted on June 28, 2020&lt;/p&gt;
  <entry>
    <title>Displaying GitHub Gists in Jekyll sites</title>
    <link href="https://localhost:4000/2018/05/13/displaying-github-gists-in-jekyll-sites"/>
-   <updated>2018-05-13T00:00:00+02:00</updated>
+   <updated>2018-05-13T00:00:00+01:00</updated>
    <id>https://localhost:4000/2018/05/13/displaying-github-gists-in-jekyll-sites</id>
    <content type="html">&lt;p&gt;Lorem ipsum dolor amet tousled viral art party blue bottle single-origin coffee cardigan, selvage man braid helvetica. Banh mi taxidermy meditation microdosing. Selvage cornhole YOLO, small batch vexillologist raclette VHS prism sustainable 8-bit ugh semiotics letterpress disrupt pop-up. Celiac shabby chic ugh, jianbing whatever kitsch tattooed edison bulb kogi irony etsy.&lt;/p&gt;
 
@@ -263,7 +936,7 @@ Posted on June 28, 2020&lt;/p&gt;
  <entry>
    <title>Disable Jekyll&apos;s default syntax highlighter Rouge</title>
    <link href="https://localhost:4000/2018/02/05/disable-jekylls-default-syntax-highlighter-rouge"/>
-   <updated>2018-02-05T00:00:00+01:00</updated>
+   <updated>2018-02-05T00:00:00+00:00</updated>
    <id>https://localhost:4000/2018/02/05/disable-jekylls-default-syntax-highlighter-rouge</id>
    <content type="html">&lt;p&gt;Lorem ipsum dolor amet tousled viral art party blue bottle single-origin coffee cardigan, selvage man braid helvetica. Banh mi taxidermy meditation microdosing. Selvage cornhole YOLO, small batch vexillologist raclette VHS prism sustainable 8-bit ugh semiotics letterpress disrupt pop-up. Celiac shabby chic ugh, jianbing whatever kitsch tattooed edison bulb kogi irony etsy.&lt;/p&gt;
 
@@ -280,7 +953,7 @@ Posted on June 28, 2020&lt;/p&gt;
  <entry>
    <title>Image caption in Jekyll</title>
    <link href="https://localhost:4000/2018/02/03/image-captions-in-jekyll"/>
-   <updated>2018-02-03T00:00:00+01:00</updated>
+   <updated>2018-02-03T00:00:00+00:00</updated>
    <id>https://localhost:4000/2018/02/03/image-captions-in-jekyll</id>
    <content type="html">&lt;p&gt;&lt;img src=&quot;https://images.unsplash.com/photo-1573481193569-c00872fb99fb?ixlib=rb-1.2.1&amp;amp;q=80&amp;amp;fm=jpg&amp;amp;crop=entropy&amp;amp;cs=tinysrgb&amp;amp;dl=k-mitch-hodge-yTVqCMI2yPY-unsplash.jpg&amp;amp;w=2400&quot; alt=&quot;&quot; /&gt;
 &lt;em&gt;Photo by &lt;a href=&quot;https://unsplash.com/@kmitchhodge?utm_source=unsplash&amp;amp;utm_medium=referral&amp;amp;utm_content=creditCopyText&quot;&gt;K. Mitch Hodge&lt;/a&gt; on &lt;a href=&quot;https://unsplash.com/collections/8725460/sky?utm_source=unsplash&amp;amp;utm_medium=referral&amp;amp;utm_content=creditCopyText&quot;&gt;Unsplash&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
@@ -301,7 +974,7 @@ Posted on June 28, 2020&lt;/p&gt;
  <entry>
    <title>Showing the word count in Jekyll</title>
    <link href="https://localhost:4000/2018/01/17/showing-the-word-count"/>
-   <updated>2018-01-17T00:00:00+01:00</updated>
+   <updated>2018-01-17T00:00:00+00:00</updated>
    <id>https://localhost:4000/2018/01/17/showing-the-word-count</id>
    <content type="html">&lt;p&gt;Lorem ipsum dolor amet tousled viral art party blue bottle single-origin coffee cardigan, selvage man braid helvetica. Banh mi taxidermy meditation microdosing. Selvage cornhole YOLO, small batch vexillologist raclette VHS prism sustainable 8-bit ugh semiotics letterpress disrupt pop-up. Celiac shabby chic ugh, jianbing whatever kitsch tattooed edison bulb kogi irony etsy.&lt;/p&gt;
 
@@ -318,7 +991,7 @@ Posted on June 28, 2020&lt;/p&gt;
  <entry>
    <title>Custom 404 page for Jekyll on Github pages</title>
    <link href="https://localhost:4000/2017/11/15/custom-404-page-for-jekyll-on-github-pages"/>
-   <updated>2017-11-15T00:00:00+01:00</updated>
+   <updated>2017-11-15T00:00:00+00:00</updated>
    <id>https://localhost:4000/2017/11/15/custom-404-page-for-jekyll-on-github-pages</id>
    <content type="html">&lt;p&gt;Lorem ipsum dolor amet tousled viral art party blue bottle single-origin coffee cardigan, selvage man braid helvetica. Banh mi taxidermy meditation microdosing. Selvage cornhole YOLO, small batch vexillologist raclette VHS prism sustainable 8-bit ugh semiotics letterpress disrupt pop-up. Celiac shabby chic ugh, jianbing whatever kitsch tattooed edison bulb kogi irony etsy.&lt;/p&gt;
 
@@ -335,7 +1008,7 @@ Posted on June 28, 2020&lt;/p&gt;
  <entry>
    <title>Redirect Jekyll URLs</title>
    <link href="https://localhost:4000/2017/11/10/redirect-jekyll-urls"/>
-   <updated>2017-11-10T00:00:00+01:00</updated>
+   <updated>2017-11-10T00:00:00+00:00</updated>
    <id>https://localhost:4000/2017/11/10/redirect-jekyll-urls</id>
    <content type="html">&lt;p&gt;Lorem ipsum dolor amet tousled viral art party blue bottle single-origin coffee cardigan, selvage man braid helvetica. Banh mi taxidermy meditation microdosing. Selvage cornhole YOLO, small batch vexillologist raclette VHS prism sustainable 8-bit ugh semiotics letterpress disrupt pop-up. Celiac shabby chic ugh, jianbing whatever kitsch tattooed edison bulb kogi irony etsy.&lt;/p&gt;
 
@@ -352,7 +1025,7 @@ Posted on June 28, 2020&lt;/p&gt;
  <entry>
    <title>Quotes In Jekyll</title>
    <link href="https://localhost:4000/2017/02/05/quotes-test"/>
-   <updated>2017-02-05T00:00:00+01:00</updated>
+   <updated>2017-02-05T00:00:00+00:00</updated>
    <id>https://localhost:4000/2017/02/05/quotes-test</id>
    <content type="html">&lt;p&gt;Lorem ipsum dolor amet tousled viral art party blue bottle single-origin coffee cardigan, selvage man braid helvetica. Banh mi taxidermy meditation microdosing. Selvage cornhole YOLO, small batch vexillologist raclette VHS prism sustainable 8-bit ugh semiotics letterpress disrupt pop-up. Celiac shabby chic ugh, jianbing whatever kitsch tattooed edison bulb kogi irony etsy.&lt;/p&gt;
 
@@ -506,7 +1179,7 @@ Lorem ipsum dolor amet tousled viral art party blue bottle single-origin coffee 
  <entry>
    <title>Creating navigation menu in Jekyll</title>
    <link href="https://localhost:4000/2017/01/03/creating-navigation-menu-in-jekyll"/>
-   <updated>2017-01-03T00:00:00+01:00</updated>
+   <updated>2017-01-03T00:00:00+00:00</updated>
    <id>https://localhost:4000/2017/01/03/creating-navigation-menu-in-jekyll</id>
    <content type="html">&lt;p&gt;Lorem ipsum dolor amet tousled viral art party blue bottle single-origin coffee cardigan, selvage man braid helvetica. Banh mi taxidermy meditation microdosing. Selvage cornhole YOLO, small batch vexillologist raclette VHS prism sustainable 8-bit ugh semiotics letterpress disrupt pop-up. Celiac shabby chic ugh, jianbing whatever kitsch tattooed edison bulb kogi irony etsy.&lt;/p&gt;
 
@@ -523,7 +1196,7 @@ Lorem ipsum dolor amet tousled viral art party blue bottle single-origin coffee 
  <entry>
    <title>Jejkyll Headers</title>
    <link href="https://localhost:4000/2017/01/02/headers-test"/>
-   <updated>2017-01-02T00:00:00+01:00</updated>
+   <updated>2017-01-02T00:00:00+00:00</updated>
    <id>https://localhost:4000/2017/01/02/headers-test</id>
    <content type="html">&lt;h1 id=&quot;headers-test&quot;&gt;Headers Test&lt;/h1&gt;
 &lt;p&gt;This page tests jekyll headers&lt;/p&gt;
@@ -551,7 +1224,7 @@ Lorem ipsum dolor amet tousled viral art party blue bottle single-origin coffee 
  <entry>
    <title>Structured Data markup validation and testing tools</title>
    <link href="https://localhost:4000/2016/12/11/structured-data-markup-validation-and-testing-tools"/>
-   <updated>2016-12-11T00:00:00+01:00</updated>
+   <updated>2016-12-11T00:00:00+00:00</updated>
    <id>https://localhost:4000/2016/12/11/structured-data-markup-validation-and-testing-tools</id>
    <content type="html">&lt;p&gt;Lorem ipsum dolor amet tousled viral art party blue bottle single-origin coffee cardigan, selvage man braid helvetica. Banh mi taxidermy meditation microdosing. Selvage cornhole YOLO, small batch vexillologist raclette VHS prism sustainable 8-bit ugh semiotics letterpress disrupt pop-up. Celiac shabby chic ugh, jianbing whatever kitsch tattooed edison bulb kogi irony etsy.&lt;/p&gt;
 
@@ -568,7 +1241,7 @@ Lorem ipsum dolor amet tousled viral art party blue bottle single-origin coffee 
  <entry>
    <title>Top monospaced fonts for coding</title>
    <link href="https://localhost:4000/2016/11/27/top-monospaced-fonts-for-coding"/>
-   <updated>2016-11-27T00:00:00+01:00</updated>
+   <updated>2016-11-27T00:00:00+00:00</updated>
    <id>https://localhost:4000/2016/11/27/top-monospaced-fonts-for-coding</id>
    <content type="html">&lt;p&gt;Lorem ipsum dolor amet tousled viral art party blue bottle single-origin coffee cardigan, selvage man braid helvetica. Banh mi taxidermy meditation microdosing. Selvage cornhole YOLO, small batch vexillologist raclette VHS prism sustainable 8-bit ugh semiotics letterpress disrupt pop-up. Celiac shabby chic ugh, jianbing whatever kitsch tattooed edison bulb kogi irony etsy.&lt;/p&gt;
 
@@ -585,7 +1258,7 @@ Lorem ipsum dolor amet tousled viral art party blue bottle single-origin coffee 
  <entry>
    <title>Places where you can learn how to code</title>
    <link href="https://localhost:4000/2015/07/31/places-where-you-can-learn-how-to-code"/>
-   <updated>2015-07-31T00:00:00+02:00</updated>
+   <updated>2015-07-31T00:00:00+01:00</updated>
    <id>https://localhost:4000/2015/07/31/places-where-you-can-learn-how-to-code</id>
    <content type="html">&lt;p&gt;Lorem ipsum dolor amet tousled viral art party blue bottle single-origin coffee cardigan, selvage man braid helvetica. Banh mi taxidermy meditation microdosing. Selvage cornhole YOLO, small batch vexillologist raclette VHS prism sustainable 8-bit ugh semiotics letterpress disrupt pop-up. Celiac shabby chic ugh, jianbing whatever kitsch tattooed edison bulb kogi irony etsy.&lt;/p&gt;
 
@@ -602,7 +1275,7 @@ Lorem ipsum dolor amet tousled viral art party blue bottle single-origin coffee 
  <entry>
    <title>CSS hacks you may not know</title>
    <link href="https://localhost:4000/2014/05/12/css-hacks-you-may-not-know"/>
-   <updated>2014-05-12T00:00:00+02:00</updated>
+   <updated>2014-05-12T00:00:00+01:00</updated>
    <id>https://localhost:4000/2014/05/12/css-hacks-you-may-not-know</id>
    <content type="html">&lt;p&gt;Lorem ipsum dolor amet tousled viral art party blue bottle single-origin coffee cardigan, selvage man braid helvetica. Banh mi taxidermy meditation microdosing. Selvage cornhole YOLO, small batch vexillologist raclette VHS prism sustainable 8-bit ugh semiotics letterpress disrupt pop-up. Celiac shabby chic ugh, jianbing whatever kitsch tattooed edison bulb kogi irony etsy.&lt;/p&gt;
 

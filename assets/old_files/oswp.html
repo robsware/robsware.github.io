@@ -1,0 +1,90 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <title>robsware</title>
+  <meta name="description" content="Walkthroughs, experiments and rants" />
+  <meta name="keywords" content="website keywords, website keywords" />
+  <meta http-equiv="content-type" content="text/html; charset=windows-1252" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="../style.css" />
+</head>
+
+<body>
+  <div id="main">
+    <div id="header">
+      <div id="logo">
+        <div id="logo_text">
+          <!-- class="logo_colour", allows you to change the colour of the text -->
+          <h1><a href="../index.html"><span class="logo_colour">robsware</span></a></h1>
+          <h2>Writeups. Projects. Rants.</h2>
+        </div>
+      </div>
+      <div id="menubar">
+        <ul id="menu">
+          <!-- put class="selected" in the li tag for the selected page - to highlight which page you're on -->
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../walkthroughs.html">Walkthroughs</a></li>
+          <li><a href="../experiments.html">Experiments</a></li>
+          <li class="selected"><a href="../rants.html">Rants</a></li>
+          <li><a href="../contact.html">Social Media</a></li>
+        </ul>
+      </div>
+    </div>
+    <div id="site_content">
+      <div id="content">
+        <h1>The OWSP experience: <strike>#TryHarder</strike> #TryAgain</h1>
+        <p>Posted on December 5, 2020 <br></p>
+        <p>It's been almost 1 month since I attempted and passed my OSWP. Here are my thoughts about the famous "meme" certification.</p>
+        
+
+        <h3>The Good - The Information</h3>
+        <p>As someone with only a vague knowledge of how wireless communication works, the course was extremely informative in explaining and detailing how things work and the history of wireless communication. 
+        If I were to judge the course as an informative/historical book, it would be a great book. Unfortunately, things start to fall apart when it gets to the practical part.
+
+        The self built lab is a double edged sword. On one hand, I loved not feeling the time pressure of the regular OffSec labs and being able to take my time. Setting it up and pulling all the power and ethernet cables around made feel like an old school sysadmin.
+        On the other hand... </p>
+
+         
+        <h3>The Bad - The Lab</h3>
+
+        <p>The suggested hardware for the lab is ancient and you'll really struggle to find it. If you don't live in a place with a large second hand market, you might be entirely out of luck, like I was. 
+        I asked around if people had any old router that supporter WEP and borrowed a DIR 300 from a friend. As for WiFi NIC, I used a tp-link tl-wn722n v3 from a previous project. With the spare ethernet cables I had lying around, I was able to set up my lab without spending any money.
+        OffSec suggests using their backtrack image, but I couldn't get it to recognize or install my WiFi NIC drivers. I didn't really have the hardware available to just install it on a new laptop, so after a lot of frustration and headscratching I ended up installing kali on a rasPi and connecting to it via SSH.
+        I figured this would match the exam environment quite nicely. Most of the tools used in the exercises work on rasPi kali, and the ones that don't aren't really relevant.<br><br>
+
+        The second bad part is the content. It is <b>old.</b> Very old. I've personally never seen a WEP network in my entire life, and I'm 26 for the record. I couldn't even get my router into all the WEP configs the lab described. So the lab experience was half lived at best.
+      </p>
+        <h3>The Great - Everything you need</h3>
+
+        <p>This is probably the only OffSec certification that teaches you everything you need to pass the exam, so that's convenient. If you just really focus on the exercises, you should be in great shape for the exam.
+        Setting up the lab took me about a week, and it took me another 2 weeks to go through the videos and the practice labs.</p>
+
+        <h3>The Exam</h3>
+        
+        <p>
+        The exam takes 4 hours. Given my luck, all the lab exercises that I couldn't set up were on my exam. Regardless, after going back to my notes, I was able to complete the exam in under 2 hours so I used the remaining time to have lunch and go over the exercises again and take proper screenshots.
+        One peculiar thing about the exam is that things might not... work. Even if you did everything right, it might not work on first attempt. Or second attempt. Third attempt usually does it. So all I can say is: double check your commands and.. Try Again. Inconvenient and can be a cause of lots of unwanted stress.</p>
+
+        <h3>Final Thoughts</h3>
+
+        <p>As a disclaimer, my employer paid for the exam. I originally only planned to get my CRTP during 2020, but I was able to pass with just one month of lab time and had some training funds left over. On a whim I decided to get my OSWP after a coworker got his recently too. 
+            I regret the headaches I got while trying to get Backtrack and some of the labs exercises to work, but overall I feel I learned some very crucial concepts about WiFi. I'm not quite sure I'd recommend the course, it is a tad expensive for what it is and it is quite outdated. 
+            You still get the OffSec brand quality though which evens the offer a bit. If you don't know much about WiFi and have some cash to burn, then consider it, it's not a major time investment and you'll learn some cool stuff. Otherwise, prioritize other certifications. 
+            As an alternative, I heard good things about the WiFi course on Pentester Academy, although I personally haven't attempted it: <a href="https://www.pentesteracademy.com/course?id=9">https://www.pentesteracademy.com/course?id=9</a>
+
+            WiFi hasn't really changed that much over the years. I wouldn't say that OSWP prepared me for a WiFi engagement, but it did provide a foundation solid enough so that I could build my own toolkit and methodology. Unfortunately, most Wifi assessments are capturing the WPA2 handshakes, tossing them into hashcat and praying for the best.
+            I'd like to see an updated version cover stuff like BlueTooth and Zigbee, more focused on IoT communications, but right now I can only hope.</p>
+       
+
+
+
+      </div>
+    </div>
+    <div id="footer">
+      <p><a href="../index.html">Home</a> | <a href="../walkthroughs.html">Walkthroughs</a> | <a href="../experiments.html">Experiments</a> | <a href="../rants.html">Rants</a> | <a href="../contact.html">Social Media</a></p>
+
+    </div>
+  </div>
+</body>
+</html>

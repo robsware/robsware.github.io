@@ -1,0 +1,61 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <title>robsware</title>
+  <meta name="description" content="website description" />
+  <meta name="keywords" content="website keywords, website keywords" />
+  <meta http-equiv="content-type" content="text/html; charset=windows-1252" />
+  <link rel="stylesheet" type="text/css" href="/assets/old_files/style.css" />
+</head>
+
+<body>
+  <div id="main">
+    <div id="header">
+      <div id="logo">
+        <div id="logo_text">
+          <!-- class="logo_colour", allows you to change the colour of the text -->
+          <h1><a href="index.html"><span class="logo_colour">robsware</span></a></h1>
+          <h2>Writeups. Projects. Rants.</h2>
+        </div>
+      </div>
+      <div id="menubar">
+        <ul id="menu">
+          <!-- put class="selected" in the li tag for the selected page - to highlight which page you're on -->
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../walkthroughs.html">Walkthroughs</a></li>
+          <li><a href="../experiments.html">Experiments</a></li>
+          <li class="selected"><a href="../rants.html">Rants</a></li>
+          <li><a href="../contact.html">Social Media</a></li>
+        </ul>
+      </div>
+    </div>
+    <div id="site_content">
+      <div id="content">
+        <h1>Building momentum and my methodology</h1>
+        <p>Posted on May 17, 2020 <br><br>
+        An exceedingly good week in the labs mainly thanks to the power of consistency:</p>
+        <br><br>
+        <span class="center"><img src="burpweek3.png" alt="Week 3" /></span><br><br>
+        <p>Reminder that you can always check my solutions <a href="https://github.com/robsware/Burp-Lab-Solutions">here:</a>
+        This week I focused on more DOM attacks, CORS issues, XXE attacks and request smuggling. I still don't properly trust myself to spot a DOM vulnerability out in the wild, but I think I have a decent grip over CORS. XXE and request smuggling were entirely new to me. 
+
+        I never really took the time to explore XML properly, often just bruteforcing my way though it with regex (or how to exponentially multiply the complexity of your code!). I spent some more time on it this week and it's starting to click, although what helped tremendously was this video by <a href="https://www.youtube.com/watch?v=gjm6VHZa_8s">PwnFunction on XXE</a>
+        <br><br>
+        Request smuggling was something completely new to me and I took my time experimenting and learning since it's something I can see myself often using in my real engagements. The Burp HTTP Smuggler extension helps a lot in identifying potential targets, although I need to test it more outside the labs. It did, however, push me to reach that point where I struggle to take in new information because I need to digest the one I have just learned, so I decided to slow down a bit for the weekend and play some Kenshi. Great game, would karate chop a cannibal and steal his hat again.<br><br></p>
+        <h3>My methodology</h3>
+        <p>This is by no means set in stone, and as proof is the fact that I took my time with the request smuggling labs, but I try to stick to the following:<br><br>Apprentice Difficulty: 15 minutes<br>
+        Practitioner Difficulty : 30 minutes<br>
+        Expect Difficulty: 45 minutes<br><br>
+        That's about how long I'll spend on a lab before looking up the solution, although sometimes I'll push it if I feel like I'm close. I'm not ashamed to look at the solutions at all, since many labs can be in the unknown unknowns area - things I don't even know I don't know. I do read the main page for every attack before attempting the labs (e.g. <a href="https://portswigger.net/web-security/xxe">XXE labs</a>) and I do intend to frequently return to those labs and rely less on the solutions to gain a deeper understanding. At the moment, I'm just trying to expose myself to new and diverse attack vectors.<br><br>Next week seems to be quite busy, so we'll see if I can keep my momentum going. 
+        </p>
+        
+      </div>
+    </div>
+    <div id="footer">
+      <p><a href="../index.html">Home</a> | <a href="../walkthroughs.html">Walkthroughs</a> | <a href="../experiments.html">Experiments</a> | <a href="../rants.html">Rants</a> | <a href="../contact.html">Social Media</a></p>
+
+    </div>
+  </div>
+</body>
+</html>

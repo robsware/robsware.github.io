@@ -1,12 +1,66 @@
 [
   
     {
+      "title"    : "Gpt3",
+      "description" : "",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2020/12/27/gpt3",
+      "date"     : "2020-12-27 00:00:00 +0000"
+    } ,
+  
+    {
+      "title"    : "Oswp",
+      "description" : "",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2020/12/05/oswp",
+      "date"     : "2020-12-05 00:00:00 +0000"
+    } ,
+  
+    {
+      "title"    : "Oscp",
+      "description" : "",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2020/10/02/oscp",
+      "date"     : "2020-10-02 00:00:00 +0100"
+    } ,
+  
+    {
+      "title"    : "Personalizeddata",
+      "description" : "",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2020/07/07/personalizeddata",
+      "date"     : "2020-07-07 00:00:00 +0100"
+    } ,
+  
+    {
       "title"    : "Port Swigger",
       "description" : "This is a collection of short CSS snippets I thought might be useful for beginners",
       "category" : "",
       "tags"     : "css, coding",
       "url"      : "/2020/06/28/portswigger-labs",
-      "date"     : "2020-06-28 00:00:00 +0200"
+      "date"     : "2020-06-28 00:00:00 +0100"
+    } ,
+  
+    {
+      "title"    : "Port Swigger",
+      "description" : "This is a collection of short CSS snippets I thought might be useful for beginners",
+      "category" : "",
+      "tags"     : "css, coding",
+      "url"      : "/2020/04/27/cellularautomata",
+      "date"     : "2020-04-27 00:00:00 +0100"
+    } ,
+  
+    {
+      "title"    : "Offshore",
+      "description" : "",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2020/03/15/offshore",
+      "date"     : "2020-03-15 00:00:00 +0000"
     } ,
   
     {
@@ -15,7 +69,7 @@
       "category" : "",
       "tags"     : "typography",
       "url"      : "/2019/08/31/difference-between-font-formats",
-      "date"     : "2019-08-31 00:00:00 +0200"
+      "date"     : "2019-08-31 00:00:00 +0100"
     } ,
   
     {
@@ -24,7 +78,7 @@
       "category" : "",
       "tags"     : "jekyll, coding",
       "url"      : "/2019/07/23/staticman-comments-on-a-jekyll-site",
-      "date"     : "2019-07-23 00:00:00 +0200"
+      "date"     : "2019-07-23 00:00:00 +0100"
     } ,
   
     {
@@ -33,7 +87,7 @@
       "category" : "",
       "tags"     : "netlify, coding, security",
       "url"      : "/2019/05/23/adding-http-response-headers-to-a-netlify-static-website",
-      "date"     : "2019-05-23 00:00:00 +0200"
+      "date"     : "2019-05-23 00:00:00 +0100"
     } ,
   
     {
@@ -42,7 +96,7 @@
       "category" : "",
       "tags"     : "jekyll, coding",
       "url"      : "/2018/12/23/syntax-highlight-with-rouge-in-jekyll",
-      "date"     : "2018-12-23 00:00:00 +0100"
+      "date"     : "2018-12-23 00:00:00 +0000"
     } ,
   
     {
@@ -51,7 +105,7 @@
       "category" : "",
       "tags"     : "coding, jekyll",
       "url"      : "/2018/11/12/page-specific-assets-in-jekyll",
-      "date"     : "2018-11-12 00:00:00 +0100"
+      "date"     : "2018-11-12 00:00:00 +0000"
     } ,
   
     {
@@ -60,7 +114,7 @@
       "category" : "",
       "tags"     : "jekyll, coding",
       "url"      : "/2018/09/20/jekyll-reading-time-without-plugins",
-      "date"     : "2018-09-20 00:00:00 +0200"
+      "date"     : "2018-09-20 00:00:00 +0100"
     } ,
   
     {
@@ -69,7 +123,7 @@
       "category" : "",
       "tags"     : "jekyll, coding",
       "url"      : "/2018/09/11/how-to-add-an-rss-feed-to-a-jekyll-blog",
-      "date"     : "2018-09-11 00:00:00 +0200"
+      "date"     : "2018-09-11 00:00:00 +0100"
     } ,
   
     {
@@ -78,7 +132,7 @@
       "category" : "",
       "tags"     : "coding, wordpress",
       "url"      : "/2018/08/18/top-plugins-for-wordpress-websites",
-      "date"     : "2018-08-18 00:00:00 +0200"
+      "date"     : "2018-08-18 00:00:00 +0100"
     } ,
   
     {
@@ -87,7 +141,7 @@
       "category" : "",
       "tags"     : "jekyll, coding",
       "url"      : "/2018/06/14/install-jekyll-on-mac-os",
-      "date"     : "2018-06-14 00:00:00 +0200"
+      "date"     : "2018-06-14 00:00:00 +0100"
     } ,
   
     {
@@ -96,7 +150,7 @@
       "category" : "",
       "tags"     : "coding, jekyll",
       "url"      : "/2018/06/07/applying-the-active-class-for-the-current-page-in-jekyll",
-      "date"     : "2018-06-07 00:00:00 +0200"
+      "date"     : "2018-06-07 00:00:00 +0100"
     } ,
   
     {
@@ -105,7 +159,7 @@
       "category" : "",
       "tags"     : "jekyll, coding",
       "url"      : "/2018/05/13/displaying-github-gists-in-jekyll-sites",
-      "date"     : "2018-05-13 00:00:00 +0200"
+      "date"     : "2018-05-13 00:00:00 +0100"
     } ,
   
     {
@@ -114,7 +168,7 @@
       "category" : "",
       "tags"     : "coding, jekyll",
       "url"      : "/2018/02/05/disable-jekylls-default-syntax-highlighter-rouge",
-      "date"     : "2018-02-05 00:00:00 +0100"
+      "date"     : "2018-02-05 00:00:00 +0000"
     } ,
   
     {
@@ -123,7 +177,7 @@
       "category" : "",
       "tags"     : "jekyll, coding",
       "url"      : "/2018/02/03/image-captions-in-jekyll",
-      "date"     : "2018-02-03 00:00:00 +0100"
+      "date"     : "2018-02-03 00:00:00 +0000"
     } ,
   
     {
@@ -132,7 +186,7 @@
       "category" : "",
       "tags"     : "jekyll, coding",
       "url"      : "/2018/01/17/showing-the-word-count",
-      "date"     : "2018-01-17 00:00:00 +0100"
+      "date"     : "2018-01-17 00:00:00 +0000"
     } ,
   
     {
@@ -141,7 +195,7 @@
       "category" : "",
       "tags"     : "jekyll, coding",
       "url"      : "/2017/11/15/custom-404-page-for-jekyll-on-github-pages",
-      "date"     : "2017-11-15 00:00:00 +0100"
+      "date"     : "2017-11-15 00:00:00 +0000"
     } ,
   
     {
@@ -150,7 +204,7 @@
       "category" : "",
       "tags"     : "coding, jekyll",
       "url"      : "/2017/11/10/redirect-jekyll-urls",
-      "date"     : "2017-11-10 00:00:00 +0100"
+      "date"     : "2017-11-10 00:00:00 +0000"
     } ,
   
     {
@@ -159,7 +213,7 @@
       "category" : "",
       "tags"     : "quotes, jekyll",
       "url"      : "/2017/02/05/quotes-test",
-      "date"     : "2017-02-05 00:00:00 +0100"
+      "date"     : "2017-02-05 00:00:00 +0000"
     } ,
   
     {
@@ -168,7 +222,7 @@
       "category" : "",
       "tags"     : "coding, jekyll",
       "url"      : "/2017/01/03/creating-navigation-menu-in-jekyll",
-      "date"     : "2017-01-03 00:00:00 +0100"
+      "date"     : "2017-01-03 00:00:00 +0000"
     } ,
   
     {
@@ -177,7 +231,7 @@
       "category" : "",
       "tags"     : "headers, jekyll, css",
       "url"      : "/2017/01/02/headers-test",
-      "date"     : "2017-01-02 00:00:00 +0100"
+      "date"     : "2017-01-02 00:00:00 +0000"
     } ,
   
     {
@@ -186,7 +240,7 @@
       "category" : "",
       "tags"     : "seo",
       "url"      : "/2016/12/11/structured-data-markup-validation-and-testing-tools",
-      "date"     : "2016-12-11 00:00:00 +0100"
+      "date"     : "2016-12-11 00:00:00 +0000"
     } ,
   
     {
@@ -195,7 +249,7 @@
       "category" : "",
       "tags"     : "coding",
       "url"      : "/2016/11/27/top-monospaced-fonts-for-coding",
-      "date"     : "2016-11-27 00:00:00 +0100"
+      "date"     : "2016-11-27 00:00:00 +0000"
     } ,
   
     {
@@ -204,7 +258,7 @@
       "category" : "",
       "tags"     : "coding",
       "url"      : "/2015/07/31/places-where-you-can-learn-how-to-code",
-      "date"     : "2015-07-31 00:00:00 +0200"
+      "date"     : "2015-07-31 00:00:00 +0100"
     } ,
   
     {
@@ -213,7 +267,7 @@
       "category" : "",
       "tags"     : "css, coding",
       "url"      : "/2014/05/12/css-hacks-you-may-not-know",
-      "date"     : "2014-05-12 00:00:00 +0200"
+      "date"     : "2014-05-12 00:00:00 +0100"
     } 
   
 ]
