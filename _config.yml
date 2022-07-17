@@ -2,7 +2,7 @@ site: robsware
 title: robsware
 greetings: robsware
 description: >-
-  just a minimalist, personal blog
+  Hello World
 lang: en-US
 timezone:  Europe/London
 repo: https://robsware.github.io/ # site repo [optional]
@@ -11,7 +11,7 @@ discus-identifier: powex # replace with your disqus shortname
 
 author:
   name: gesko
-  bio: just a minimalist, personal blog
+  bio: Hello World
   userpicture: 
   username: # general username
   github: # github username
@@ -59,6 +59,7 @@ plugins:
   - jekyll-paginate
   - jekyll-sitemap
   - jekyll-relative-links
+  - jekyll-seo-tag
 
 collections:
   pages:

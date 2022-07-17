@@ -258,6 +258,7 @@ DEPENDENCIES
   jekyll
   jekyll-paginate
   jekyll-relative-links
+  jekyll-seo-tag
   jekyll-sitemap
   tzinfo-data (~> 1.2021)
   wdm (>= 0.1.0)

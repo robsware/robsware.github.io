@@ -1,3 +1,12 @@
+---
+layout: post
+title: The conundrum of personalized data
+description: This is a collection of short CSS snippets I thought might be useful for beginners
+summary: This is a collection of short CSS snippets I thought might be useful for beginners.
+tags: css coding
+---
+
+
 <html>
 
 <head>
