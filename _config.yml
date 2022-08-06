@@ -2,7 +2,7 @@ site: robsware
 title: robsware
 greetings: robsware
 description: >-
-  Hello World
+  Hello Friend
 lang: en-US
 timezone:  Europe/London
 repo: https://robsware.github.io/ # site repo [optional]
@@ -11,7 +11,7 @@ discus-identifier: powex # replace with your disqus shortname
 
 author:
   name: gesko
-  bio: Hello World
+  bio: Hello Friend
   userpicture: 
   username: # general username
   github: # github username

@@ -1,9 +1,9 @@
 ---
 layout: post
 title: A review of the Certified Red Team Professional (CRTP) and the Attacking and Defending Active Directory Course
-description: This is a collection of short CSS snippets I thought might be useful for beginners
-summary: This is a collection of short CSS snippets I thought might be useful for beginners.
-tags: css coding
+description: CRTP
+summary: CRTP
+tags: certs
 ---
 
 Introduction

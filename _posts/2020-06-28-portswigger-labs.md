@@ -1,9 +1,9 @@
 ---
 layout: post
-title: Port Swigger
-description: This is a collection of short CSS snippets I thought might be useful for beginners
-summary: This is a collection of short CSS snippets I thought might be useful for beginners.
-tags: css coding
+title: The Port Swigger Labs
+description: Port Swigger Labs
+summary: Reaching the hall of fame in just over a month
+tags: CTF burp
 ---
 
 <html>

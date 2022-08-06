@@ -1,9 +1,9 @@
 ---
 layout: post
-title: Cellular Automata
-description: This is a collection of short CSS snippets I thought might be useful for beginners
-summary: This is a collection of short CSS snippets I thought might be useful for beginners.
-tags: css coding
+title: A shallow dive into Cellular Automata
+description: A shallow dive into cellular automata.
+summary: Playing around with cellular automata for fun and no profit.
+tags: experiments cellular automata
 ---
 
 <html>
