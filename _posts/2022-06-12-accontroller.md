@@ -290,4 +290,4 @@ void checkSwitches()
 //*********************************************************************
 ```
 
-I hope you've learned something from this and remember to keep explorin!
+I hope you've learned something from this and remember to keep exploring!
