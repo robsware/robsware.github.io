@@ -56,7 +56,7 @@ tags: CTF burp
           To reiterate, the labs are fantastic. The quality is fantastic. If you have any interest in pen testing and understanding how web vulnerabilities work, go do them right now. If you already are a pen tester, even an experienced one, I'd still recommend going through at least some of the labs. Have a go at the expert ones and see how that goes. While I haven't shied away from checking the solution if stuck on a lab, I do intend to return every now and then and try to do some of the labs without checking the solution, just as a way to test my knowledge and gauge my progress.<br><br>
           For now, it's time to put my new skills to the test.
         </p>
-        <h3>Updated July 2nd 2020</h3>
+        <h3>Update July 2nd 2020</h3>
         <p>
           A new section got added to the labs, deserialization. I managed to complete some of them before the solutions got uploaded, but they were really tough. I was able to snag 7th place in the Hall of Fame!
         </p>

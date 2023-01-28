@@ -70,10 +70,7 @@ tags: experiments cellular automata
         Overall, I think I used my time to learn some useful concepts, and I'll definitely be returning to this topic in the future. 
 
 
-        <h3>Cool, where's the code?</h3>
 
-        As the project was very rushed, the code is not quite up to par. Since I intend to come back to this project, I will update it and put it on my github. Yes, I know I'm breaking the rule of "Less talk, show me code". I'm a bit short on time, as around this time I was supposed to learn and practice Active Directory pen testing, but I decided to take this detour to test an idea. 
-        </p>
 
         
       </div>
@@ -85,3 +82,8 @@ tags: experiments cellular automata
   </div>
 </body>
 </html>
+
+
+**Cool, where's the code?**
+
+As the project was very rushed, the code is not quite up to par. Since I intend to come back to this project, I will update it and put it on my github. Yes, I know I'm breaking the rule of "Less talk, show me code". I'm a bit short on time, as around this time I was supposed to learn and practice Active Directory pen testing, but I decided to take this detour to test an idea. 
