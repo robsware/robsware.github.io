@@ -48,8 +48,9 @@ tags: experiments cellular automata
         I had to use something like <br><br>
         <span class="center"><img src="/assets/images/ex4.png" alt="ex4" /></span><br>     
         To anyone used to working in lower level languages, this probably seems trivial, but to someone used to flinging code fast and optimizing later, this was a bit tedious.<br>
-        Overall, I think I used my time to learn some useful concepts, and I'll definitely be returning to this topic in the future. 
+        Overall, I think I used my time to learn some useful concepts, and I'll definitely be returning to this topic in the future. </p>
         <h3>Cool, where's the code?</h3>
+        <p>
         As the project was very rushed, the code is not quite up to par. Since I intend to come back to this project, I will update it and put it on my github. Yes, I know I'm breaking the rule of "Less talk, show me code". I'm a bit short on time, as around this time I was supposed to learn and practice Active Directory pen testing, but I decided to take this detour to test an idea. 
         </p>
       </div>
