@@ -18,7 +18,7 @@ tags: experiments cellular automata
     <div id="site_content">
       <div id="content">
         <h1>Cellular Automatas</h1>
-        <p>Posted on April 27, 2020 <br><br> Inspired by Stephen Wolfram's book, which I finally got around reading now under lockdown, I decided to spend my week trying an experiment with Cellular Automata (CA) and crypto markets. My hope was that there was some sort of pattern matching with a CA rule in the minute to minute movement. Markets are interesting because, while not quite Turing Complete, they do seem to follow the law of Computational Irreducibility, which states the only way to determine the answer to a computationally irreducible question is to perform, or simulate, the computation. 
+        <p> Inspired by Stephen Wolfram's book, which I finally got around reading now under lockdown, I decided to spend my week trying an experiment with Cellular Automata (CA) and crypto markets. My hope was that there was some sort of pattern matching with a CA rule in the minute to minute movement. Markets are interesting because, while not quite Turing Complete, they do seem to follow the law of Computational Irreducibility, which states the only way to determine the answer to a computationally irreducible question is to perform, or simulate, the computation. 
         <br><br>
         I won't dwell too much on what a CA is, there are other way better sources explaining that. But if you've ever seen one of those pictures or played Conway's Game of Life, those are CAs.
         </p>
@@ -69,21 +69,17 @@ tags: experiments cellular automata
 
         Overall, I think I used my time to learn some useful concepts, and I'll definitely be returning to this topic in the future. 
 
+         <h3>Cool, where's the code?</h3>
 
+        As the project was very rushed, the code is not quite up to par. Since I intend to come back to this project, I will update it and put it on my github. Yes, I know I'm breaking the rule of "Less talk, show me code". I'm a bit short on time, as around this time I was supposed to learn and practice Active Directory pen testing, but I decided to take this detour to test an idea. 
+        </p>
 
 
         
       </div>
-    </div>
-    <div id="footer">
-      <p><a href="../index.html">Home</a> | <a href="../walkthroughs.html">Walkthroughs</a> | <a href="../experiments.html">Experiments</a> | <a href="../rants.html">Rants</a> | <a href="../contact.html">Social Media</a></p>
-
     </div>
   </div>
 </body>
 </html>
 
 
-**Cool, where's the code?**
-
-As the project was very rushed, the code is not quite up to par. Since I intend to come back to this project, I will update it and put it on my github. Yes, I know I'm breaking the rule of "Less talk, show me code". I'm a bit short on time, as around this time I was supposed to learn and practice Active Directory pen testing, but I decided to take this detour to test an idea. 
