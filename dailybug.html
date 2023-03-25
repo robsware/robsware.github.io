@@ -1,0 +1,29 @@
+---
+layout: page
+---
+
+Can you spot the vulnerability?
+<br><br>
+
+{% highlight python %}
+from flask import Flask, render_template, request
+
+app = Flask(__name__)
+
+@app.route('/')
+def index():
+    return render_template('index.html')
+
+@app.route('/view_file', methods=['POST'])
+def view_file():
+    file_path = request.form['file_path']
+    with open(file_path, 'r') as f:
+        contents = f.read()
+    return render_template('file_contents.html', contents=contents)
+
+if __name__ == '__main__':
+    app.run(debug=True)
+{% endhighlight %}
+
+<br>
+If you did, ping me at @robsware on twitter to get a Like. Answers will be posted next day.
