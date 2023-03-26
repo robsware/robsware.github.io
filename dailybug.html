@@ -15,6 +15,41 @@ layout: page
 <br>
 
 {% highlight python %}
+from flask import Flask, request
+import os
+
+app = Flask(__name__)
+
+@app.route('/')
+def index():
+    return '''
+        <form method="POST" action="/cat">
+            <label for="filename">Enter a filename:</label>
+            <input type="text" name="filename">
+            <input type="submit" value="Cat it!">
+        </form>
+    '''
+
+@app.route('/cat', methods=['POST'])
+def cat():
+    filename = request.form['filename']
+    os.system("cat " + filename)
+    return 'File contents displayed'
+
+if __name__ == '__main__':
+    app.run(debug=True)
+{% endhighlight %}
+
+<br>
+If you did, ping me at @robsware on twitter to get a Like. Answers will be posted next day.
+
+
+
+
+
+<p>Yesterday's challenge:</p>
+
+{% highlight python %}
 from flask import Flask, render_template, request
 
 app = Flask(__name__)
@@ -34,5 +69,20 @@ if __name__ == '__main__':
     app.run(debug=True)
 {% endhighlight %}
 
-<br>
-If you did, ping me at @robsware on twitter to get a Like. Answers will be posted next day.
+
+<p>To fix this vulnerability, we can use the os.path.abspath function to convert the input to an absolute path, which resolves any .. components that attempt to traverse up the directory tree. Here's the fixed code snippet:</p>
+
+{% highlight python %}
+import os
+
+def view_file(file_path):
+    abs_path = os.path.abspath(file_path)
+    if not abs_path.startswith('/restricted_directory/'):
+        raise ValueError("Invalid file path")
+    with open(abs_path, 'r') as f:
+        contents = f.read()
+        print(contents)
+
+file_path = input("Enter the file path: ")
+view_file(file_path)
+{% endhighlight %}
