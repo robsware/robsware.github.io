@@ -13,72 +13,43 @@ layout: page
   </section>
 <p>Can you spot the vulnerability?</p>
 <br>
-{% highlight html %}
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.PrintWriter;
-import java.util.UUID;
+{% highlight html %}php
+<?php
+session_start();
+$username = $_SESSION['username'] ?? 'Guest';
+?>
 
-import javax.servlet.ServletException;
-import javax.servlet.annotation.MultipartConfig;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.Part;
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSRF Demo</title>
+</head>
+<body>
+    <h1>Welcome, <?php echo $username; ?>!</h1>
 
-@WebServlet("/upload")
-@MultipartConfig
-public class FileUploadServlet extends HttpServlet {
-	
-    private static final long serialVersionUID = 1L;
-    private static final String UPLOAD_DIR = "uploads";
+    <?php if ($username !== 'Guest'): ?>
+    <form method="post" action="update.php">
+        <input type="text" name="username" placeholder="Enter your new username">
+        <input type="submit" name="submit" value="Update">
+    </form>
+    <?php endif; ?>
+</body>
+</html>
+
+{% endhighlight %}{% highlight html %}php
+<?php
+session_start();
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $username = $_POST['username'];
     
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-    	
-        response.setContentType("text/html");
-        PrintWriter out = response.getWriter();
-        
-        try {
-            Part filePart = request.getPart("file");
-            String fileName = getFileName(filePart);
-            
-            InputStream inputStream = filePart.getInputStream();
-            String newFileName = UUID.randomUUID().toString() + "_" + fileName;
-            writeToFile(inputStream, UPLOAD_DIR + "/" + newFileName);
-            
-            out.println("<h1>Success!</h1>");
-            out.println("<p>Your file " + fileName + " has been uploaded as " + newFileName + ".</p>");
-        } catch (Exception e) {
-            out.println("<h1>Failed!</h1>");
-            out.println("<p>" + e.getMessage() + "</p>");
-        }
-        
-        out.close();
-    }
+    // Update username in database
     
-    private String getFileName(final Part part) {
-		final String partHeader = part.getHeader("content-disposition");
-		for (String content : partHeader.split(";")) {
-			if (content.trim().startsWith("filename")) {
-				return content.substring(content.indexOf('=') + 1).trim().replace("\"", "");
-			}
-		}
-		return null;
-	}
-
-	private void writeToFile(InputStream inputStream, String filePath) throws IOException {
-		// Insecure code - does not restrict file type
-		byte[] buffer = new byte[1024];
-		int bytesRead = 0;
-		while ((bytesRead = inputStream.read(buffer)) != -1) {
-			try (FileOutputStream outputStream = new FileOutputStream(filePath, true)) {
-				outputStream.write(buffer, 0, bytesRead);
-			}
-		}
-	}
+    $_SESSION['username'] = $username;
+    header('Location: index.php');
+    exit();
 }
+?>
 
-{% endhighlight %}{% highlight html %}
 {% endhighlight %}
 <br>If you did, ping me at @robsware on twitter to get a Like and a retweet. Answers will be posted next day.
