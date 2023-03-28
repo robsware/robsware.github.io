@@ -11,38 +11,84 @@ layout: page
       </button>
     </div>
   </section>
-The vulnerability is NULL Pointer Dereference
+The vulnerability is Unrestricted Upload of File with Dangerous Type
 {% highlight html %}
-from flask import Flask, request, render_template
-
-app = Flask(__name__)
-
-@app.route('/', methods=['GET', 'POST'])
-def index():
-    name = None
-    if request.method == 'POST':
-        name = request.form['name']
-    return render_template('index.html', name=name)
-
-if __name__ == '__main__':
-    app.run()
+<html>
+<head>
+    <title>File Upload Example</title>
+</head>
+<body>
+    <form method="post" action="FileUploadServlet" enctype="multipart/form-data">
+        <label>File:</label>
+        <input type="file" name="file" /><br />
+        <label>File Name:</label>
+        <input type="text" name="filename" /><br />
+        <input type="submit" value="Upload" />
+    </form>
+</body>
+</html>
 
 
 {% endhighlight %}
 
 
-In this code, the `print_name()` function takes a `name` parameter and tries to convert it to uppercase using the `.upper()` method. However, if `name` is `None` (i.e. null), then an error will occur because `None` is not a string object and does not have the `.upper()` method.
+The above code is vulnerable to unrestricted upload of files with dangerous types. The `fileName` parameter can be used to create a file name for any file that is uploaded, including files with dangerous file types such as `.jsp`, `.php`, `.py`, etc. 
 
-To fix this vulnerability, we can add a simple check to ensure that `name` is not `None` before trying to convert it to uppercase. Here's the fixed code:
+To fix this vulnerability, we can add a whitelist of allowed file types:
 
 
 
 {% highlight html %}
-def print_name(name):
-    if name is not None:
-        print(name.upper())
+import java.io.*;
+import javax.servlet.*;
+import javax.servlet.http.*;
 
-name = None
-print_name(name)
+public class FileUploadServlet extends HttpServlet {
+   private static final String[] ALLOWED_FILE_TYPES = {"jpg", "jpeg", "gif", "png"};
+
+   public void doPost(HttpServletRequest req, HttpServletResponse res) 
+      throws ServletException, IOException {
+
+      res.setContentType("text/html");
+      PrintWriter out = res.getWriter();
+      
+      String fileName = req.getParameter("filename");
+      
+      // validate file type
+      boolean fileTypeAllowed = false;
+      for (String allowedFileType : ALLOWED_FILE_TYPES) {
+         if (fileName.toLowerCase().endsWith("." + allowedFileType)) {
+            fileTypeAllowed = true;
+            break;
+         }
+      }
+      
+      if (!fileTypeAllowed) {
+         out.println("<html>");
+         out.println("<body>");
+         out.println("<h3>Invalid file type</h3>");
+         out.println("</body>");
+         out.println("</html>");
+         return;
+      }
+      
+      Part filePart = req.getPart("file");
+      
+      InputStream fileContent = filePart.getInputStream();
+      OutputStream fileOutStream = new FileOutputStream(fileName);
+      
+      byte[] buffer = new byte[4096];
+      int bytesRead = -1;
+      while ((bytesRead = fileContent.read(buffer)) != -1) {
+         fileOutStream.write(buffer, 0, bytesRead);
+      }
+      
+      out.println("<html>");
+      out.println("<body>");
+      out.println("<h3>File uploaded successfully</h3>");
+      out.println("</body>");
+      out.println("</html>");
+   }
+}
 
 {% endhighlight %}
