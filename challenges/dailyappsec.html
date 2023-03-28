@@ -4,7 +4,8 @@ layout: page
 
 <section class="post">
     <div class="flex-row-between">
-        <a href="{{ site.url }}{{ site.baseurl }}/"> Home</a>
+    <a href="{{ site.url }}{{ site.baseurl }}/2023-03-27"> Previous challenge</a>
+          <a href="{{ site.url }}{{ site.baseurl }}/"> Home</a>
       <button title="Change theme" id="theme-toggle" onclick="modeSwitcher()">
         <div></div>
       </button>
@@ -13,40 +14,41 @@ layout: page
 <p>Can you spot the vulnerability?</p>
 <br>
 {% highlight html %}
-<?php
-  session_start();
-  $db_conn = mysqli_connect("localhost", "root", "", "testdb");
-  
-  if (isset($_POST['username']) && isset($_POST['password'])) {
-    $username = $_POST['username'];
-    $password = $_POST['password'];
-    $query = "INSERT INTO users (username, password) VALUES ('$username', '$password')";
-    $result = mysqli_query($db_conn, $query);
-    if ($result) {
-      echo "User created successfully";
-    } else {
-      echo "Error creating user";
-    }
-  }
-?>
+from flask import Flask, request, render_template
 
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Web App</title>
-</head>
-<body>
-  <h1>Create User</h1>
-  
-  <form method="POST">
-    <input type="text" name="username" placeholder="Username">
-    <input type="password" name="password" placeholder="Password">
-    <button type="submit">Create User</button>
-  </form>
-  
-</body>
-</html>
+app = Flask(__name__)
+
+@app.route('/')
+def index():
+    return render_template('index.html')
+
+@app.route('/', methods=['POST'])
+def process_form():
+    name = request.form['name']
+    message = "Hello " + name + ", welcome to our website!"
+    return render_template('index.html', message=message)
+
+if __name__ == '__main__':
+    app.run()
 
 {% endhighlight %}{% highlight html %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Example App</title>
+  </head>
+  <body>
+    <h1>Example App</h1>
+    <form method="POST">
+      <label for="name">Enter your name:</label>
+      <input type="text" id="name" name="name">
+      <button type="submit">Submit</button>
+    </form>
+    {% if message %}
+      <p>{{ message }}</p>
+    {% endif %}
+  </body>
+</html>
+
 {% endhighlight %}
 <br>If you did, ping me at @robsware on twitter to get a Like and a retweet. Answers will be posted next day.

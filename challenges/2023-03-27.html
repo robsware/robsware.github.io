@@ -4,68 +4,84 @@ layout: page
 
 <section class="post">
     <div class="flex-row-between">
-        <a href="{{ site.url }}{{ site.baseurl }}/"> Home</a>
+        <a href="{{ site.url }}{{ site.baseurl }}/2023-03-26"> Previous challenge</a>
+             <a href="{{ site.url }}{{ site.baseurl }}/"> Home</a>
       <button title="Change theme" id="theme-toggle" onclick="modeSwitcher()">
         <div></div>
       </button>
     </div>
   </section>
-The vulnerability is Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')
-{% highlight javascript %}
-javascript
-const express = require('express');
-const fs = require('fs');
-const path = require('path');
+The vulnerability is Missing Authorization
+{% highlight html %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Change Email</title>
+  </head>
+  <body>
+    <h1>Change Email</h1>
+    <label for="new-email">New Email:</label>
+    <input type="email" id="new-email">
+    <button onclick="changeEmail()">Change Email</button>
 
-const app = express();
+    <script>
+      // Database object assumes user data is stored here
+      const database = {
+        users: [
+          {
+            id: 1,
+            name: "John",
+            email: "john@gmail.com"
+          },
+          {
+            id: 2,
+            name: "Jane",
+            email: "jane@gmail.com"
+          }
+        ],
+        updateUserEmail: function(userId, newEmail) {
+          const user = this.users.find(user => user.id === userId);
+          user.email = newEmail;
+          console.log(`Email for user ${userId} updated to ${newEmail}`);
+        }
+      };
 
-app.get('/download', (req, res) => {
-  const filePath = path.join(__dirname, 'uploads', req.query.filename);
-  fs.readFile(filePath, (err, data) => {
-    if (err) {
-      console.error(err);
-      res.status(500).send('Server Error');
-    } else {
-      res.setHeader('Content-Type', 'application/octet-stream');
-      res.sendFile(filePath);
-    }
-  });
-});
+      function getUserId() {
+        const userId = prompt("Enter your user id:");
+        return parseInt(userId);
+      }
 
-app.listen(3000, () => {
-  console.log('Server started on port 3000');
-});
+      function changeEmail() {
+        const newEmail = document.getElementById("new-email").value;
+        const userId = getUserId();
+        database.updateUserEmail(userId, newEmail);
+      }
+
+    </script>
+  </body>
+</html>
 
 
 {% endhighlight %}
 
 
-This code snippet allows users to download files from the server but does not properly restrict access to only the `uploads` directory. Attackers can exploit this vulnerability by including "../" directory traversal sequences in the `req.query.filename` parameter to access sensitive files outside of the `uploads` directory.
+In the above code, any user can change the email of any other user, as there is no check for authorization.
 
-To fix this vulnerability, you can use the `path.resolve` function to resolve the file path relative to the `uploads` directory:
+Fix:
 
 
 
-{% highlight javascript %}
-javascript
-const path = require('path');
-const fs = require('fs');
-
-const fileName = req.query.filename;
-const filePath = path.resolve(__dirname, 'uploads', fileName);
-if (!filePath.startsWith(__dirname + '/uploads')) {
-  console.error('Unauthorized Access Attempted');
-  res.status(403).send('Unauthorized Access');
-  return;
-}
-fs.readFile(filePath, (err, data) => {
-  if (err) {
-    console.error(err);
-    res.status(500).send('Server Error');
+{% highlight html %}
+function changeEmail(newEmail) {
+  let userId = getUserId(); // Assuming this function returns the id of the logged-in user
+  let userRole = getUserRole(userId); // Assuming this function returns the role of the logged-in user
+  
+  if(userRole === 'admin') {
+    let targetUserId = prompt('Enter the user id whose email you want to update:');
+    database.updateUserEmail(targetUserId, newEmail);
   } else {
-    res.setHeader('Content-Type', 'application/octet-stream');
-    res.sendFile(filePath);
+    database.updateUserEmail(userId, newEmail);
   }
-});
+}
 
 {% endhighlight %}
