@@ -14,19 +14,20 @@ layout: page
 <p>Can you spot the vulnerability?</p>
 <br>
 {% highlight html %}
-from flask import Flask, request, render_template
-
-app = Flask(__name__)
-
-@app.route('/', methods=['GET', 'POST'])
-def index():
-    name = None
-    if request.method == 'POST':
-        name = request.form['name']
-    return render_template('index.html', name=name)
-
-if __name__ == '__main__':
-    app.run()
+<html>
+<head>
+    <title>File Upload Example</title>
+</head>
+<body>
+    <form method="post" action="FileUploadServlet" enctype="multipart/form-data">
+        <label>File:</label>
+        <input type="file" name="file" /><br />
+        <label>File Name:</label>
+        <input type="text" name="filename" /><br />
+        <input type="submit" value="Upload" />
+    </form>
+</body>
+</html>
 
 {% endhighlight %}{% highlight html %}
 {% endhighlight %}

@@ -4,67 +4,45 @@ layout: page
 
 <section class="post">
     <div class="flex-row-between">
-        <a href="{{ site.url }}{{ site.baseurl }}/2023-03-26"> Previous challenge</a>
+        <a href="{{ site.url }}{{ site.baseurl }}/challenges/2023-03-26"> Previous challenge</a>
              <a href="{{ site.url }}{{ site.baseurl }}/"> Home</a>
       <button title="Change theme" id="theme-toggle" onclick="modeSwitcher()">
         <div></div>
       </button>
     </div>
   </section>
-The vulnerability is Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')
+The vulnerability is NULL Pointer Dereference
 {% highlight html %}
 from flask import Flask, request, render_template
 
 app = Flask(__name__)
 
-@app.route('/')
+@app.route('/', methods=['GET', 'POST'])
 def index():
-    return render_template('index.html')
-
-@app.route('/', methods=['POST'])
-def process_form():
-    name = request.form['name']
-    message = "Hello " + name + ", welcome to our website!"
-    return render_template('index.html', message=message)
+    name = None
+    if request.method == 'POST':
+        name = request.form['name']
+    return render_template('index.html', name=name)
 
 if __name__ == '__main__':
     app.run()
 
 
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Example App</title>
-  </head>
-  <body>
-    <h1>Example App</h1>
-    <form method="POST">
-      <label for="name">Enter your name:</label>
-      <input type="text" id="name" name="name">
-      <button type="submit">Submit</button>
-    </form>
-    {% if message %}
-      <p>{{ message }}</p>
-    {% endif %}
-  </body>
-</html>
-
 {% endhighlight %}
 
 
-In the above code snippet, if the user enters a name that contains a script tag or some other malicious code, it will be executed on the webpage, which could lead to a cross-site scripting attack.
+In this code, the `print_name()` function takes a `name` parameter and tries to convert it to uppercase using the `.upper()` method. However, if `name` is `None` (i.e. null), then an error will occur because `None` is not a string object and does not have the `.upper()` method.
 
-To fix this vulnerability, we need to sanitize the user input to remove any potentially harmful characters. One way to do this is to use an HTML-escaping function like `cgi.escape()`.
-
-Fixed Code:
+To fix this vulnerability, we can add a simple check to ensure that `name` is not `None` before trying to convert it to uppercase. Here's the fixed code:
 
 
 
 {% highlight html %}
-import cgi
+def print_name(name):
+    if name is not None:
+        print(name.upper())
 
-name = input("Enter your name: ")
-sanitized_name = cgi.escape(name, quote=True)
-print("Hello " + sanitized_name + ", welcome to our website!")
+name = None
+print_name(name)
 
 {% endhighlight %}
