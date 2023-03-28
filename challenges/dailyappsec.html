@@ -4,7 +4,7 @@ layout: page
 
 <section class="post">
     <div class="flex-row-between">
-    <a href="{{ site.url }}{{ site.baseurl }}/2023-03-27"> Previous challenge</a>
+    <a href="{{ site.url }}{{ site.baseurl }}/challenges/2023-03-27"> Previous challenge</a>
           <a href="{{ site.url }}{{ site.baseurl }}/"> Home</a>
       <button title="Change theme" id="theme-toggle" onclick="modeSwitcher()">
         <div></div>
@@ -18,37 +18,16 @@ from flask import Flask, request, render_template
 
 app = Flask(__name__)
 
-@app.route('/')
+@app.route('/', methods=['GET', 'POST'])
 def index():
-    return render_template('index.html')
-
-@app.route('/', methods=['POST'])
-def process_form():
-    name = request.form['name']
-    message = "Hello " + name + ", welcome to our website!"
-    return render_template('index.html', message=message)
+    name = None
+    if request.method == 'POST':
+        name = request.form['name']
+    return render_template('index.html', name=name)
 
 if __name__ == '__main__':
     app.run()
 
 {% endhighlight %}{% highlight html %}
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Example App</title>
-  </head>
-  <body>
-    <h1>Example App</h1>
-    <form method="POST">
-      <label for="name">Enter your name:</label>
-      <input type="text" id="name" name="name">
-      <button type="submit">Submit</button>
-    </form>
-    {% if message %}
-      <p>{{ message }}</p>
-    {% endif %}
-  </body>
-</html>
-
 {% endhighlight %}
 <br>If you did, ping me at @robsware on twitter to get a Like and a retweet. Answers will be posted next day.

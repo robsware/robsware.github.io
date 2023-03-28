@@ -11,77 +11,60 @@ layout: page
       </button>
     </div>
   </section>
-The vulnerability is Missing Authorization
+The vulnerability is Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')
 {% highlight html %}
+from flask import Flask, request, render_template
+
+app = Flask(__name__)
+
+@app.route('/')
+def index():
+    return render_template('index.html')
+
+@app.route('/', methods=['POST'])
+def process_form():
+    name = request.form['name']
+    message = "Hello " + name + ", welcome to our website!"
+    return render_template('index.html', message=message)
+
+if __name__ == '__main__':
+    app.run()
+
+
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Change Email</title>
+    <title>Example App</title>
   </head>
   <body>
-    <h1>Change Email</h1>
-    <label for="new-email">New Email:</label>
-    <input type="email" id="new-email">
-    <button onclick="changeEmail()">Change Email</button>
-
-    <script>
-      // Database object assumes user data is stored here
-      const database = {
-        users: [
-          {
-            id: 1,
-            name: "John",
-            email: "john@gmail.com"
-          },
-          {
-            id: 2,
-            name: "Jane",
-            email: "jane@gmail.com"
-          }
-        ],
-        updateUserEmail: function(userId, newEmail) {
-          const user = this.users.find(user => user.id === userId);
-          user.email = newEmail;
-          console.log(`Email for user ${userId} updated to ${newEmail}`);
-        }
-      };
-
-      function getUserId() {
-        const userId = prompt("Enter your user id:");
-        return parseInt(userId);
-      }
-
-      function changeEmail() {
-        const newEmail = document.getElementById("new-email").value;
-        const userId = getUserId();
-        database.updateUserEmail(userId, newEmail);
-      }
-
-    </script>
+    <h1>Example App</h1>
+    <form method="POST">
+      <label for="name">Enter your name:</label>
+      <input type="text" id="name" name="name">
+      <button type="submit">Submit</button>
+    </form>
+    {% if message %}
+      <p>{{ message }}</p>
+    {% endif %}
   </body>
 </html>
-
 
 {% endhighlight %}
 
 
-In the above code, any user can change the email of any other user, as there is no check for authorization.
+In the above code snippet, if the user enters a name that contains a script tag or some other malicious code, it will be executed on the webpage, which could lead to a cross-site scripting attack.
 
-Fix:
+To fix this vulnerability, we need to sanitize the user input to remove any potentially harmful characters. One way to do this is to use an HTML-escaping function like `cgi.escape()`.
+
+Fixed Code:
 
 
 
 {% highlight html %}
-function changeEmail(newEmail) {
-  let userId = getUserId(); // Assuming this function returns the id of the logged-in user
-  let userRole = getUserRole(userId); // Assuming this function returns the role of the logged-in user
-  
-  if(userRole === 'admin') {
-    let targetUserId = prompt('Enter the user id whose email you want to update:');
-    database.updateUserEmail(targetUserId, newEmail);
-  } else {
-    database.updateUserEmail(userId, newEmail);
-  }
-}
+import cgi
+
+name = input("Enter your name: ")
+sanitized_name = cgi.escape(name, quote=True)
+print("Hello " + sanitized_name + ", welcome to our website!")
 
 {% endhighlight %}
