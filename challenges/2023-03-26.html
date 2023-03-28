@@ -1,0 +1,52 @@
+---
+layout: page
+---
+
+<section class="post">
+    <div class="flex-row-between">
+        <a href="{{ site.url }}{{ site.baseurl }}/"> Home</a>
+      <button title="Change theme" id="theme-toggle" onclick="modeSwitcher()">
+        <div></div>
+      </button>
+    </div>
+  </section>
+{% highlight c# %}
+csharp
+using System;
+using System.Web;
+
+public class MyPage : IHttpHandler {
+
+    public void ProcessRequest (HttpContext context) {
+        context.Response.ContentType = "text/plain";
+        int* ptr = new int(5);
+        int* ptr2 = ptr;
+        delete ptr; // Here ptr is freed
+        *ptr2 = 10; //  vulnerability
+        context.Response.Write("Use After Free Vulnerability Fixed!");
+    }
+
+    public bool IsReusable {
+        get {
+            return false;
+        }
+    }
+}
+
+
+{% endhighlight %}
+
+Fixing Use After Free vulnerability:
+
+To fix the Use After Free vulnerability, we must prevent the use of the pointer after it has been freed. We can do that by setting the pointer to null or invalidating it. Here is an example of how to fix the above code:
+
+
+{% highlight c# %}
+
+int* ptr = new int(5);
+int* ptr2 = ptr;
+delete ptr; // Here, ptr is freed
+ptr = nullptr; // Pointer set to null
+*ptr2 = 10; // Use after free vulnerability is avoided now
+
+{% endhighlight %}

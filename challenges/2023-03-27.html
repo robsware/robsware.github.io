@@ -1,0 +1,71 @@
+---
+layout: page
+---
+
+<section class="post">
+    <div class="flex-row-between">
+        <a href="{{ site.url }}{{ site.baseurl }}/"> Home</a>
+      <button title="Change theme" id="theme-toggle" onclick="modeSwitcher()">
+        <div></div>
+      </button>
+    </div>
+  </section>
+The vulnerability is Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')
+{% highlight javascript %}
+javascript
+const express = require('express');
+const fs = require('fs');
+const path = require('path');
+
+const app = express();
+
+app.get('/download', (req, res) => {
+  const filePath = path.join(__dirname, 'uploads', req.query.filename);
+  fs.readFile(filePath, (err, data) => {
+    if (err) {
+      console.error(err);
+      res.status(500).send('Server Error');
+    } else {
+      res.setHeader('Content-Type', 'application/octet-stream');
+      res.sendFile(filePath);
+    }
+  });
+});
+
+app.listen(3000, () => {
+  console.log('Server started on port 3000');
+});
+
+
+{% endhighlight %}
+
+
+This code snippet allows users to download files from the server but does not properly restrict access to only the `uploads` directory. Attackers can exploit this vulnerability by including "../" directory traversal sequences in the `req.query.filename` parameter to access sensitive files outside of the `uploads` directory.
+
+To fix this vulnerability, you can use the `path.resolve` function to resolve the file path relative to the `uploads` directory:
+
+
+
+{% highlight javascript %}
+javascript
+const path = require('path');
+const fs = require('fs');
+
+const fileName = req.query.filename;
+const filePath = path.resolve(__dirname, 'uploads', fileName);
+if (!filePath.startsWith(__dirname + '/uploads')) {
+  console.error('Unauthorized Access Attempted');
+  res.status(403).send('Unauthorized Access');
+  return;
+}
+fs.readFile(filePath, (err, data) => {
+  if (err) {
+    console.error(err);
+    res.status(500).send('Server Error');
+  } else {
+    res.setHeader('Content-Type', 'application/octet-stream');
+    res.sendFile(filePath);
+  }
+});
+
+{% endhighlight %}
