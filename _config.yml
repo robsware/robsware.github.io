@@ -31,7 +31,7 @@ permalink: pretty
 # url: "http://localhost:4000" # 
 # baseurl: "" # 
 
-
+encoding: utf-8
 markdown: kramdown
 kramdown:
   input: GFM
