@@ -1,0 +1,76 @@
+---
+layout: page
+---
+
+<section class="post">
+    <div class="flex-row-between">
+        <a href="{{ site.url }}{{ site.baseurl }}/challenges/2023-03-26"> Previous challenge</a>
+             <a href="{{ site.url }}{{ site.baseurl }}/"> Home</a>
+      <button title="Change theme" id="theme-toggle" onclick="modeSwitcher()">
+        <div></div>
+      </button>
+    </div>
+  </section>
+The vulnerability is Cross-Site Request Forgery (CSRF)
+{% highlight html %}php
+<?php
+session_start();
+$username = $_SESSION['username'] ?? 'Guest';
+?>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSRF Demo</title>
+</head>
+<body>
+    <h1>Welcome, <?php echo $username; ?>!</h1>
+
+    <?php if ($username !== 'Guest'): ?>
+    <form method="post" action="update.php">
+        <input type="text" name="username" placeholder="Enter your new username">
+        <input type="submit" name="submit" value="Update">
+    </form>
+    <?php endif; ?>
+</body>
+</html>
+
+php
+<?php
+session_start();
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $username = $_POST['username'];
+    
+    // Update username in database
+    
+    $_SESSION['username'] = $username;
+    header('Location: index.php');
+    exit();
+}
+?>
+
+{% endhighlight %}
+
+
+In this code, an attacker can create an HTML form on a different website and submit it to the `update.php` script, which would process the form data and update the user's information without their knowledge or consent.
+
+To fix this vulnerability, we need to add a CSRF token to the form that prevents outside requests from being submitted. Here's an example:
+
+
+
+{% highlight html %}php
+<?php
+// Generate a CSRF token and add it to the session
+session_start();
+$_SESSION['csrf_token'] = base64_encode(openssl_random_pseudo_bytes(32));
+?>
+
+<form method="post" action="update.php">
+    <input type="hidden" name="csrf_token" value="<?php echo $_SESSION['csrf_token']; ?>">
+    <input type="text" name="username" placeholder="Enter your username">
+    <input type="password" name="password" placeholder="Enter your password">
+    <input type="submit" name="submit" value="Update">
+</form>
+
+{% endhighlight %}
