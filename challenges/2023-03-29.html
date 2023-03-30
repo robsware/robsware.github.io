@@ -1,0 +1,97 @@
+---
+layout: page
+---
+
+<section class="post">
+    <div class="flex-row-between">
+        <a href="{{ site.url }}{{ site.baseurl }}/challenges/2023-03-27"> Previous challenge</a>
+             <a href="{{ site.url }}{{ site.baseurl }}/"> Home</a>
+      <button title="Change theme" id="theme-toggle" onclick="modeSwitcher()">
+        <div></div>
+      </button>
+    </div>
+  </section>
+The vulnerability is Server-Side Request Forgery (SSRF)
+{% highlight html %}
+from flask import Flask, render_template, request
+import requests
+
+app = Flask(__name__)
+
+@app.route('/')
+def index():
+    return render_template('index.html')
+
+@app.route('/response', methods=['POST'])
+def response():
+    target_url = request.form['url']
+    response = requests.get(target_url)
+    return response.content
+
+if __name__ == '__main__':
+    app.run(port=5000)
+
+
+from flask import Flask, render_template, request
+import requests
+import re
+
+app = Flask(__name__)
+
+whitelisted_urls = ['https://example.com', 'https://google.com']
+
+@app.route('/')
+def index():
+    return render_template('index.html')
+
+@app.route('/response', methods=['POST'])
+def response():
+    target_url = request.form['url']
+
+    if target_url not in whitelisted_urls:
+        return "Invalid URL: " + target_url, 400
+
+    if not re.match(r'^https?://(?:[a-z0-9-]+\.)+[a-z]{2,6}(?:/[a-z0-9+.-]+)*$', target_url):
+        return "Invalid format for URL: " + target_url, 400
+
+    response = requests.get(target_url)
+    return response.content
+
+if __name__ == '__main__':
+    app.run(port=5000)
+
+{% endhighlight %}
+
+
+The above code is vulnerable to SSRF as the input `target_url` is not validated or sanitized, allowing an attacker to supply a malicious or spoofed URL that can access internal resources or external resources that should not be accessible. 
+
+To fix this vulnerability, we can use a white list approach where we only allow requests to specific known URLs or IP addresses. We can also validate and restrict the input by using regular expressions or other input validation techniques to ensure that the URL is a valid and safe one. Moreover, we can use a network proxy which will help us prevent such attacks by blocking requests to internal resources. Here's an example of a code snippet that implements these fixes:
+
+
+
+{% highlight html %}
+import requests
+import re
+
+# White listed URLs
+whitelisted_urls = ['https://example.com', 'https://google.com']
+
+# User-provided input for the target URL
+target_url = input("Enter the target URL: ")
+
+# Check if the input URL is allowed
+if target_url not in whitelisted_urls:
+    raise ValueError("Invalid URL: ", target_url)
+
+# Validate the input URL
+if not re.match(r'^https?://(?:[a-z0-9-]+\.)+[a-z]{2,6}(?:/[a-z0-9+.-]+)*$', target_url):
+    raise ValueError("Invalid format for URL: ", target_url)
+
+# Send a GET request to the target URL
+response = requests.get(target_url)
+
+# Print the response status code and content
+print("Response Status Code: ", response.status_code)
+print("Response Content: ", response.content)
+
+{% endhighlight %}
