@@ -1,0 +1,86 @@
+---
+layout: page
+---
+
+<section class="post">
+    <div class="flex-row-between">
+        <a href="{{ site.url }}{{ site.baseurl }}/challenges/2023-03-28"> Previous challenge</a>
+             <a href="{{ site.url }}{{ site.baseurl }}/"> Home</a>
+      <button title="Change theme" id="theme-toggle" onclick="modeSwitcher()">
+        <div></div>
+      </button>
+    </div>
+  </section>
+The vulnerability is Deserialization of Untrusted Data
+{% highlight python %}
+python
+from flask import Flask, request
+import pickle
+
+app = Flask(__name__)
+
+class User:
+    def __init__(self, name, age, email):
+        self.name = name
+        self.age = age
+        self.email = email
+
+@app.route('/', methods=['POST'])
+def index():
+    user_data = request.form.get('user_data')
+    user = pickle.loads(user_data)
+    return f'Welcome, {user.name}, ({user.email})'
+
+if __name__ == '__main__':
+    app.run()
+
+python
+from flask import Flask, request
+import json
+
+app = Flask(__name__)
+
+class User:
+    def __init__(self, name, age, email):
+        self.name = name
+        self.age = age
+        self.email = email
+
+@app.route('/', methods=['POST'])
+def index():
+    user_data = json.loads(request.form.get('user_data'))
+    user = User(user_data['name'], user_data['age'], user_data['email'])
+    return f'Welcome, {user.name}, ({user.email})'
+
+if __name__ == '__main__':
+    app.run()
+
+{% endhighlight %}
+
+
+This code snippet is vulnerable to Deserialization of Untrusted Data because it uses `pickle` module to serialize and deserialize the `Employee` object. This module does not check for malicious code, which means an attacker can send a malicious payload to execute arbitrary code on the victim's machine.
+
+To fix this vulnerability, use a safe serialization format like `json` or `yaml`.
+
+Fixed code:
+
+
+
+{% highlight python %}
+python
+import json
+
+class Employee:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+employee = Employee('John', 25)
+
+serialized_employee = json.dumps({'name': employee.name, 'age': employee.age})
+
+deserialized_employee = json.loads(serialized_employee)
+
+print(deserialized_employee)
+
+{% endhighlight %}
