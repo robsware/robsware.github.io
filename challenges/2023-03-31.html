@@ -1,0 +1,79 @@
+---
+layout: page
+---
+
+<section class="post">
+    <div class="flex-row-between">
+        <a href="{{ site.url }}{{ site.baseurl }}/challenges/2023-03-29"> Previous challenge</a>
+             <a href="{{ site.url }}{{ site.baseurl }}/"> Home</a>
+      <button title="Change theme" id="theme-toggle" onclick="modeSwitcher()">
+        <div></div>
+      </button>
+    </div>
+  </section>
+The vulnerability is Unrestricted Upload of File with Dangerous Type
+{% highlight html %}
+from flask import Flask, request
+
+app = Flask(__name__)
+
+@app.route('/')
+def index():
+    return '''
+        <html>
+            <body>
+                <form action="/upload" method="post" enctype="multipart/form-data">
+                    <input type="file" name="file">
+                    <input type="submit" value="Upload">
+                </form>
+            </body>
+        </html>
+    '''
+
+@app.route('/upload', methods=['POST'])
+def upload_file():
+    uploaded_file = request.files['file']
+    uploaded_file.save(uploaded_file.filename)
+    return 'File uploaded successfully.'
+
+if __name__ == '__main__':
+    app.run(debug=True)
+
+
+{% endhighlight %}
+
+
+The above code is vulnerable to Unrestricted Upload of File with Dangerous Type, as it doesn't check if the uploaded file is of a safe type or not. An attacker can abuse this vulnerability by uploading a malicious file with an executable extension such as .exe, .py, .sh, etc. which can lead to remote code execution.
+
+To fix this vulnerability, we can check the file's extension to ensure it is of an allowed type. We can do this by creating a set of allowed extensions and checking if the uploaded file's extension is present in the set. Here is an example:
+
+
+
+{% highlight html %}
+import os
+from flask import Flask, request
+
+app = Flask(__name__)
+
+ALLOWED_EXTENSIONS = {'txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'}
+
+def allowed_file(filename):
+    return '.' in filename and \
+           filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
+
+@app.route('/upload', methods=['POST'])
+def upload_file():
+    uploaded_file = request.files['file']
+    if uploaded_file.filename == '':
+        return 'No file selected.'
+    if uploaded_file and allowed_file(uploaded_file.filename):
+        # This line saves the file to the current working directory
+        uploaded_file.save(uploaded_file.filename)
+        return 'File uploaded successfully.'
+    else:
+        return 'Invalid file type.'
+
+if __name__ == '__main__':
+    app.run()
+
+{% endhighlight %}
