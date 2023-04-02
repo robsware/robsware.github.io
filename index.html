@@ -40,4 +40,9 @@ layout: default
         </li>
         {% endfor %}
     </ul>
+    <h2>Medium Articles</h2>
+    <ul>
+        <a href="https://medium.com/@robsware/how-to-access-your-virtual-machine-from-the-internet-with-openvpn-b26dc80cd3cb">MEDIUM: openvpn</a>
+        <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "Sep 21, 2020" }}</time>
+    </ul>
 </section>

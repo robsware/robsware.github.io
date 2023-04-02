@@ -1,0 +1,95 @@
+---
+layout: page
+---
+
+<section class="post">
+    <div class="flex-row-between">
+        <a href="{{ site.url }}{{ site.baseurl }}/challenges/2023-03-30"> Previous challenge</a>
+             <a href="{{ site.url }}{{ site.baseurl }}/"> Home</a>
+      <button title="Change theme" id="theme-toggle" onclick="modeSwitcher()">
+        <div></div>
+      </button>
+    </div>
+  </section>
+The vulnerability is Use of Hard-coded Credentials
+{% highlight html %}csharp
+public class LoginController : Controller
+{
+    [HttpPost]
+    public IActionResult Login(string username, string password)
+    {
+        // Hard-coded credentials
+        string adminUsername = "admin";
+        string adminPassword = "password123";
+
+        if (username == adminUsername && password == adminPassword)
+        {
+            // Successful login
+            return RedirectToAction("Dashboard");
+        }
+        else
+        {
+            // Failed login
+            ViewBag.ErrorMessage = "Invalid credentials";
+            return View();
+        }
+    }
+}
+
+html
+@{
+    ViewBag.Title = "Login";
+}
+
+<h2>Login</h2>
+
+<form method="post" action="@Url.Action("Login", "Login")">
+    <label for="username">Username</label>
+    <input type="text" name="username" />
+    <br />
+    <label for="password">Password</label>
+    <input type="password" name="password" />
+    <br />
+    <input type="submit" value="Submit" />
+</form>
+
+@if (ViewBag.ErrorMessage != null)
+{
+    <p class="error">@ViewBag.ErrorMessage</p>
+}
+
+{% endhighlight %}
+To fix the vulnerability, we first must set up and configure an actual authentication framework, such as ASP.NET Core Identity, as it provides secure handling of user authentication, including the storage of sensitive data such as credentials.
+
+Once the framework is set up, we modify the LoginController code to use the framework's user authentication system, such as the `SignInManager` provided by ASP.NET Core Identity, to authenticate users. This way, we avoid using hardcoded credentials and ensure that the login system is secure, reliable, and scalable.
+
+{% highlight html %}csharp
+public class LoginController : Controller
+{
+    private readonly SignInManager<ApplicationUser> _signInManager;
+
+    public LoginController(SignInManager<ApplicationUser> signInManager)
+    {
+        _signInManager = signInManager;
+    }
+
+    [HttpPost]
+    public async Task<IActionResult> Login(string username, string password)
+    {
+        var result = await _signInManager.PasswordSignInAsync(username, password, false, false);
+
+        if (result.Succeeded)
+        {
+            // Successful login
+            return RedirectToAction("Dashboard");
+        }
+        else
+        {
+            // Failed login
+            ViewBag.ErrorMessage = "Invalid credentials";
+            return View();
+        }
+    }
+}
+
+{% endhighlight %}
