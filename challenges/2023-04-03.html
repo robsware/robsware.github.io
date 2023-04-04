@@ -1,0 +1,129 @@
+---
+layout: page
+---
+
+<section class="post">
+    <div class="flex-row-between">
+        <a href="{{ site.url }}{{ site.baseurl }}/challenges/2023-04-01"> Previous challenge</a>
+             <a href="{{ site.url }}{{ site.baseurl }}/"> Home</a>
+      <button title="Change theme" id="theme-toggle" onclick="modeSwitcher()">
+        <div></div>
+      </button>
+    </div>
+  </section>
+The vulnerability is Deserialization of Untrusted Data
+{% highlight html %}javascript
+// vulnerable code
+const express = require('express');
+const app = express();
+const cookieParser = require('cookie-parser');
+
+app.use(cookieParser());
+
+app.get('/', (req, res) => {
+  const userData = req.cookies.userData;
+  const deserializedData = JSON.parse(userData);
+  res.send(`Hello, ${deserializedData.username}!`);
+});
+
+app.listen(3000, () => console.log('Server is running on port 3000'));
+
+html
+<!-- add the vulnerable code to a web application -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Web App</title>
+</head>
+<body>
+  <h1>Welcome to My Web App!</h1>
+  <script src="vulnerableCode.js"></script>
+</body>
+</html>
+
+{% endhighlight %}
+xpress = require('express');
+const app = express();
+const cookieParser = require('cookie-parser');
+
+app.use(cookieParser());
+
+app.get('/', (req, res) => {
+  const userData = req.cookies.userData;
+  const deserializedData = JSON.parse(userData);
+  res.send(`Hello, ${deserializedData.username}!`);
+});
+
+app.listen(3000, () => console.log('Server is running on port 3000'));
+```
+
+```html
+<!-- add the vulnerable code to a web application -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Web App</title>
+</head>
+<body>
+  <h1>Welcome to My Web App!</h1>
+  <script src="vulnerableCode.js"></script>
+</body>
+</html>
+```
+
+```javascript
+// solution how to fix the vulnerable code
+const express = require('express');
+const app = express();
+const cookieParser = require('cookie-parser');
+const jwt = require('jsonwebtoken');
+const SECRET_KEY = 'my-super-secret-key';
+
+app.use(cookieParser());
+
+app.get('/', (req, res) => {
+  const token = req.cookies.userData;
+  
+  try {
+    const deserializedData = jwt.verify(token, SECRET_KEY);
+    res.send(`Hello, ${deserializedData.username}!`);
+  } catch (err) {
+    res.status(400).send('Invalid cookie data');
+  }
+});
+
+app.listen(3000, () => console.log('Server is running on port 3000'));
+```
+
+To fix the vulnerability, we use JSON Web Tokens (JWT) for securely transmitting information between parties as a JSON object. This information can be verified and trusted because it is digitally signed. We use the 'jsonwebtoken' package to help generate and verify these tokens. 
+
+We replace the `JSON.parse` part with `jwt.verify(token, SECRET_KEY)`, which verifies the token and returns the deserialized data if the token is valid. If the token is not valid, it will throw an error, which we catch and send back an error response. This way, we ensure that only trusted data is deserialized in our application.
+
+{% highlight html %}javascript
+// solution how to fix the vulnerable code
+const express = require('express');
+const app = express();
+const cookieParser = require('cookie-parser');
+const jwt = require('jsonwebtoken');
+const SECRET_KEY = 'my-super-secret-key';
+
+app.use(cookieParser());
+
+app.get('/', (req, res) => {
+  const token = req.cookies.userData;
+  
+  try {
+    const deserializedData = jwt.verify(token, SECRET_KEY);
+    res.send(`Hello, ${deserializedData.username}!`);
+  } catch (err) {
+    res.status(400).send('Invalid cookie data');
+  }
+});
+
+app.listen(3000, () => console.log('Server is running on port 3000'));
+
+{% endhighlight %}
