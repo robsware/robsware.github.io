@@ -31,22 +31,6 @@ public class UserController : ApiController
     }
 }
 
-{% endhighlight %}csharp
-public class UserController : ApiController
-{
-    // GET api/user/5
-    [HttpGet]
-    public IHttpActionResult GetUser(int id)
-    {
-        User user = Database.GetUserById(id);
-        if (user != null)
-        {
-            return Ok(user);
-        }
-        return NotFound();
-    }
-}
-
-{% highlight html %}
 {% endhighlight %}
+
 <br>If you did, ping me at @robsware on twitter to get a Like and a retweet. Answers will be posted next day.
