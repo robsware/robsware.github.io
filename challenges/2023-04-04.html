@@ -1,0 +1,65 @@
+---
+layout: page
+---
+
+<section class="post">
+    <div class="flex-row-between">
+        <a href="{{ site.url }}{{ site.baseurl }}/challenges/2023-04-03"> Previous challenge</a>
+             <a href="{{ site.url }}{{ site.baseurl }}/"> Home</a>
+      <button title="Change theme" id="theme-toggle" onclick="modeSwitcher()">
+        <div></div>
+      </button>
+    </div>
+  </section>
+The vulnerability is Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')
+{% highlight python %}
+python
+from flask import Flask, request, redirect, render_template_string
+
+app = Flask(__name__)
+
+@app.route('/', methods=['GET', 'POST'])
+def index():
+    if request.method == 'POST':
+        user_name = request.form.get('username')
+        return render_template_string('Hello, {{ user_name }}!', user_name=user_name)
+
+    return '''
+    <form method="POST">
+        <input type="text" name="username" placeholder="Enter your name">
+        <input type="submit" value="Submit">
+    </form>
+    '''
+
+if __name__ == '__main__':
+    app.run(port=8000)
+
+
+{% endhighlight %}
+To fix the vulnerability, you need to sanitize user input by escaping any potentially harmful characters. In Python, you can use the `html.escape()` function from the `html` module to escape characters that have special meaning in HTML. In the code above, `sanitized_user_name` is created by escaping `user_name` input, and then `sanitized_user_name` is used in the template rendering. This way, any HTML tags and other potentially harmful input will be rendered as plain text instead of being executed by the browser.
+
+{% highlight python %}
+python
+from flask import Flask, request, redirect, render_template_string
+import html
+
+app = Flask(__name__)
+
+@app.route('/', methods=['GET', 'POST'])
+def index():
+    if request.method == 'POST':
+        user_name = request.form.get('username')
+        sanitized_user_name = html.escape(user_name)
+        return render_template_string('Hello, {{ user_name }}!', user_name=sanitized_user_name)
+
+    return '''
+    <form method="POST">
+        <input type="text" name="username" placeholder="Enter your name">
+        <input type="submit" value="Submit">
+    </form>
+    '''
+
+if __name__ == '__main__':
+    app.run(port=8000)
+
+{% endhighlight %}
