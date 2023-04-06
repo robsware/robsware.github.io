@@ -1,0 +1,58 @@
+---
+layout: page
+---
+
+<section class="post">
+    <div class="flex-row-between">
+        <a href="{{ site.url }}{{ site.baseurl }}/challenges/2023-04-04"> Previous challenge</a>
+             <a href="{{ site.url }}{{ site.baseurl }}/"> Home</a>
+      <button title="Change theme" id="theme-toggle" onclick="modeSwitcher()">
+        <div></div>
+      </button>
+    </div>
+  </section>
+The vulnerability is Missing Authorization
+{% highlight c# %}
+csharp
+public class UserController : ApiController
+{
+    // GET api/user/5
+    [HttpGet]
+    public IHttpActionResult GetUser(int id)
+    {
+        User user = Database.GetUserById(id);
+        if (user != null)
+        {
+            return Ok(user);
+        }
+        return NotFound();
+    }
+}
+
+
+{% endhighlight %}
+1. Add the `[Authorize]` attribute on the UserController class to enable the authorization check for all the actions within the controller.
+
+2. Check if the User.Identity.Name (the authenticated user's username) is the same as the username of the requested user (user.Username). This ensures that only the authenticated user can access their own information.
+
+{% highlight c# %}
+csharp
+[Authorize] // Add this attribute to enable authorization
+public class UserController : ApiController
+{
+    // GET api/user/5
+    [HttpGet]
+    public IHttpActionResult GetUser(int id)
+    {
+        User user = Database.GetUserById(id);
+
+        // Ensure that the user requesting the data is the same as the data requested
+        if (user != null && User.Identity.Name == user.Username)
+        {
+            return Ok(user);
+        }
+        return NotFound();
+    }
+}
+
+{% endhighlight %}
