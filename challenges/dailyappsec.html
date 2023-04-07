@@ -28,15 +28,6 @@ public class CodeInjectionExample {
 }
 
 {% endhighlight %}java
-// Vulnerable code
-import java.io.IOException;
-
-public class CodeInjectionExample {
-    public static void main(String[] args) throws IOException {
-        String userInput = args[0]; // Assume user input is passed from command line argument
-        Runtime.getRuntime().exec("java -jar someApplication.jar " + userInput);
-    }
-}
 
 
 <br>If you did, ping me at @robsware on twitter to get a Like and a retweet. Answers will be posted next day.
