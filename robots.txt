@@ -1,2 +1,2 @@
 User-agent: *
-Sitemap: https://robsware.github.io//sitemap.xml
+Sitemap: https://robsware.github.io/sitemap.xml

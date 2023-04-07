@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
  <title>robsware</title>
- <link href="https://robsware.github.io//atom.xml" rel="self"/>
- <link href="https://robsware.github.io//"/>
- <updated>2023-04-06T10:21:07+01:00</updated>
- <id>https://robsware.github.io/</id>
+ <link href="https://robsware.github.io/atom.xml" rel="self"/>
+ <link href="https://robsware.github.io/"/>
+ <updated>2023-04-07T10:42:57+01:00</updated>
+ <id>https://robsware.github.io</id>
  <author>
    <name>gesko</name>
    <email>your-email@email.com</email>
@@ -14,9 +14,9 @@
  
  <entry>
    <title>The value of patience</title>
-   <link href="https://robsware.github.io//2023/03/23/patience"/>
+   <link href="https://robsware.github.io/2023/03/23/patience"/>
    <updated>2023-03-23T00:00:00+00:00</updated>
-   <id>https://robsware.github.io//2023/03/23/patience</id>
+   <id>https://robsware.github.io/2023/03/23/patience</id>
    <content type="html">&lt;p&gt;“If you wait by the river long enough, the bodies of your enemies will float by.”  - Unknown&lt;/p&gt;
 
 &lt;p&gt;This rather morbid quote is a good analogy for many things in the tech world. The tech industry is known for moving quickly, and the idea of waiting may seem out of place. However, I have come to appreciate the benefits of being patient in my career so far.&lt;/p&gt;
@@ -47,9 +47,9 @@
  
  <entry>
    <title>OSWE Review - A return to roots</title>
-   <link href="https://robsware.github.io//2023/03/13/oswe"/>
+   <link href="https://robsware.github.io/2023/03/13/oswe"/>
    <updated>2023-03-13T00:00:00+00:00</updated>
-   <id>https://robsware.github.io//2023/03/13/oswe</id>
+   <id>https://robsware.github.io/2023/03/13/oswe</id>
    <content type="html">&lt;p&gt;At the start of December 2022, I enrolled into the Learn One - OSWE package and I started on it immediately to make use of the holiday season downtime. By March 2023, I successfully cleared the OSWE exam with full points. As opposed to my OSEP experience, this one was mostly solid but that is likely in part of my background and future goals.&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;My Background&lt;/strong&gt;&lt;/p&gt;
@@ -155,9 +155,9 @@
  
  <entry>
    <title>The making of a Discord bot, from a joke project to (some) usefulness.</title>
-   <link href="https://robsware.github.io//2022/08/21/ump9"/>
+   <link href="https://robsware.github.io/2022/08/21/ump9"/>
    <updated>2022-08-21T00:00:00+01:00</updated>
-   <id>https://robsware.github.io//2022/08/21/ump9</id>
+   <id>https://robsware.github.io/2022/08/21/ump9</id>
    <content type="html">&lt;p&gt;In early 2020, when the lockdowns were still going strong, I got possessed by this incredible need to create a bot. Bots have been a subject of fascination for me for a long time, out of various reasons, and now I wanted to get my hands dirty and build something for my small Discord community.&lt;/p&gt;
 
 &lt;p&gt;The bot has been through a number of revisions and refactoring as I have switched technologies around and the discord API changed and expanded, but I have stuck with javascript throughout its full duration and learned a lot of useful things!&lt;/p&gt;
@@ -622,9 +622,9 @@ Other misc discord features
  
  <entry>
    <title>OSEP - Finding my limits</title>
-   <link href="https://robsware.github.io//2022/06/22/osep"/>
+   <link href="https://robsware.github.io/2022/06/22/osep"/>
    <updated>2022-06-22T00:00:00+01:00</updated>
-   <id>https://robsware.github.io//2022/06/22/osep</id>
+   <id>https://robsware.github.io/2022/06/22/osep</id>
    <content type="html">&lt;p&gt;I have successfully cleared the OSEP exam in April on my 2nd attempt with 15 flags and secret.txt. I have some mixed feelings about the whole experience so I will try to put those thoughts in writing in this post.&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;The platform&lt;/strong&gt;&lt;/p&gt;
@@ -723,9 +723,9 @@ Other misc discord features
  
  <entry>
    <title>Between Worlds</title>
-   <link href="https://robsware.github.io//2022/06/17/worlds"/>
+   <link href="https://robsware.github.io/2022/06/17/worlds"/>
    <updated>2022-06-17T00:00:00+01:00</updated>
-   <id>https://robsware.github.io//2022/06/17/worlds</id>
+   <id>https://robsware.github.io/2022/06/17/worlds</id>
    <content type="html">&lt;p&gt;I have been working in tech for about 5 years now, but it would be amiss to say that tech hasn’t been a part of my life for as long as I can remember, be it through modding games or hacking my PSP when I was 12. So despite my years studying and working in finance, I still maintained a healthy relationship with it - I was running linux as my main OS all of this time!&lt;/p&gt;
 
 &lt;p&gt;But now that I work in tech and tech is also my hobby, I have been getting increasingly separated from the rest of the world, a fact exacerbated by the pandemic, to the point where I struggle to understand what people who do not work in tech do. I am aware that sounds incredibly close minded, and I don’t intend it in a disparaging way, it’s just a by-product of tech being part of my every waking moment for the past few years. While I’ve put my startup dreams to rest for the time being, I do have a feeling that this isolationism will be a burden in the future. But every time I have to venture out into the “real world” and deal with official documents, warranties or shipping things it feels like a massive struggle compared to the ease of doing anything on a computer or through a webapp. But the real divide comes from interacting with non-techies.&lt;/p&gt;
@@ -738,9 +738,9 @@ Other misc discord features
  
  <entry>
    <title>Building an energy saving AC controller with 0 prior knowledge.</title>
-   <link href="https://robsware.github.io//2022/05/14/accontroller"/>
+   <link href="https://robsware.github.io/2022/05/14/accontroller"/>
    <updated>2022-05-14T00:00:00+01:00</updated>
-   <id>https://robsware.github.io//2022/05/14/accontroller</id>
+   <id>https://robsware.github.io/2022/05/14/accontroller</id>
    <content type="html">&lt;p&gt;The very week after I attempted my OSEP exam, I got contacted by an acquaintance that knew I did computer stuff and asked if I could build a device that would stop the AC if there wasn’t anybody in the room, with a 2 week deadline and for less than $40.&lt;/p&gt;
 
 &lt;p&gt;I had 0 knowledge of electronics. I had never touched a jumper wire or a breadboard in my life. I did not know how an AC worked or how to determine the occupancy of a room. I should’ve said no.&lt;/p&gt;
@@ -1027,9 +1027,9 @@ Shipping: $3
  
  <entry>
    <title>Hacker culture - only for millenials?</title>
-   <link href="https://robsware.github.io//2021/09/18/hackerculture"/>
+   <link href="https://robsware.github.io/2021/09/18/hackerculture"/>
    <updated>2021-09-18T00:00:00+01:00</updated>
-   <id>https://robsware.github.io//2021/09/18/hackerculture</id>
+   <id>https://robsware.github.io/2021/09/18/hackerculture</id>
    <content type="html">&lt;p&gt;As a late millennial, I’ve finally grown old enough to judge the younger generation. Just like our parents complained about our generation, I too shall complain about the younger generation, the zoomers (gen Z) but I’ll mainly keep to aspects related to my field of work - information security.&lt;/p&gt;
 
 &lt;p&gt;I think the millennial generation was fortunate enough to be born at the same time as the internet and grow up with it. I’d extend that to computing in general. Many of the systems available in the 80s and 90s were upgradeable and customizable to a much larger degree compared to modern hardware. The internet was a decentralised wild west, where you’d have hundreds of BBSes and later forums focused on specific interests. Not so much now where 90% of internet traffic is focused on a handful of websites. There was a sense of exploration and curiosity. Both hardware and software were simpler and one could start tweaking with them in order to get more performance or make them do some cool stuff.&lt;/p&gt;
@@ -1045,9 +1045,9 @@ Shipping: $3
  
  <entry>
    <title>The augmented human</title>
-   <link href="https://robsware.github.io//2021/07/31/augmented"/>
+   <link href="https://robsware.github.io/2021/07/31/augmented"/>
    <updated>2021-07-31T00:00:00+01:00</updated>
-   <id>https://robsware.github.io//2021/07/31/augmented</id>
+   <id>https://robsware.github.io/2021/07/31/augmented</id>
    <content type="html">&lt;p&gt;At 6:52 AM, my alarm rings. My phone app uses artificial intelligence to calculate the perfect moment to wake me using movement and data aggregated and analyzed on my sleep patterns.&lt;/p&gt;
 
 &lt;p&gt;I get up, shower, and hop on my bike. My podcast app recommends a number of episodes based on my listening history. I pick one focused on ransomware, which comes up at work later. Nice choice. I need to pick up some groceries while I’m out on my morning bike ride. I input “Nearby grocery store” and google maps points me to one that is open at this early hour.&lt;/p&gt;
@@ -1070,9 +1070,9 @@ Shipping: $3
  
  <entry>
    <title>How to access your virtual machine from the internet with OpenVPN</title>
-   <link href="https://robsware.github.io//2021/06/21/openvpn"/>
+   <link href="https://robsware.github.io/2021/06/21/openvpn"/>
    <updated>2021-06-21T00:00:00+01:00</updated>
-   <id>https://robsware.github.io//2021/06/21/openvpn</id>
+   <id>https://robsware.github.io/2021/06/21/openvpn</id>
    <content type="html">&lt;p&gt;How to access your virtual machine from the internet with OpenVPN
 During my pentest engagements, I sometimes get remote code execution (RCE) on a server. Depending on the type of engagement, sometimes this might be enough for the client, but other times they might ask for post exploitation too. For cases like this, I’ve relied on a droplet (VPS) hosted on Digital Ocean to transfer files across and get my shells going. This runs into a few problems, mostly related to costs. A VPS with kali and its toolset can become somewhat expensive. My previous solution was to have a debian distro with the kali repos and just use what I need, which worked fine for the most part, but I kept wanting to have access to my full kali box on my PC. Since I started working fully remote, I like working from various places, so the option of a fixed business IP is not really feasible. Thus this project.&lt;/p&gt;
 
@@ -1200,9 +1200,9 @@ iptables -t nat -A POSTROUTING -d 10.8.0.2 -p tcp -j SNAT — to-source 138.xxx.
  
  <entry>
    <title>The Mechanicus Moment</title>
-   <link href="https://robsware.github.io//2021/01/31/mechanicus"/>
+   <link href="https://robsware.github.io/2021/01/31/mechanicus"/>
    <updated>2021-01-31T00:00:00+00:00</updated>
-   <id>https://robsware.github.io//2021/01/31/mechanicus</id>
+   <id>https://robsware.github.io/2021/01/31/mechanicus</id>
    <content type="html">&lt;p&gt;“At this point someone might have a better chance of understanding the willy wonka factory than this.” - some guy in a helmet&lt;/p&gt;
 
 &lt;p&gt;This topic’s been on my mind for a while and it came up between my colleagues a few times. The idea that things are getting more and more complex. In infosec at least, there are tools upon tools that can assist in a variety of tasks. It got to the point where being a script kiddy can get you remarkably far.&lt;/p&gt;
@@ -1221,9 +1221,9 @@ iptables -t nat -A POSTROUTING -d 10.8.0.2 -p tcp -j SNAT — to-source 138.xxx.
  
  <entry>
    <title>A week with GPT3</title>
-   <link href="https://robsware.github.io//2020/12/27/gpt3"/>
+   <link href="https://robsware.github.io/2020/12/27/gpt3"/>
    <updated>2020-12-27T00:00:00+00:00</updated>
-   <id>https://robsware.github.io//2020/12/27/GPT3</id>
+   <id>https://robsware.github.io/2020/12/27/GPT3</id>
    <content type="html">&lt;h1&gt;A week with GPT3&lt;/h1&gt;
 &lt;p&gt;Posted on December 27, 2020 &lt;br /&gt;&lt;br /&gt; On the 19th of December, I woke up bleary eyed on a Saturday after another late night of doing CTFs and reached for my phone to check the time, expecting a lazy weekend ahead to cool down and I noticed an email from OpenAI. Suffice to say that woke me faster than any amount of binge drinking Monster energy drinks would. The email just said I now have a trial access to GPT3, either through March or until I hit my quota, whichever comes first. So I jumped right out of bed and to my PC to read the docs.
 &lt;br /&gt;&lt;br /&gt;
@@ -1318,9 +1318,9 @@ Being an invite only program, there&apos;s not a lot of documentation available 
  
  <entry>
    <title>OSWP - T̶r̶y̶ ̶H̶a̶r̶d̶e̶r̶  Try More</title>
-   <link href="https://robsware.github.io//2020/12/05/oswp"/>
+   <link href="https://robsware.github.io/2020/12/05/oswp"/>
    <updated>2020-12-05T00:00:00+00:00</updated>
-   <id>https://robsware.github.io//2020/12/05/oswp</id>
+   <id>https://robsware.github.io/2020/12/05/oswp</id>
    <content type="html">&lt;h1&gt;The OWSP experience: &lt;strike&gt;#TryHarder&lt;/strike&gt; #TryAgain&lt;/h1&gt;
 &lt;p&gt;Posted on December 5, 2020 &lt;br /&gt;&lt;/p&gt;
 &lt;p&gt;It&apos;s been almost 1 month since I attempted and passed my OSWP. Here are my thoughts about the famous &quot;meme&quot; certification.&lt;/p&gt;
@@ -1367,9 +1367,9 @@ I&apos;d like to see an updated version cover stuff like BlueTooth and Zigbee, m
  
  <entry>
    <title>How to safely scan your network for the Zerologon Vulnerability</title>
-   <link href="https://robsware.github.io//2020/10/12/zerologon"/>
+   <link href="https://robsware.github.io/2020/10/12/zerologon"/>
    <updated>2020-10-12T00:00:00+01:00</updated>
-   <id>https://robsware.github.io//2020/10/12/zerologon</id>
+   <id>https://robsware.github.io/2020/10/12/zerologon</id>
    <content type="html">&lt;p&gt;By now we’re all hopefully familiar with the Zerologon vulnerability, and it’s potentially disastrous impact. If not, there are many websites that go in depth about the vulnerability, but the gist of it is that it allows a hacker to take control of any domain controller (DC), including the root DC.  by changing or removing the password for a service account on the controller. From there on it becomes drivial to cause a mass denial of service in the network or simply take over all its assets. It has been rated as a Critical 10/10 CVE, about the worst it can get: &lt;a href=&quot;https://portal.msrc.microsoft.com/en-US/security-guidance/advisory/CVE-2020-1472&quot;&gt;https://portal.msrc.microsoft.com/en-US/security-guidance/advisory/CVE-2020-1472&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;Recently I’ve had the opportunity to flex my blue hat skills a bit and do a scan across a network with hundreds of DCs for auditing purposes. We’ll use a bit of powershell magic, some python and a publicly available Zerologon PoC. We’ll be running this from a generic domain Windows box. This scan will not cause any kind of damage or downtime.&lt;/p&gt;
@@ -1433,9 +1433,9 @@ ogon attack.” -Context 3 | Out-File VulnerableDCs.txt&lt;/p&gt;
  
  <entry>
    <title>A lookback at the OSCP</title>
-   <link href="https://robsware.github.io//2020/10/02/oscp"/>
+   <link href="https://robsware.github.io/2020/10/02/oscp"/>
    <updated>2020-10-02T00:00:00+01:00</updated>
-   <id>https://robsware.github.io//2020/10/02/oscp</id>
+   <id>https://robsware.github.io/2020/10/02/oscp</id>
    <content type="html">&lt;p&gt;Today marks one year since I got my OSCP, and a year and 6 months since I started learning about infosec. A little over 2 years since I got into tech. 6 months since I started on a pentester position. This is my story, mostly the interesting bits.&lt;/p&gt;
 
 &lt;h2 id=&quot;background&quot;&gt;Background&lt;/h2&gt;
@@ -1537,9 +1537,9 @@ Remember to respect the rules and ask questions in the appropriate channels. Peo
  
  <entry>
    <title>A review of the Certified Red Team Professional (CRTP) and the Attacking and Defending Active Directory Course</title>
-   <link href="https://robsware.github.io//2020/09/20/medium-crtp"/>
+   <link href="https://robsware.github.io/2020/09/20/medium-crtp"/>
    <updated>2020-09-20T00:00:00+01:00</updated>
-   <id>https://robsware.github.io//2020/09/20/MEDIUM-CRTP</id>
+   <id>https://robsware.github.io/2020/09/20/MEDIUM-CRTP</id>
    <content type="html">&lt;p&gt;Introduction
 Quick question: What’s a technology that almost every company out there is using, which is often very dangerous and can lead to a complete compromise of company assets in case of breach? That’s right, it’s Active Directory. Unfortunately, there are not a lot of resources when it comes to attacking and defending Active Directory, and those that already exist have various drawbacks: HTB Pro Labs can be a bit pricey and the first boxes are a nightmare as everybody is swarming them and ruining the experience, PWK/OSCP just recently added an AD module to the syllabus but it is still rather expensive, and the stand alone HTB Boxes that involve AD usually do it in a superfluous way.&lt;/p&gt;
 
@@ -1613,9 +1613,9 @@ www.labofapenetrationtester.com&lt;/p&gt;
  
  <entry>
    <title>The conundrum of personalized data</title>
-   <link href="https://robsware.github.io//2020/07/07/personalizeddata"/>
+   <link href="https://robsware.github.io/2020/07/07/personalizeddata"/>
    <updated>2020-07-07T00:00:00+01:00</updated>
-   <id>https://robsware.github.io//2020/07/07/personalizeddata</id>
+   <id>https://robsware.github.io/2020/07/07/personalizeddata</id>
    <content type="html">&lt;h1&gt;The conundrum of personalized data&lt;/h1&gt;
 &lt;p&gt;Posted on July 7, 2020 &lt;br /&gt;&lt;/p&gt;
 &lt;p&gt;There&apos;s been a lot of debate regarding data ownership and the use of harvested private data. I think we all enjoy personalized products, especially when we discover something new and exciting. The problem arises when the data starts to be tied to our real identity and sold to 3rd parties. To exemplify what I&apos;m referring to, I&apos;ve organized a small tier list based on products I use:&lt;/p&gt;
@@ -1650,9 +1650,9 @@ As for us users, we can also take steps towards a more decentralized internet. S
  
  <entry>
    <title>The Port Swigger Labs</title>
-   <link href="https://robsware.github.io//2020/06/28/portswigger-labs"/>
+   <link href="https://robsware.github.io/2020/06/28/portswigger-labs"/>
    <updated>2020-06-28T00:00:00+01:00</updated>
-   <id>https://robsware.github.io//2020/06/28/portswigger-labs</id>
+   <id>https://robsware.github.io/2020/06/28/portswigger-labs</id>
    <content type="html">&lt;h1&gt;The Post Swigger Academy Labs experience&lt;/h1&gt;
 &lt;h3&gt;Often called the Burp Labs&lt;/h3&gt;
 &lt;p&gt;Posted on June 28, 2020 &lt;br /&gt;&lt;br /&gt;
@@ -1696,9 +1696,9 @@ A new section got added to the labs, deserialization. I managed to complete some
  
  <entry>
    <title>A shallow dive into Cellular Automata</title>
-   <link href="https://robsware.github.io//2020/04/27/cellularautomata"/>
+   <link href="https://robsware.github.io/2020/04/27/cellularautomata"/>
    <updated>2020-04-27T00:00:00+01:00</updated>
-   <id>https://robsware.github.io//2020/04/27/cellularautomata</id>
+   <id>https://robsware.github.io/2020/04/27/cellularautomata</id>
    <content type="html">&lt;h1&gt;Cellular Automatas&lt;/h1&gt;
 &lt;p&gt; Inspired by Stephen Wolfram&apos;s book, which I finally got around reading now under lockdown, I decided to spend my week trying an experiment with Cellular Automata (CA) and crypto markets. My hope was that there was some sort of pattern matching with a CA rule in the minute to minute movement. Markets are interesting because, while not quite Turing Complete, they do seem to follow the law of Computational Irreducibility, which states the only way to determine the answer to a computationally irreducible question is to perform, or simulate, the computation. 
 &lt;br /&gt;&lt;br /&gt;
@@ -1742,9 +1742,9 @@ As the project was very rushed, the code is not quite up to par. Since I intend 
  
  <entry>
    <title>Hack The Box - Offshore Lab</title>
-   <link href="https://robsware.github.io//2020/03/15/offshore"/>
+   <link href="https://robsware.github.io/2020/03/15/offshore"/>
    <updated>2020-03-15T00:00:00+00:00</updated>
-   <id>https://robsware.github.io//2020/03/15/offshore</id>
+   <id>https://robsware.github.io/2020/03/15/offshore</id>
    <content type="html">&lt;p&gt;HackTheBox Offshore review - a mixed experience
 Posted on May 15, 2021&lt;/p&gt;
 
