@@ -4,7 +4,7 @@ layout: page
 
 <section class="post">
     <div class="flex-row-between">
-    <a href="{{ site.url }}{{ site.baseurl }}/challenges/2023-04-05"> Previous challenge</a>
+    <a href="{{ site.url }}{{ site.baseurl }}/challenges/2023-04-06"> Previous challenge</a>
           <a href="{{ site.url }}{{ site.baseurl }}/"> Home</a>
       <button title="Change theme" id="theme-toggle" onclick="modeSwitcher()">
         <div></div>
@@ -15,50 +15,28 @@ layout: page
 <br><p>Can you spot the vulnerability?</p>
 <br>
 {% highlight html %} 
-{% endhighlight %}{% highlight javascript %}
-javascript
-// vulnerable code
+{% endhighlight %}{% highlight java %}
+java
+// Vulnerable code
+import java.io.IOException;
 
-const fs = require('fs');
-const http = require('http');
-const url = require('url');
-
-http.createServer((req, res) => {
-  const query = url.parse(req.url, true).query;
-  const filename = '.' + query.file;
-
-  fs.readFile(filename, (err, data) => {
-    if (err) {
-      res.writeHead(404);
-      res.end('File not found');
-      return;
+public class CodeInjectionExample {
+    public static void main(String[] args) throws IOException {
+        String userInput = args[0]; // Assume user input is passed from command line argument
+        Runtime.getRuntime().exec("java -jar someApplication.jar " + userInput);
     }
-    res.writeHead(200);
-    res.end(data);
-  });
-}).listen(8080);
+}
 
-{% endhighlight %}javascript
-// vulnerable code
+{% endhighlight %}java
+// Vulnerable code
+import java.io.IOException;
 
-const fs = require('fs');
-const http = require('http');
-const url = require('url');
-
-http.createServer((req, res) => {
-  const query = url.parse(req.url, true).query;
-  const filename = '.' + query.file;
-
-  fs.readFile(filename, (err, data) => {
-    if (err) {
-      res.writeHead(404);
-      res.end('File not found');
-      return;
+public class CodeInjectionExample {
+    public static void main(String[] args) throws IOException {
+        String userInput = args[0]; // Assume user input is passed from command line argument
+        Runtime.getRuntime().exec("java -jar someApplication.jar " + userInput);
     }
-    res.writeHead(200);
-    res.end(data);
-  });
-}).listen(8080);
+}
 
 
 <br>If you did, ping me at @robsware on twitter to get a Like and a retweet. Answers will be posted next day.
