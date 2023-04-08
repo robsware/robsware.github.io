@@ -4,7 +4,7 @@
  <title>robsware</title>
  <link href="https://robsware.github.io/atom.xml" rel="self"/>
  <link href="https://robsware.github.io/"/>
- <updated>2023-04-08T11:06:11+01:00</updated>
+ <updated>2023-04-08T13:29:09+01:00</updated>
  <id>https://robsware.github.io</id>
  <author>
    <name>gesko</name>
@@ -1199,10 +1199,10 @@ iptables -t nat -A POSTROUTING -d 10.8.0.2 -p tcp -j SNAT — to-source 138.xxx.
  </entry>
  
  <entry>
-   <title>The Mechanicus Moment</title>
-   <link href="https://robsware.github.io/2021/01/31/mechanicus"/>
+   <title>The future is fragile</title>
+   <link href="https://robsware.github.io/2021/01/31/fragile"/>
    <updated>2021-01-31T00:00:00+00:00</updated>
-   <id>https://robsware.github.io/2021/01/31/mechanicus</id>
+   <id>https://robsware.github.io/2021/01/31/fragile</id>
    <content type="html">&lt;p&gt;“At this point someone might have a better chance of understanding the willy wonka factory than this.” - some guy in a helmet&lt;/p&gt;
 
 &lt;p&gt;This topic’s been on my mind for a while and it came up between my colleagues a few times. The idea that things are getting more and more complex. In infosec at least, there are tools upon tools that can assist in a variety of tasks. It got to the point where being a script kiddy can get you remarkably far.&lt;/p&gt;
