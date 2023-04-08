@@ -1,0 +1,84 @@
+---
+layout: page
+---
+
+<section class="post">
+    <div class="flex-row-between">
+        <a href="{{ site.url }}{{ site.baseurl }}/challenges/2023-04-06"> Previous challenge</a>
+             <a href="{{ site.url }}{{ site.baseurl }}/"> Home</a>
+      <button title="Change theme" id="theme-toggle" onclick="modeSwitcher()">
+        <div></div>
+      </button>
+    </div>
+  </section>
+The vulnerability is Improper Control of Generation of Code ('Code Injection')
+{% highlight html %} 
+{% endhighlight %}{% highlight java %}
+java
+// Vulnerable code
+import java.io.IOException;
+
+public class CodeInjectionExample {
+    public static void main(String[] args) throws IOException {
+        String userInput = args[0]; // Assume user input is passed from command line argument
+        Runtime.getRuntime().exec("java -jar someApplication.jar " + userInput);
+    }
+}
+
+{% endhighlight %}java
+// Vulnerable code
+import java.io.IOException;
+
+public class CodeInjectionExample {
+    public static void main(String[] args) throws IOException {
+        String userInput = args[0]; // Assume user input is passed from command line argument
+        Runtime.getRuntime().exec("java -jar someApplication.jar " + userInput);
+    }
+}
+
+
+o.IOException;
+
+public class CodeInjectionExample {
+    public static void main(String[] args) throws IOException {
+        String userInput = args[0]; // Assume user input is passed from command line argument
+        Runtime.getRuntime().exec("java -jar someApplication.jar " + userInput);
+    }
+}
+```
+
+N/A
+
+```java
+// Solution
+import java.io.IOException;
+
+public class CodeInjectionExample {
+    public static void main(String[] args) throws IOException {
+        String userInput = args[0]; // Assume user input is passed from command line argument
+        String[] command = {"java", "-jar", "someApplication.jar", userInput};
+        Runtime.getRuntime().exec(command);
+    }
+}
+```
+
+Explanation:
+
+In the vulnerable code, the user input is directly appended to the command string which would be executed using `Runtime.exec()`. This makes it vulnerable to code injection since an attacker could execute arbitrary commands by providing a crafted input.
+
+In the fixed code, instead of concatenating the input with the command string, the command and arguments are passed as an array to `Runtime.exec()`. By doing this, each element in the array is treated as a separate command-line argument, and it prevents the possibility of injecting code through user input. Always make sure to sanitize or validate user input before using it, especially when working with command execution or other critical operations.
+
+{% highlight java %}
+java
+// Solution
+import java.io.IOException;
+
+public class CodeInjectionExample {
+    public static void main(String[] args) throws IOException {
+        String userInput = args[0]; // Assume user input is passed from command line argument
+        String[] command = {"java", "-jar", "someApplication.jar", userInput};
+        Runtime.getRuntime().exec(command);
+    }
+}
+
+{% endhighlight %}
