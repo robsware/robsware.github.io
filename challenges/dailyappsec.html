@@ -4,7 +4,7 @@ layout: page
 
 <section class="post">
     <div class="flex-row-between">
-    <a href="{{ site.url }}{{ site.baseurl }}/challenges/2023-04-07"> Previous challenge</a>
+    <a href="{{ site.url }}{{ site.baseurl }}/challenges/2023-04-08"> Previous challenge</a>
           <a href="{{ site.url }}{{ site.baseurl }}/"> Home</a>
       <button title="Change theme" id="theme-toggle" onclick="modeSwitcher()">
         <div></div>
@@ -15,47 +15,30 @@ layout: page
 <br><p>Can you spot the vulnerability?</p>
 <br>
 {% highlight html %}csharp
-// Web application using the vulnerable code
-using System.Web.UI;
+using System;
 
-public partial class UploadFile : System.Web.UI.Page
+class Program
 {
-    protected void Page_Load(object sender, EventArgs e)
+    static void Main()
     {
-        if (IsPostBack)
+        Console.WriteLine("Enter your name:");
+        string userName = Console.ReadLine();
+        Console.WriteLine("Enter your age:");
+        int userAge = Convert.ToInt32(Console.ReadLine());
+
+        if (userAge >= 18)
         {
-            var handler = new FileUpload();
-            handler.ProcessRequest(HttpContext.Current);
+            Console.WriteLine($"Hello, {userName}. You are authorized to view this content.");            
+        }
+        else
+        {
+            Console.WriteLine($"Hello, {userName}. You are not authorized to view this content.");
         }
     }
 }
 
 {% endhighlight %}
 {% highlight c# %}
-csharp
-// Vulnerable code
-using System;
-using System.IO;
-using System.Web;
-
-public class FileUpload : IHttpHandler {
-    
-    public void ProcessRequest (HttpContext context) {
-        HttpPostedFile file = context.Request.Files["file"];
-        string savePath = context.Server.MapPath("~/uploads/");
-
-        if (file != null && file.ContentLength > 0) {
-            string fileName = Path.GetFileName(file.FileName);
-            file.SaveAs(savePath + fileName);
-        }
-    }
- 
-    public bool IsReusable {
-        get {
-            return false;
-        }
-    }
-}
-
+vulnerable code
 {% endhighlight %}
 <br>If you did, ping me at @robsware on twitter to get a Like and a retweet. Answers will be posted next day.

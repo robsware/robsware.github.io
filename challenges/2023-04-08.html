@@ -1,0 +1,194 @@
+---
+layout: page
+---
+
+<section class="post">
+    <div class="flex-row-between">
+        <a href="{{ site.url }}{{ site.baseurl }}/challenges/2023-04-07"> Previous challenge</a>
+             <a href="{{ site.url }}{{ site.baseurl }}/"> Home</a>
+      <button title="Change theme" id="theme-toggle" onclick="modeSwitcher()">
+        <div></div>
+      </button>
+    </div>
+  </section>
+The vulnerability is Unrestricted Upload of File with Dangerous Type
+{% highlight html %}csharp
+// Web application using the vulnerable code
+using System.Web.UI;
+
+public partial class UploadFile : System.Web.UI.Page
+{
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        if (IsPostBack)
+        {
+            var handler = new FileUpload();
+            handler.ProcessRequest(HttpContext.Current);
+        }
+    }
+}
+
+{% endhighlight %}{% highlight c# %}
+csharp
+// Vulnerable code
+using System;
+using System.IO;
+using System.Web;
+
+public class FileUpload : IHttpHandler {
+    
+    public void ProcessRequest (HttpContext context) {
+        HttpPostedFile file = context.Request.Files["file"];
+        string savePath = context.Server.MapPath("~/uploads/");
+
+        if (file != null && file.ContentLength > 0) {
+            string fileName = Path.GetFileName(file.FileName);
+            file.SaveAs(savePath + fileName);
+        }
+    }
+ 
+    public bool IsReusable {
+        get {
+            return false;
+        }
+    }
+}
+
+{% endhighlight %}csharp
+// Vulnerable code
+using System;
+using System.IO;
+using System.Web;
+
+public class FileUpload : IHttpHandler {
+    
+    public void ProcessRequest (HttpContext context) {
+        HttpPostedFile file = context.Request.Files["file"];
+        string savePath = context.Server.MapPath("~/uploads/");
+
+        if (file != null && file.ContentLength > 0) {
+            string fileName = Path.GetFileName(file.FileName);
+            file.SaveAs(savePath + fileName);
+        }
+    }
+ 
+    public bool IsReusable {
+        get {
+            return false;
+        }
+    }
+}
+
+
+m;
+using System.IO;
+using System.Web;
+
+public class FileUpload : IHttpHandler {
+    
+    public void ProcessRequest (HttpContext context) {
+        HttpPostedFile file = context.Request.Files["file"];
+        string savePath = context.Server.MapPath("~/uploads/");
+
+        if (file != null && file.ContentLength > 0) {
+            string fileName = Path.GetFileName(file.FileName);
+            file.SaveAs(savePath + fileName);
+        }
+    }
+ 
+    public bool IsReusable {
+        get {
+            return false;
+        }
+    }
+}
+```
+
+```csharp
+// Web application using the vulnerable code
+using System.Web.UI;
+
+public partial class UploadFile : System.Web.UI.Page
+{
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        if (IsPostBack)
+        {
+            var handler = new FileUpload();
+            handler.ProcessRequest(HttpContext.Current);
+        }
+    }
+}
+```
+
+```csharp
+// Solution to fix the vulnerable code
+using System;
+using System.IO;
+using System.Web;
+
+public class SafeFileUpload : IHttpHandler {
+    
+    public void ProcessRequest (HttpContext context) {
+        HttpPostedFile file = context.Request.Files["file"];
+        string savePath = context.Server.MapPath("~/uploads/");
+
+        if (file != null && file.ContentLength > 0) {
+            string fileName = Path.GetFileName(file.FileName);
+            string fileExtension = Path.GetExtension(file.FileName).ToLower();
+
+            // Only allow specific file types
+            string[] allowedExtensions = { ".jpg", ".jpeg", ".png", ".gif" };
+            if (Array.IndexOf(allowedExtensions, fileExtension) >= 0) {
+                file.SaveAs(savePath + fileName);
+            } else {
+                context.Response.Write("Invalid file type. Only .jpg, .jpeg, .png, and .gif are allowed.");
+            }
+        }
+    }
+ 
+    public bool IsReusable {
+        get {
+            return false;
+        }
+    }
+}
+```
+
+To fix the vulnerability, we modified the code to only allow specific types of files to be uploaded. In this case, we restrict the allowed file extensions to .jpg, .jpeg, .png, and .gif by checking the file extension of the uploaded file against the array of allowed extensions. If the file extension is not found in the allowedExtensions array, an error message is displayed and the file is not saved on the server.
+
+{% highlight c# %}
+csharp
+// Solution to fix the vulnerable code
+using System;
+using System.IO;
+using System.Web;
+
+public class SafeFileUpload : IHttpHandler {
+    
+    public void ProcessRequest (HttpContext context) {
+        HttpPostedFile file = context.Request.Files["file"];
+        string savePath = context.Server.MapPath("~/uploads/");
+
+        if (file != null && file.ContentLength > 0) {
+            string fileName = Path.GetFileName(file.FileName);
+            string fileExtension = Path.GetExtension(file.FileName).ToLower();
+
+            // Only allow specific file types
+            string[] allowedExtensions = { ".jpg", ".jpeg", ".png", ".gif" };
+            if (Array.IndexOf(allowedExtensions, fileExtension) >= 0) {
+                file.SaveAs(savePath + fileName);
+            } else {
+                context.Response.Write("Invalid file type. Only .jpg, .jpeg, .png, and .gif are allowed.");
+            }
+        }
+    }
+ 
+    public bool IsReusable {
+        get {
+            return false;
+        }
+    }
+}
+
+{% endhighlight %}
