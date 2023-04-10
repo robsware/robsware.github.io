@@ -4,7 +4,7 @@ layout: page
 
 <section class="post">
     <div class="flex-row-between">
-    <a href="{{ site.url }}{{ site.baseurl }}/challenges/2023-04-08"> Previous challenge</a>
+    <a href="{{ site.url }}{{ site.baseurl }}/challenges/2023-04-09"> Previous challenge</a>
           <a href="{{ site.url }}{{ site.baseurl }}/"> Home</a>
       <button title="Change theme" id="theme-toggle" onclick="modeSwitcher()">
         <div></div>
@@ -15,30 +15,36 @@ layout: page
 <br><p>Can you spot the vulnerability?</p>
 <br>
 {% highlight html %}csharp
-using System;
+// Short web application using the vulnerable code
+<%@ Page Language="C#" AutoEventWireup="true" CodeFile="VulnerablePage.aspx.cs" Inherits="VulnerablePage" %>
 
-class Program
-{
-    static void Main()
-    {
-        Console.WriteLine("Enter your name:");
-        string userName = Console.ReadLine();
-        Console.WriteLine("Enter your age:");
-        int userAge = Convert.ToInt32(Console.ReadLine());
-
-        if (userAge >= 18)
-        {
-            Console.WriteLine($"Hello, {userName}. You are authorized to view this content.");            
-        }
-        else
-        {
-            Console.WriteLine($"Hello, {userName}. You are not authorized to view this content.");
-        }
-    }
-}
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Vulnerable Page</title>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div id="displayMessage" runat="server"></div>
+    </form>
+</body>
+</html>
 
 {% endhighlight %}
 {% highlight c# %}
-vulnerable code
+csharp
+// vulnerable code
+using System;
+using System.Web.UI;
+
+public partial class VulnerablePage : Page
+{
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        string userInput = Request.QueryString["userInput"];
+        displayMessage.InnerHtml = "Welcome, " + userInput + "!";
+    }
+}
+
 {% endhighlight %}
 <br>If you did, ping me at @robsware on twitter to get a Like and a retweet. Answers will be posted next day.
