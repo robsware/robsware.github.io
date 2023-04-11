@@ -1,0 +1,127 @@
+---
+layout: page
+---
+
+<section class="post">
+    <div class="flex-row-between">
+        <a href="{{ site.url }}{{ site.baseurl }}/challenges/2023-04-09"> Previous challenge</a>
+             <a href="{{ site.url }}{{ site.baseurl }}/"> Home</a>
+      <button title="Change theme" id="theme-toggle" onclick="modeSwitcher()">
+        <div></div>
+      </button>
+    </div>
+  </section>
+The vulnerability is Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')
+{% highlight html %}csharp
+// Short web application using the vulnerable code
+<%@ Page Language="C#" AutoEventWireup="true" CodeFile="VulnerablePage.aspx.cs" Inherits="VulnerablePage" %>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Vulnerable Page</title>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div id="displayMessage" runat="server"></div>
+    </form>
+</body>
+</html>
+
+{% endhighlight %}{% highlight c# %}
+csharp
+// vulnerable code
+using System;
+using System.Web.UI;
+
+public partial class VulnerablePage : Page
+{
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        string userInput = Request.QueryString["userInput"];
+        displayMessage.InnerHtml = "Welcome, " + userInput + "!";
+    }
+}
+
+{% endhighlight %}csharp
+// vulnerable code
+using System;
+using System.Web.UI;
+
+public partial class VulnerablePage : Page
+{
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        string userInput = Request.QueryString["userInput"];
+        displayMessage.InnerHtml = "Welcome, " + userInput + "!";
+    }
+}
+
+
+m;
+using System.Web.UI;
+
+public partial class VulnerablePage : Page
+{
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        string userInput = Request.QueryString["userInput"];
+        displayMessage.InnerHtml = "Welcome, " + userInput + "!";
+    }
+}
+```
+
+```csharp
+// Short web application using the vulnerable code
+<%@ Page Language="C#" AutoEventWireup="true" CodeFile="VulnerablePage.aspx.cs" Inherits="VulnerablePage" %>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Vulnerable Page</title>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div id="displayMessage" runat="server"></div>
+    </form>
+</body>
+</html>
+```
+
+```csharp
+// solution how to fix the vulnerable code
+using System;
+using System.Web;
+using System.Web.UI;
+
+public partial class SecurePage : Page
+{
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        string userInput = Request.QueryString["userInput"];
+        string encodedUserInput = HttpUtility.HtmlEncode(userInput);
+        displayMessage.InnerHtml = "Welcome, " + encodedUserInput + "!";
+    }
+}
+```
+
+To fix the vulnerability, we need to encode the user input before rendering it to the web page. In this case, we use the `HttpUtility.HtmlEncode()` method to encode the user input. This method replaces the potentially dangerous characters in the user input with their corresponding HTML entities. This prevents the browser from interpreting the input as actual HTML markup, eliminating the possibility of executing malicious scripts.
+
+{% highlight c# %}
+csharp
+// solution how to fix the vulnerable code
+using System;
+using System.Web;
+using System.Web.UI;
+
+public partial class SecurePage : Page
+{
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        string userInput = Request.QueryString["userInput"];
+        string encodedUserInput = HttpUtility.HtmlEncode(userInput);
+        displayMessage.InnerHtml = "Welcome, " + encodedUserInput + "!";
+    }
+}
+
+{% endhighlight %}
