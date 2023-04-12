@@ -1,0 +1,51 @@
+---
+layout: page
+---
+
+<section class="post">
+    <div class="flex-row-between">
+        <a href="{{ site.url }}{{ site.baseurl }}/challenges/2023-04-10"> Previous challenge</a>
+             <a href="{{ site.url }}{{ site.baseurl }}/"> Home</a>
+      <button title="Change theme" id="theme-toggle" onclick="modeSwitcher()">
+        <div></div>
+      </button>
+    </div>
+  </section>
+The vulnerability is Improper Restriction of XML External Entity Reference
+{% highlight html %} 
+{% endhighlight %}{% highlight python %}
+python
+# vulnerable code
+from lxml import etree
+
+def parse_xml(xml_data):
+    parser = etree.XMLParser()
+    tree = etree.fromstring(xml_data, parser)
+    return etree.tostring(tree)
+
+
+{% endhighlight %}python
+# vulnerable code
+from lxml import etree
+
+def parse_xml(xml_data):
+    parser = etree.XMLParser()
+    tree = etree.fromstring(xml_data, parser)
+    return etree.tostring(tree)
+
+
+
+To fix the vulnerability, disable the resolution of external entities in the XML parser. In the lxml library, this can be achieved by setting the `resolve_entities` parameter to `False`.
+
+{% highlight python %}
+python
+# solution how to fix the vulnerable code
+from lxml import etree
+
+def parse_xml(xml_data):
+    parser = etree.XMLParser(resolve_entities=False)
+    tree = etree.fromstring(xml_data, parser)
+    return etree.tostring(tree)
+
+
+{% endhighlight %}

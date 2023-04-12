@@ -4,7 +4,7 @@ layout: page
 
 <section class="post">
     <div class="flex-row-between">
-    <a href="{{ site.url }}{{ site.baseurl }}/challenges/2023-04-10"> Previous challenge</a>
+    <a href="{{ site.url }}{{ site.baseurl }}/challenges/2023-04-11"> Previous challenge</a>
           <a href="{{ site.url }}{{ site.baseurl }}/"> Home</a>
       <button title="Change theme" id="theme-toggle" onclick="modeSwitcher()">
         <div></div>
@@ -16,16 +16,18 @@ layout: page
 <br>
 {% highlight html %} 
 {% endhighlight %}
-{% highlight python %}
-python
-# vulnerable code
-from lxml import etree
+{% highlight java %}
+java
+// vulnerable code
+public class VulnerableCode {
+    public static void main(String[] args) {
+        int[] numbers = new int[10];
 
-def parse_xml(xml_data):
-    parser = etree.XMLParser()
-    tree = etree.fromstring(xml_data, parser)
-    return etree.tostring(tree)
-
+        for (int i = 0; i <= 10; i++) {
+            numbers[i] = i * 2;
+        }
+    }
+}
 
 {% endhighlight %}
 <br>If you did, ping me at @robsware on twitter to get a Like and a retweet. Answers will be posted next day.
