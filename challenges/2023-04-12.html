@@ -1,0 +1,57 @@
+---
+layout: page
+---
+
+<section class="post">
+    <div class="flex-row-between">
+        <a href="{{ site.url }}{{ site.baseurl }}/challenges/2023-04-11"> Previous challenge</a>
+             <a href="{{ site.url }}{{ site.baseurl }}/"> Home</a>
+      <button title="Change theme" id="theme-toggle" onclick="modeSwitcher()">
+        <div></div>
+      </button>
+    </div>
+  </section>
+The vulnerability is Out-of-bounds Write
+{% highlight html %} 
+{% endhighlight %}{% highlight java %}
+java
+// vulnerable code
+public class VulnerableCode {
+    public static void main(String[] args) {
+        int[] numbers = new int[10];
+
+        for (int i = 0; i <= 10; i++) {
+            numbers[i] = i * 2;
+        }
+    }
+}
+
+{% endhighlight %}java
+// vulnerable code
+public class VulnerableCode {
+    public static void main(String[] args) {
+        int[] numbers = new int[10];
+
+        for (int i = 0; i <= 10; i++) {
+            numbers[i] = i * 2;
+        }
+    }
+}
+
+
+The vulnerability exists because the loop iterates through the array from 0 *up to and including* 10, causing an out-of-bounds write on the 11th iteration (when `i` is 10). To fix it, simply change the loop condition from `i <= 10` to `i < 10`, so that the loop will only iterate while `i` is less than 10 (preventing the out-of-bounds access).
+
+{% highlight java %}
+java
+// solution how to fix the vulnerable code
+public class FixedCode {
+    public static void main(String[] args) {
+        int[] numbers = new int[10];
+
+        for (int i = 0; i < 10; i++) {
+            numbers[i] = i * 2;
+        }
+    }
+}
+
+{% endhighlight %}

@@ -4,7 +4,7 @@ layout: page
 
 <section class="post">
     <div class="flex-row-between">
-    <a href="{{ site.url }}{{ site.baseurl }}/challenges/2023-04-11"> Previous challenge</a>
+    <a href="{{ site.url }}{{ site.baseurl }}/challenges/2023-04-12"> Previous challenge</a>
           <a href="{{ site.url }}{{ site.baseurl }}/"> Home</a>
       <button title="Change theme" id="theme-toggle" onclick="modeSwitcher()">
         <div></div>
@@ -16,16 +16,18 @@ layout: page
 <br>
 {% highlight html %} 
 {% endhighlight %}
-{% highlight java %}
-java
-// vulnerable code
-public class VulnerableCode {
-    public static void main(String[] args) {
-        int[] numbers = new int[10];
+{% highlight c# %}
+csharp
+// Vulnerable code
+class Program
+{
+    static void Main(string[] args)
+    {
+        string firstName = null;
+        string lastName = "Smith";
 
-        for (int i = 0; i <= 10; i++) {
-            numbers[i] = i * 2;
-        }
+        int nameLength = firstName.Length + lastName.Length;
+        Console.WriteLine("Full name length: " + nameLength);
     }
 }
 
