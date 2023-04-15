@@ -4,7 +4,7 @@ layout: page
 
 <section class="post">
     <div class="flex-row-between">
-    <a href="{{ site.url }}{{ site.baseurl }}/challenges/2023-04-12"> Previous challenge</a>
+    <a href="{{ site.url }}{{ site.baseurl }}/challenges/2023-04-14"> Previous challenge</a>
           <a href="{{ site.url }}{{ site.baseurl }}/"> Home</a>
       <button title="Change theme" id="theme-toggle" onclick="modeSwitcher()">
         <div></div>
@@ -19,15 +19,25 @@ layout: page
 {% highlight c# %}
 csharp
 // Vulnerable code
+using System.Diagnostics;
+public class VulnerableSnippet
+{
+    public static void ExecuteUserCommand(string userCommand)
+    {
+        Process process = new Process();
+        process.StartInfo.FileName = "cmd.exe";
+        process.StartInfo.Arguments = "/C " + userCommand;
+        process.Start();
+    }
+}
+
 class Program
 {
     static void Main(string[] args)
     {
-        string firstName = null;
-        string lastName = "Smith";
-
-        int nameLength = firstName.Length + lastName.Length;
-        Console.WriteLine("Full name length: " + nameLength);
+        Console.WriteLine("Enter a command:");
+        string userCommand = Console.ReadLine();
+        VulnerableSnippet.ExecuteUserCommand(userCommand);
     }
 }
 

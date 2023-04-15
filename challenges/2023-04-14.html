@@ -1,0 +1,66 @@
+---
+layout: page
+---
+
+<section class="post">
+    <div class="flex-row-between">
+        <a href="{{ site.url }}{{ site.baseurl }}/challenges/2023-04-12"> Previous challenge</a>
+             <a href="{{ site.url }}{{ site.baseurl }}/"> Home</a>
+      <button title="Change theme" id="theme-toggle" onclick="modeSwitcher()">
+        <div></div>
+      </button>
+    </div>
+  </section>
+The vulnerability is NULL Pointer Dereference
+{% highlight html %} 
+{% endhighlight %}{% highlight c# %}
+csharp
+// Vulnerable code
+class Program
+{
+    static void Main(string[] args)
+    {
+        string firstName = null;
+        string lastName = "Smith";
+
+        int nameLength = firstName.Length + lastName.Length;
+        Console.WriteLine("Full name length: " + nameLength);
+    }
+}
+
+{% endhighlight %}csharp
+// Vulnerable code
+class Program
+{
+    static void Main(string[] args)
+    {
+        string firstName = null;
+        string lastName = "Smith";
+
+        int nameLength = firstName.Length + lastName.Length;
+        Console.WriteLine("Full name length: " + nameLength);
+    }
+}
+
+
+In the vulnerable code, the `firstName` variable is initialized as null, so when the program tries to access its `Length` property, it causes a NullReferenceException. To fix the issue, we use the null conditional (`?.`) operator when accessing the Length property for both `firstName` and `lastName`. This helps to avoid the exception from occurring. If the value is null, we use the null coalescence (`??`) operator to assign 0 as the default value for the length. This ensures that the nameLength calculation can proceed safely even if either firstName or lastName are null.
+
+{% highlight c# %}
+csharp
+// Solution how to fix the vulnerable code
+class Program
+{
+    static void Main(string[] args)
+    {
+        string firstName = null;
+        string lastName = "Smith";
+
+        int firstNameLength = firstName?.Length ?? 0;
+        int lastNameLength = lastName?.Length ?? 0;
+
+        int nameLength = firstNameLength + lastNameLength;
+        Console.WriteLine("Full name length: " + nameLength);
+    }
+}
+
+{% endhighlight %}
