@@ -1,0 +1,99 @@
+---
+layout: page
+---
+
+<section class="post">
+    <div class="flex-row-between">
+        <a href="{{ site.url }}{{ site.baseurl }}/challenges/2023-04-14"> Previous challenge</a>
+             <a href="{{ site.url }}{{ site.baseurl }}/"> Home</a>
+      <button title="Change theme" id="theme-toggle" onclick="modeSwitcher()">
+        <div></div>
+      </button>
+    </div>
+  </section>
+The vulnerability is Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection')
+{% highlight html %} 
+{% endhighlight %}{% highlight c# %}
+csharp
+// Vulnerable code
+using System.Diagnostics;
+public class VulnerableSnippet
+{
+    public static void ExecuteUserCommand(string userCommand)
+    {
+        Process process = new Process();
+        process.StartInfo.FileName = "cmd.exe";
+        process.StartInfo.Arguments = "/C " + userCommand;
+        process.Start();
+    }
+}
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        Console.WriteLine("Enter a command:");
+        string userCommand = Console.ReadLine();
+        VulnerableSnippet.ExecuteUserCommand(userCommand);
+    }
+}
+
+{% endhighlight %}csharp
+// Vulnerable code
+using System.Diagnostics;
+public class VulnerableSnippet
+{
+    public static void ExecuteUserCommand(string userCommand)
+    {
+        Process process = new Process();
+        process.StartInfo.FileName = "cmd.exe";
+        process.StartInfo.Arguments = "/C " + userCommand;
+        process.Start();
+    }
+}
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        Console.WriteLine("Enter a command:");
+        string userCommand = Console.ReadLine();
+        VulnerableSnippet.ExecuteUserCommand(userCommand);
+    }
+}
+
+
+To fix the vulnerability, we need to sanitize the user input by escaping any special characters. In the secure code snippet, a new method called `SanitizeInput` has been added which replaces "&" with "^&" and "|" with "^|". This ensures that if the user tries to inject any additional commands using these characters, they will be treated as plain text and not run as separate commands. Then, the sanitized input is passed to the `Arguments` property of `StartInfo`.
+
+{% highlight c# %}
+csharp
+// Solution how to fix the vulnerable code
+using System.Diagnostics;
+public class SecureSnippet
+{
+    public static void ExecuteUserCommand(string userCommand)
+    {
+        Process process = new Process();
+        process.StartInfo.FileName = "cmd.exe";
+        process.StartInfo.Arguments = $"/C \"{SanitizeInput(userCommand)}\"";
+        process.Start();
+    }
+
+    private static string SanitizeInput(string input)
+    {
+        if (string.IsNullOrEmpty(input)) return string.Empty;
+        return input.Replace("&", "^&").Replace("|", "^|");
+    }
+}
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        Console.WriteLine("Enter a command:");
+        string userCommand = Console.ReadLine();
+        SecureSnippet.ExecuteUserCommand(userCommand);
+    }
+}
+
+{% endhighlight %}
