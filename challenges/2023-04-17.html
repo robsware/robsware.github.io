@@ -1,0 +1,151 @@
+---
+layout: page
+---
+
+<section class="post">
+    <div class="flex-row-between">
+        <a href="{{ site.url }}{{ site.baseurl }}/challenges/2023-04-16"> Previous challenge</a>
+             <a href="{{ site.url }}{{ site.baseurl }}/"> Home</a>
+      <button title="Change theme" id="theme-toggle" onclick="modeSwitcher()">
+        <div></div>
+      </button>
+    </div>
+  </section>
+The vulnerability is Server-Side Request Forgery (SSRF)
+{% highlight html %}html
+<!--Insert the vulnerable code into a short web application-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Web App Example</title>
+</head>
+<body>
+  <form method="GET" action="vulnerable_code.php">
+    <label for="url">Enter URL:</label>
+    <input type="text" name="url" id="url">
+    <button type="submit">Submit</button>
+  </form>
+</body>
+</html>
+
+{% endhighlight %}{% highlight php %}
+php
+// vulnerable code
+
+<?php
+$url = $_GET['url'];
+$content = file_get_contents($url);
+echo $content;
+?>
+
+{% endhighlight %}php
+// vulnerable code
+
+<?php
+$url = $_GET['url'];
+$content = file_get_contents($url);
+echo $content;
+?>
+
+
+$_GET['url'];
+$content = file_get_contents($url);
+echo $content;
+?>
+```
+
+```html
+<!--Insert the vulnerable code into a short web application-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Web App Example</title>
+</head>
+<body>
+  <form method="GET" action="vulnerable_code.php">
+    <label for="url">Enter URL:</label>
+    <input type="text" name="url" id="url">
+    <button type="submit">Submit</button>
+  </form>
+</body>
+</html>
+```
+
+```php
+// solution how to fix the vulnerable code
+
+<?php
+function is_valid_url($url) {
+    if (filter_var($url, FILTER_VALIDATE_URL) === false) {
+        return false;
+    }
+    $parsed_url = parse_url($url);
+
+    if (($parsed_url['scheme'] !== 'http') && ($parsed_url['scheme'] !== 'https')) {
+        return false;
+    }
+
+    if ($parsed_url['host'] === 'localhost' || $parsed_url['host'] === '127.0.0.1') {
+        return false;
+    }
+
+    // Add further validation checks as needed
+
+    return true;
+}
+
+$url = $_GET['url'];
+if (is_valid_url($url)) {
+    $content = file_get_contents($url);
+    echo $content;
+} else {
+    echo "Invalid URL";
+}
+```
+
+To fix the vulnerability, we added a new function `is_valid_url` which performs validation checks on the given URL. 
+
+1. First, we check if the URL is valid using `filter_var` with the `FILTER_VALIDATE_URL` filter. 
+2. Next, we check if the protocol scheme is `http` or `https` to prevent other protocol schemes from being used.
+3. We then disallow requests to `localhost` and `127.0.0.1` in order to prevent attack loopbacks to the local machine.
+4. Further validation checks can be added as needed.
+
+Calling this function before processing the URL ensures that only valid and allowed URLs are accessed in the server-side script.
+
+{% highlight php %}
+php
+// solution how to fix the vulnerable code
+
+<?php
+function is_valid_url($url) {
+    if (filter_var($url, FILTER_VALIDATE_URL) === false) {
+        return false;
+    }
+    $parsed_url = parse_url($url);
+
+    if (($parsed_url['scheme'] !== 'http') && ($parsed_url['scheme'] !== 'https')) {
+        return false;
+    }
+
+    if ($parsed_url['host'] === 'localhost' || $parsed_url['host'] === '127.0.0.1') {
+        return false;
+    }
+
+    // Add further validation checks as needed
+
+    return true;
+}
+
+$url = $_GET['url'];
+if (is_valid_url($url)) {
+    $content = file_get_contents($url);
+    echo $content;
+} else {
+    echo "Invalid URL";
+}
+
+{% endhighlight %}
