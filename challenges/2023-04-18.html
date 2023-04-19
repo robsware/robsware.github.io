@@ -1,0 +1,41 @@
+---
+layout: page
+---
+
+<section class="post">
+    <div class="flex-row-between">
+        <a href="{{ site.url }}{{ site.baseurl }}/challenges/2023-04-17"> Previous challenge</a>
+             <a href="{{ site.url }}{{ site.baseurl }}/"> Home</a>
+      <button title="Change theme" id="theme-toggle" onclick="modeSwitcher()">
+        <div></div>
+      </button>
+    </div>
+  </section>
+The vulnerability is Concurrent Execution using Shared Resource with Improper Synchronization ('Race Condition')
+{% highlight html %}csharp
+class VulnerableCounter
+{
+    private int count;
+
+    public void Increment()
+    {
+        count++;
+    }
+
+    public int GetCount()
+    {
+        return count;
+    }
+}
+
+{% endhighlight %}{% highlight c# %}
+vulnerable code
+{% endhighlight %}vulnerable code
+
+To fix the vulnerability, we need to synchronize the access to the shared resource (in this case, the `count` variable) to ensure that no two threads are executing the Increment or GetCount methods simultaneously. This can be accomplished in C# using the `lock` statement. 
+
+In the fixed code example, we introduce a new object `countLock` which acts as a synchronization mutex. The `Increment` and `GetCount` methods are both modified to first acquire a lock on `countLock` before performing any operations on `count`. This ensures that all access to the `count` variable is serialized and prevents concurrent execution on the shared resource.
+
+{% highlight c# %}
+N/A
+{% endhighlight %}

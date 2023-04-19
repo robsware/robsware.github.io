@@ -4,7 +4,7 @@ layout: page
 
 <section class="post">
     <div class="flex-row-between">
-    <a href="{{ site.url }}{{ site.baseurl }}/challenges/2023-04-17"> Previous challenge</a>
+    <a href="{{ site.url }}{{ site.baseurl }}/challenges/2023-04-18"> Previous challenge</a>
           <a href="{{ site.url }}{{ site.baseurl }}/"> Home</a>
       <button title="Change theme" id="theme-toggle" onclick="modeSwitcher()">
         <div></div>
@@ -15,18 +15,21 @@ layout: page
 <br><p>Can you spot the vulnerability?</p>
 <br>
 {% highlight html %}csharp
-class VulnerableCounter
+using System;
+using System.IO;
+using System.Net;
+
+namespace SSRF
 {
-    private int count;
-
-    public void Increment()
+    class Program
     {
-        count++;
-    }
-
-    public int GetCount()
-    {
-        return count;
+        static void Main(string[] args)
+        {
+            string url = args[0];
+            WebClient webClient = new WebClient();
+            string result = webClient.DownloadString(url);
+            Console.WriteLine(result);
+        }
     }
 }
 
