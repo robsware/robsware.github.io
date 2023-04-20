@@ -1,0 +1,44 @@
+---
+layout: page
+---
+
+<section class="post">
+    <div class="flex-row-between">
+        <a href="{{ site.url }}{{ site.baseurl }}/challenges/2023-04-18"> Previous challenge</a>
+             <a href="{{ site.url }}{{ site.baseurl }}/"> Home</a>
+      <button title="Change theme" id="theme-toggle" onclick="modeSwitcher()">
+        <div></div>
+      </button>
+    </div>
+  </section>
+The vulnerability is Server-Side Request Forgery (SSRF)
+{% highlight html %}csharp
+using System;
+using System.IO;
+using System.Net;
+
+namespace SSRF
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string url = args[0];
+            WebClient webClient = new WebClient();
+            string result = webClient.DownloadString(url);
+            Console.WriteLine(result);
+        }
+    }
+}
+
+{% endhighlight %}{% highlight c# %}
+vulnerable code
+{% endhighlight %}vulnerable code
+
+- Use HttpClient instead of WebClient to have better control over the request.
+- Add a timeout for the request to prevent long-running requests that might be abused.
+- Validate the provided URL using Uri.TryCreate and only allow HTTP and HTTPS URL schemes to prevent the attacker from sending requests to other schemes like file, ftp, or custom protocols, which might result in potential leakage of sensitive information or other unexpected impacts.
+
+{% highlight c# %}
+short web application
+{% endhighlight %}
