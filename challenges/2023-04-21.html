@@ -1,0 +1,85 @@
+---
+layout: page
+---
+
+<section class="post">
+    <div class="flex-row-between">
+        <a href="{{ site.url }}{{ site.baseurl }}/challenges/2023-04-19"> Previous challenge</a>
+             <a href="{{ site.url }}{{ site.baseurl }}/"> Home</a>
+      <button title="Change theme" id="theme-toggle" onclick="modeSwitcher()">
+        <div></div>
+      </button>
+    </div>
+  </section>
+The vulnerability is Incorrect Default Permissions
+{% highlight html %} 
+{% endhighlight %}{% highlight c# %}
+csharp
+// Vulnerable code
+using System.IO;
+
+class IncorrectDefaults
+{
+    static void Main()
+    {
+        FileStream fs = new FileStream("importantData.txt", FileMode.Create);
+
+        using (StreamWriter sw = new StreamWriter(fs))
+        {
+            sw.WriteLine("Sensitive Data");
+        }
+    }
+}
+
+{% endhighlight %}csharp
+// Vulnerable code
+using System.IO;
+
+class IncorrectDefaults
+{
+    static void Main()
+    {
+        FileStream fs = new FileStream("importantData.txt", FileMode.Create);
+
+        using (StreamWriter sw = new StreamWriter(fs))
+        {
+            sw.WriteLine("Sensitive Data");
+        }
+    }
+}
+
+
+- Use `File.GetAccessControl()` method to get the access control object for the file.
+- Call `SetAccessRuleProtection(true, false)` on the file security object to disable inheritance and remove inherited access rules.
+- Create a new access rule for the current user allowing Read and Write permissions.
+- Set the new access rule using the `SetAccessRule()` method.
+- Apply the modified access control settings to the file using `File.SetAccessControl()`.
+
+{% highlight c# %}
+csharp
+// Fixed code
+using System.IO;
+using System.Security.AccessControl;
+
+class CorrectDefaults
+{
+    static void Main()
+    {
+        string filePath = "importantData.txt";
+        FileStream fs = new FileStream(filePath, FileMode.Create);
+
+        // Set file permission to read and write only for the current user
+        FileSecurity fileSec = File.GetAccessControl(filePath);
+        fileSec.SetAccessRuleProtection(true, false); // Disable inheritance, remove inherited access rules
+        FileSystemAccessRule accessRule = new FileSystemAccessRule(Environment.UserName, FileSystemRights.Read | FileSystemRights.Write, AccessControlType.Allow);
+        fileSec.SetAccessRule(accessRule);
+        File.SetAccessControl(filePath, fileSec);
+
+        using (StreamWriter sw = new StreamWriter(fs))
+        {
+            sw.WriteLine("Sensitive Data");
+        }
+    }
+}
+
+{% endhighlight %}
