@@ -1,0 +1,92 @@
+---
+layout: page
+---
+
+<section class="post">
+    <div class="flex-row-between">
+        <a href="{{ site.url }}{{ site.baseurl }}/challenges/2023-04-21"> Previous challenge</a>
+             <a href="{{ site.url }}{{ site.baseurl }}/"> Home</a>
+      <button title="Change theme" id="theme-toggle" onclick="modeSwitcher()">
+        <div></div>
+      </button>
+    </div>
+  </section>
+The vulnerability is Improper Input Validation
+{% highlight html %}html
+<!-- Insert the vulnerable code into a short web application -->
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="vulnerable.js"></script>
+</head>
+<body>
+  <button onclick="greetUser('<script>alert("Hacked!")</script>')">Say hello</button>
+</body>
+</html>
+
+{% endhighlight %}{% highlight javascript %}
+javascript
+// Vulnerable code
+function greetUser(username) {
+  const welcomeMsg = "Welcome, " + username + "!";
+  console.log(welcomeMsg);
+}
+
+greetUser('<script>alert("Hacked!")</script>');
+
+{% endhighlight %}javascript
+// Vulnerable code
+function greetUser(username) {
+  const welcomeMsg = "Welcome, " + username + "!";
+  console.log(welcomeMsg);
+}
+
+greetUser('<script>alert("Hacked!")</script>');
+
+
+n greetUser(username) {
+  const welcomeMsg = "Welcome, " + username + "!";
+  console.log(welcomeMsg);
+}
+
+greetUser('<script>alert("Hacked!")</script>');
+```
+
+```html
+<!-- Insert the vulnerable code into a short web application -->
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="vulnerable.js"></script>
+</head>
+<body>
+  <button onclick="greetUser('<script>alert("Hacked!")</script>')">Say hello</button>
+</body>
+</html>
+```
+
+```javascript
+// Solution to fix the vulnerable code
+function greetUser(username) {
+  const safeUsername = username.replace(/</g, '&lt;').replace(/>/g, '&gt;');
+  const welcomeMsg = "Welcome, " + safeUsername + "!";
+  console.log(welcomeMsg);
+}
+
+greetUser('<script>alert("Hacked!")</script>');
+```
+
+To fix the vulnerability, we need to sanitize the input by escaping any dangerous characters (like `<` and `>`) before creating the welcome message. This will prevent any potentially harmful code from being executed.
+
+{% highlight javascript %}
+javascript
+// Solution to fix the vulnerable code
+function greetUser(username) {
+  const safeUsername = username.replace(/</g, '&lt;').replace(/>/g, '&gt;');
+  const welcomeMsg = "Welcome, " + safeUsername + "!";
+  console.log(welcomeMsg);
+}
+
+greetUser('<script>alert("Hacked!")</script>');
+
+{% endhighlight %}
