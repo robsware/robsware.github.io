@@ -1,0 +1,92 @@
+---
+layout: page
+---
+
+<section class="post">
+    <div class="flex-row-between">
+        <a href="{{ site.url }}{{ site.baseurl }}/challenges/2023-04-22"> Previous challenge</a>
+             <a href="{{ site.url }}{{ site.baseurl }}/"> Home</a>
+      <button title="Change theme" id="theme-toggle" onclick="modeSwitcher()">
+        <div></div>
+      </button>
+    </div>
+  </section>
+The vulnerability is Missing Authorization
+{% highlight html %} 
+{% endhighlight %}{% highlight python %}
+python
+# Vulnerable code
+def view_profile(request):
+    user_id = request.GET["user_id"]
+    user = get_user_by_id(user_id)
+    return render(request, "profile.html", {"user": user})
+
+# In the web application
+from django.urls import path
+from . import views
+
+urlpatterns = [
+    path('profile/', views.view_profile, name='view_profile'),
+]
+
+{% endhighlight %}python
+# Vulnerable code
+def view_profile(request):
+    user_id = request.GET["user_id"]
+    user = get_user_by_id(user_id)
+    return render(request, "profile.html", {"user": user})
+
+# In the web application
+from django.urls import path
+from . import views
+
+urlpatterns = [
+    path('profile/', views.view_profile, name='view_profile'),
+]
+
+
+file(request):
+    user_id = request.GET["user_id"]
+    user = get_user_by_id(user_id)
+    return render(request, "profile.html", {"user": user})
+
+# In the web application
+from django.urls import path
+from . import views
+
+urlpatterns = [
+    path('profile/', views.view_profile, name='view_profile'),
+]
+```
+
+```N/A```
+
+```python
+# Solution how to fix the vulnerable code
+def view_profile(request):
+    user_id = request.GET["user_id"]
+    
+    # Check if the request user has authorization to view the profile
+    if request.user.id == int(user_id) or request.user.is_superuser:
+        user = get_user_by_id(user_id)
+        return render(request, "profile.html", {"user": user})
+    else:
+        return render(request, "unauthorized.html")
+```
+
+To fix the vulnerability, we need to check if the user making the request has authorization to view the profile. In this case, we only allow the user to view their own profile or if they are a superuser. If the user doesn't have authorization, we return an unauthorized page.
+
+{% highlight python %}
+python
+# Solution how to fix the vulnerable code
+def view_profile(request):
+    user_id = request.GET["user_id"]
+    
+    # Check if the request user has authorization to view the profile
+    if request.user.id == int(user_id) or request.user.is_superuser:
+        user = get_user_by_id(user_id)
+        return render(request, "profile.html", {"user": user})
+    else:
+        return render(request, "unauthorized.html")
+
+{% endhighlight %}

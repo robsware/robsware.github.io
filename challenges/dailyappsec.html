@@ -4,7 +4,7 @@ layout: page
 
 <section class="post">
     <div class="flex-row-between">
-    <a href="{{ site.url }}{{ site.baseurl }}/challenges/2023-04-22"> Previous challenge</a>
+    <a href="{{ site.url }}{{ site.baseurl }}/challenges/2023-04-23"> Previous challenge</a>
           <a href="{{ site.url }}{{ site.baseurl }}/"> Home</a>
       <button title="Change theme" id="theme-toggle" onclick="modeSwitcher()">
         <div></div>
@@ -16,21 +16,36 @@ layout: page
 <br>
 {% highlight html %} 
 {% endhighlight %}
-{% highlight python %}
-python
-# Vulnerable code
-def view_profile(request):
-    user_id = request.GET["user_id"]
-    user = get_user_by_id(user_id)
-    return render(request, "profile.html", {"user": user})
+{% highlight java %}
+java
+// Vulnerable code
+public class User {
+    private String username;
+    private boolean isAdmin;
 
-# In the web application
-from django.urls import path
-from . import views
+    public User(String username, boolean isAdmin) {
+        this.username = username;
+        this.isAdmin = isAdmin;
+    }
 
-urlpatterns = [
-    path('profile/', views.view_profile, name='view_profile'),
-]
+    public String getUsername() {
+        return username;
+    }
+
+    public boolean isAdmin() {
+        return isAdmin;
+    }
+}
+
+public class UserController {
+    public static void deleteUser(User currentUser, User targetUser) {
+        if (currentUser.isAdmin()) {
+            // Delete the targetUser from the database
+        } else {
+            System.out.println("You do not have permission to delete users.");
+        }
+    }
+}
 
 {% endhighlight %}
 <br>If you did, ping me at @robsware on twitter to get a Like and a retweet. Answers will be posted next day.
