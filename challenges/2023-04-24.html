@@ -1,0 +1,183 @@
+---
+layout: page
+---
+
+<section class="post">
+    <div class="flex-row-between">
+        <a href="{{ site.url }}{{ site.baseurl }}/challenges/2023-04-23"> Previous challenge</a>
+             <a href="{{ site.url }}{{ site.baseurl }}/"> Home</a>
+      <button title="Change theme" id="theme-toggle" onclick="modeSwitcher()">
+        <div></div>
+      </button>
+    </div>
+  </section>
+The vulnerability is Missing Authorization
+{% highlight html %} 
+{% endhighlight %}{% highlight java %}
+java
+// Vulnerable code
+public class User {
+    private String username;
+    private boolean isAdmin;
+
+    public User(String username, boolean isAdmin) {
+        this.username = username;
+        this.isAdmin = isAdmin;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public boolean isAdmin() {
+        return isAdmin;
+    }
+}
+
+public class UserController {
+    public static void deleteUser(User currentUser, User targetUser) {
+        if (currentUser.isAdmin()) {
+            // Delete the targetUser from the database
+        } else {
+            System.out.println("You do not have permission to delete users.");
+        }
+    }
+}
+
+{% endhighlight %}java
+// Vulnerable code
+public class User {
+    private String username;
+    private boolean isAdmin;
+
+    public User(String username, boolean isAdmin) {
+        this.username = username;
+        this.isAdmin = isAdmin;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public boolean isAdmin() {
+        return isAdmin;
+    }
+}
+
+public class UserController {
+    public static void deleteUser(User currentUser, User targetUser) {
+        if (currentUser.isAdmin()) {
+            // Delete the targetUser from the database
+        } else {
+            System.out.println("You do not have permission to delete users.");
+        }
+    }
+}
+
+
+User {
+    private String username;
+    private boolean isAdmin;
+
+    public User(String username, boolean isAdmin) {
+        this.username = username;
+        this.isAdmin = isAdmin;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public boolean isAdmin() {
+        return isAdmin;
+    }
+}
+
+public class UserController {
+    public static void deleteUser(User currentUser, User targetUser) {
+        if (currentUser.isAdmin()) {
+            // Delete the targetUser from the database
+        } else {
+            System.out.println("You do not have permission to delete users.");
+        }
+    }
+}
+```
+
+N/A
+
+```java
+// Solution to fix the vulnerable code
+public class User {
+    private String username;
+    private boolean isAdmin;
+
+    public User(String username, boolean isAdmin) {
+        this.username = username;
+        this.isAdmin = isAdmin;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public boolean isAdmin() {
+        return isAdmin;
+    }
+}
+
+public class UserController {
+    public static void deleteUser(User currentUser, User targetUser) {
+        if (hasDeletePermission(currentUser)) {
+            // Delete the targetUser from the database
+        } else {
+            System.out.println("You do not have permission to delete users.");
+        }
+    }
+
+    private static boolean hasDeletePermission(User user) {
+        // Check user permissions using a more complex authorization system, like role-based authorization
+        return user.isAdmin();
+    }
+}
+```
+
+To fix the vulnerability, we can refactor the access control check into a separate method, such as `hasDeletePermission()`. This method could then be extended to implement a more complex authorization system, like role-based authorization or attribute-based access control, depending on the needs of the application. Doing so would allow for greater control and flexibility in determining which users have the ability to perform sensitive actions like deleting other users.
+
+{% highlight java %}
+java
+// Solution to fix the vulnerable code
+public class User {
+    private String username;
+    private boolean isAdmin;
+
+    public User(String username, boolean isAdmin) {
+        this.username = username;
+        this.isAdmin = isAdmin;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public boolean isAdmin() {
+        return isAdmin;
+    }
+}
+
+public class UserController {
+    public static void deleteUser(User currentUser, User targetUser) {
+        if (hasDeletePermission(currentUser)) {
+            // Delete the targetUser from the database
+        } else {
+            System.out.println("You do not have permission to delete users.");
+        }
+    }
+
+    private static boolean hasDeletePermission(User user) {
+        // Check user permissions using a more complex authorization system, like role-based authorization
+        return user.isAdmin();
+    }
+}
+
+{% endhighlight %}

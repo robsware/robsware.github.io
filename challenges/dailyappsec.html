@@ -4,7 +4,7 @@ layout: page
 
 <section class="post">
     <div class="flex-row-between">
-    <a href="{{ site.url }}{{ site.baseurl }}/challenges/2023-04-23"> Previous challenge</a>
+    <a href="{{ site.url }}{{ site.baseurl }}/challenges/2023-04-24"> Previous challenge</a>
           <a href="{{ site.url }}{{ site.baseurl }}/"> Home</a>
       <button title="Change theme" id="theme-toggle" onclick="modeSwitcher()">
         <div></div>
@@ -16,33 +16,16 @@ layout: page
 <br>
 {% highlight html %} 
 {% endhighlight %}
-{% highlight java %}
-java
-// Vulnerable code
-public class User {
-    private String username;
-    private boolean isAdmin;
+{% highlight c# %}
+csharp
+// vulnerable code
+using System;
 
-    public User(String username, boolean isAdmin) {
-        this.username = username;
-        this.isAdmin = isAdmin;
-    }
-
-    public String getUsername() {
-        return username;
-    }
-
-    public boolean isAdmin() {
-        return isAdmin;
-    }
-}
-
-public class UserController {
-    public static void deleteUser(User currentUser, User targetUser) {
-        if (currentUser.isAdmin()) {
-            // Delete the targetUser from the database
-        } else {
-            System.out.println("You do not have permission to delete users.");
+class Program {
+    static void Main(string[] args) {
+        int[] array = new int[5];
+        for (int i = 0; i <= array.Length; i++) {
+            array[i] = i;
         }
     }
 }
