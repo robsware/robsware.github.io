@@ -4,7 +4,7 @@ layout: page
 
 <section class="post">
     <div class="flex-row-between">
-    <a href="{{ site.url }}{{ site.baseurl }}/challenges/2023-04-24"> Previous challenge</a>
+    <a href="{{ site.url }}{{ site.baseurl }}/challenges/2023-04-25"> Previous challenge</a>
           <a href="{{ site.url }}{{ site.baseurl }}/"> Home</a>
       <button title="Change theme" id="theme-toggle" onclick="modeSwitcher()">
         <div></div>
@@ -19,15 +19,10 @@ layout: page
 {% highlight c# %}
 csharp
 // vulnerable code
-using System;
-
-class Program {
-    static void Main(string[] args) {
-        int[] array = new int[5];
-        for (int i = 0; i <= array.Length; i++) {
-            array[i] = i;
-        }
-    }
+public void PrintInput()
+{
+    string input = Console.ReadLine();
+    Console.WriteLine($"You entered: {input}");
 }
 
 {% endhighlight %}
