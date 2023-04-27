@@ -1,0 +1,54 @@
+---
+layout: page
+---
+
+<section class="post">
+    <div class="flex-row-between">
+        <a href="{{ site.url }}{{ site.baseurl }}/challenges/2023-04-25"> Previous challenge</a>
+             <a href="{{ site.url }}{{ site.baseurl }}/"> Home</a>
+      <button title="Change theme" id="theme-toggle" onclick="modeSwitcher()">
+        <div></div>
+      </button>
+    </div>
+  </section>
+The vulnerability is Improper Input Validation
+{% highlight html %} 
+{% endhighlight %}{% highlight c# %}
+csharp
+// vulnerable code
+public void PrintInput()
+{
+    string input = Console.ReadLine();
+    Console.WriteLine($"You entered: {input}");
+}
+
+{% endhighlight %}csharp
+// vulnerable code
+public void PrintInput()
+{
+    string input = Console.ReadLine();
+    Console.WriteLine($"You entered: {input}");
+}
+
+
+To fix the vulnerability, we need to validate the input before using it. In the fixed code snippet, we check if the input is either a null, empty or whitespace-only string, which would make it invalid. We also check if the input length exceeds 100 characters to prevent overly long inputs. If the input is invalid, we display an error message, and if it's valid, we proceed with printing the input as originally intended.
+
+{% highlight c# %}
+csharp
+// solution how to fix the vulnerable code
+public void PrintValidatedInput()
+{
+    string input = Console.ReadLine();
+
+    // Validate the input before using it
+    if (String.IsNullOrWhiteSpace(input) || input.Length > 100)
+    {
+        Console.WriteLine("Invalid input. Please enter a non-empty string with a maximum length of 100 characters.");
+    }
+    else
+    {
+        Console.WriteLine($"You entered: {input}");
+    }
+}
+
+{% endhighlight %}

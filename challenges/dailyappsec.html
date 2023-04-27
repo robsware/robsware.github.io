@@ -4,7 +4,7 @@ layout: page
 
 <section class="post">
     <div class="flex-row-between">
-    <a href="{{ site.url }}{{ site.baseurl }}/challenges/2023-04-25"> Previous challenge</a>
+    <a href="{{ site.url }}{{ site.baseurl }}/challenges/2023-04-26"> Previous challenge</a>
           <a href="{{ site.url }}{{ site.baseurl }}/"> Home</a>
       <button title="Change theme" id="theme-toggle" onclick="modeSwitcher()">
         <div></div>
@@ -16,14 +16,22 @@ layout: page
 <br>
 {% highlight html %} 
 {% endhighlight %}
-{% highlight c# %}
-csharp
-// vulnerable code
-public void PrintInput()
-{
-    string input = Console.ReadLine();
-    Console.WriteLine($"You entered: {input}");
-}
+{% highlight python %}
+python
+# vulnerable code
+def login(username, password):
+    if username == "admin" and password == "password123":
+        return True
+    else:
+        return False
+
+user_input_username = input("Enter your username: ")
+user_input_password = input("Enter your password: ")
+
+if login(user_input_username, user_input_password):
+    print("Logged in successfully")
+else:
+    print("Invalid credentials")
 
 {% endhighlight %}
 <br>If you did, ping me at @robsware on twitter to get a Like and a retweet. Answers will be posted next day.
