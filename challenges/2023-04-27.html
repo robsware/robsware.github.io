@@ -1,0 +1,75 @@
+---
+layout: page
+---
+
+<section class="post">
+    <div class="flex-row-between">
+        <a href="{{ site.url }}{{ site.baseurl }}/challenges/2023-04-26"> Previous challenge</a>
+             <a href="{{ site.url }}{{ site.baseurl }}/"> Home</a>
+      <button title="Change theme" id="theme-toggle" onclick="modeSwitcher()">
+        <div></div>
+      </button>
+    </div>
+  </section>
+The vulnerability is Improper Authentication
+{% highlight html %} 
+{% endhighlight %}{% highlight python %}
+python
+# vulnerable code
+def login(username, password):
+    if username == "admin" and password == "password123":
+        return True
+    else:
+        return False
+
+user_input_username = input("Enter your username: ")
+user_input_password = input("Enter your password: ")
+
+if login(user_input_username, user_input_password):
+    print("Logged in successfully")
+else:
+    print("Invalid credentials")
+
+{% endhighlight %}python
+# vulnerable code
+def login(username, password):
+    if username == "admin" and password == "password123":
+        return True
+    else:
+        return False
+
+user_input_username = input("Enter your username: ")
+user_input_password = input("Enter your password: ")
+
+if login(user_input_username, user_input_password):
+    print("Logged in successfully")
+else:
+    print("Invalid credentials")
+
+
+In the original code, the password was being stored in plaintext, making it very easy for an attacker to obtain the password if they had access to the source code. To fix this, instead of storing the password in plaintext, we store the hash of the password (in this case, using the MD5 hashing algorithm) and compare it to the hash of the user's input. This way, even if an attacker managed to look at the source code, they would not be able to retrieve the original password, as it is not stored in the code.
+
+{% highlight python %}
+python
+# solution how to fix the vulnerable code
+import hashlib
+
+correct_username = "admin"
+correct_password_hash = "5f4dcc3b5aa765d61d8327deb882cf99"  # hash of "password123" using md5
+
+def login(username, password):
+    password_hash = hashlib.md5(password.encode('utf-8')).hexdigest()
+    if username == correct_username and correct_password_hash == password_hash:
+        return True
+    else:
+        return False
+
+user_input_username = input("Enter your username: ")
+user_input_password = input("Enter your password: ")
+
+if login(user_input_username, user_input_password):
+    print("Logged in successfully")
+else:
+    print("Invalid credentials")
+
+{% endhighlight %}
