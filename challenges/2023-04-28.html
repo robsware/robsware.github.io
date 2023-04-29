@@ -1,0 +1,71 @@
+---
+layout: page
+---
+
+<section class="post">
+    <div class="flex-row-between">
+        <a href="{{ site.url }}{{ site.baseurl }}/challenges/2023-04-27"> Previous challenge</a>
+             <a href="{{ site.url }}{{ site.baseurl }}/"> Home</a>
+      <button title="Change theme" id="theme-toggle" onclick="modeSwitcher()">
+        <div></div>
+      </button>
+    </div>
+  </section>
+The vulnerability is Improper Input Validation
+{% highlight html %}html
+<!-- Insert the vulnerable code into a short web application -->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Input Validation Example</title>
+  <script src="vulnerable.js"></script>
+</head>
+<body>
+  <input id="userNameInput" type="text" placeholder="Enter your name" />
+  <button onclick="greetUser(userNameInput.value)">Greet</button>
+</body>
+</html>
+
+{% endhighlight %}{% highlight javascript %}
+javascript
+// vulnerable code
+function greetUser(userName) {
+  alert('Hello, ' + userName + '!');
+}
+
+const userInputElement = document.getElementById('userNameInput');
+const userName = userInputElement.value;
+greetUser(userName);
+
+{% endhighlight %}javascript
+// vulnerable code
+function greetUser(userName) {
+  alert('Hello, ' + userName + '!');
+}
+
+const userInputElement = document.getElementById('userNameInput');
+const userName = userInputElement.value;
+greetUser(userName);
+
+
+The vulnerability in the initial code is due to not validating or sanitizing the user input, which allows for potentially malicious content to be executed. The solution is to use a proper input validation and sanitization method, such as the `escapeHTML` function in the provided solution. This function creates a temporary DOM element and sets its textContent to the user input, which automatically escapes any potentially dangerous HTML entities. As a result, when the modified `greetUser` function uses `safeUserName`, it's guaranteed to be free from any potential threats.
+
+{% highlight javascript %}
+javascript
+// solution how to fix the vulnerable code
+function escapeHTML(unsafeText) {
+  const div = document.createElement('div');
+  div.textContent = unsafeText;
+  return div.innerHTML;
+}
+
+function greetUser(userName) {
+  const safeUserName = escapeHTML(userName);
+  alert('Hello, ' + safeUserName + '!');
+}
+
+const userInputElement = document.getElementById('userNameInput');
+const userName = userInputElement.value;
+greetUser(userName);
+
+{% endhighlight %}
