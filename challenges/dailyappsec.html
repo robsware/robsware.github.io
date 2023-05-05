@@ -4,7 +4,7 @@ layout: page
 
 <section class="post">
     <div class="flex-row-between">
-    <a href="{{ site.url }}{{ site.baseurl }}/challenges/2023-04-28"> Previous challenge</a>
+    <a href="{{ site.url }}{{ site.baseurl }}/challenges/2023-05-04"> Previous challenge</a>
           <a href="{{ site.url }}{{ site.baseurl }}/"> Home</a>
       <button title="Change theme" id="theme-toggle" onclick="modeSwitcher()">
         <div></div>
@@ -18,17 +18,32 @@ layout: page
 {% endhighlight %}
 {% highlight php %}
 php
+<!-- vulnerable code -->
 <?php
-function incrementCounter() {
-    $counterFile = 'counter.txt';
-    $counterValue = file_get_contents($counterFile);
-    $counterValue++;
-
-    file_put_contents($counterFile, $counterValue);
+$file = $_GET['file'];
+if (isset($file)) {
+    include("restricted-directory/" . $file);
 }
-
-incrementCounter();
 ?>
+
+<!-- short web application -->
+<!-- filename: index.php -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Web App</title>
+</head>
+<body>
+    <h1>Simple Web App</h1>
+    <?php
+    if (isset($_GET['file'])) {
+        echo '<pre>';
+        include('restricted-directory/' . $_GET['file']);
+        echo '</pre>';
+    }
+    ?>
+</body>
+</html>
 
 {% endhighlight %}
 <br>If you did, ping me at @robsware on twitter to get a Like and a retweet. Answers will be posted next day.
