@@ -4,7 +4,7 @@ layout: page
 
 <section class="post">
     <div class="flex-row-between">
-    <a href="{{ site.url }}{{ site.baseurl }}/challenges/2023-05-04"> Previous challenge</a>
+    <a href="{{ site.url }}{{ site.baseurl }}/challenges/2023-05-06"> Previous challenge</a>
           <a href="{{ site.url }}{{ site.baseurl }}/"> Home</a>
       <button title="Change theme" id="theme-toggle" onclick="modeSwitcher()">
         <div></div>
@@ -16,34 +16,22 @@ layout: page
 <br>
 {% highlight html %} 
 {% endhighlight %}
-{% highlight php %}
-php
-<!-- vulnerable code -->
-<?php
-$file = $_GET['file'];
-if (isset($file)) {
-    include("restricted-directory/" . $file);
-}
-?>
+{% highlight python %}
+python
+def add_numbers(a, b):
+    return a.value + b.value
 
-<!-- short web application -->
-<!-- filename: index.php -->
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Web App</title>
-</head>
-<body>
-    <h1>Simple Web App</h1>
-    <?php
-    if (isset($_GET['file'])) {
-        echo '<pre>';
-        include('restricted-directory/' . $_GET['file']);
-        echo '</pre>';
-    }
-    ?>
-</body>
-</html>
+def main():
+    a = None
+    b = 5
+
+    try:
+        result = add_numbers(a, b)
+        print("Result: ", result)
+    except Exception as ex:
+        print("Error: ", ex)
+
+main()
 
 {% endhighlight %}
 <br>If you did, ping me at @robsware on twitter to get a Like and a retweet. Answers will be posted next day.

@@ -1,0 +1,87 @@
+---
+layout: page
+---
+
+<section class="post">
+    <div class="flex-row-between">
+        <a href="{{ site.url }}{{ site.baseurl }}/challenges/2023-05-04"> Previous challenge</a>
+             <a href="{{ site.url }}{{ site.baseurl }}/"> Home</a>
+      <button title="Change theme" id="theme-toggle" onclick="modeSwitcher()">
+        <div></div>
+      </button>
+    </div>
+  </section>
+The vulnerability is Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')
+{% highlight html %} 
+{% endhighlight %}{% highlight php %}
+php
+<!-- vulnerable code -->
+<?php
+$file = $_GET['file'];
+if (isset($file)) {
+    include("restricted-directory/" . $file);
+}
+?>
+
+<!-- short web application -->
+<!-- filename: index.php -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Web App</title>
+</head>
+<body>
+    <h1>Simple Web App</h1>
+    <?php
+    if (isset($_GET['file'])) {
+        echo '<pre>';
+        include('restricted-directory/' . $_GET['file']);
+        echo '</pre>';
+    }
+    ?>
+</body>
+</html>
+
+{% endhighlight %}php
+<!-- vulnerable code -->
+<?php
+$file = $_GET['file'];
+if (isset($file)) {
+    include("restricted-directory/" . $file);
+}
+?>
+
+<!-- short web application -->
+<!-- filename: index.php -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Web App</title>
+</head>
+<body>
+    <h1>Simple Web App</h1>
+    <?php
+    if (isset($_GET['file'])) {
+        echo '<pre>';
+        include('restricted-directory/' . $_GET['file']);
+        echo '</pre>';
+    }
+    ?>
+</body>
+</html>
+
+
+In the fixed code snippet, we have defined an array of allowed file names that can be included (in this case, 'file1.php' and 'file2.php'). When a user tries to access a file, we check if the requested file is in the allowed files array using the `in_array` function. If it's present in the allowed files array, we include the file. Otherwise, we don't include the file. This approach effectively limits the access to only the specified files in the restricted directory, preventing path traversal vulnerabilities.
+
+{% highlight php %}
+php
+<!-- solution how to fix the vulnerable code -->
+<?php
+$file = $_GET['file'];
+$allowed_files = array('file1.php', 'file2.php');
+if (isset($file) && in_array($file, $allowed_files)) {
+    include("restricted-directory/" . $file);
+}
+?>
+
+{% endhighlight %}
