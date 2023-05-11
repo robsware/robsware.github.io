@@ -1,0 +1,76 @@
+---
+layout: page
+---
+
+<section class="post">
+    <div class="flex-row-between">
+        <a href="{{ site.url }}{{ site.baseurl }}/challenges/2023-05-06"> Previous challenge</a>
+             <a href="{{ site.url }}{{ site.baseurl }}/"> Home</a>
+      <button title="Change theme" id="theme-toggle" onclick="modeSwitcher()">
+        <div></div>
+      </button>
+    </div>
+  </section>
+The vulnerability is NULL Pointer Dereference
+{% highlight html %} 
+{% endhighlight %}{% highlight python %}
+python
+def add_numbers(a, b):
+    return a.value + b.value
+
+def main():
+    a = None
+    b = 5
+
+    try:
+        result = add_numbers(a, b)
+        print("Result: ", result)
+    except Exception as ex:
+        print("Error: ", ex)
+
+main()
+
+{% endhighlight %}python
+def add_numbers(a, b):
+    return a.value + b.value
+
+def main():
+    a = None
+    b = 5
+
+    try:
+        result = add_numbers(a, b)
+        print("Result: ", result)
+    except Exception as ex:
+        print("Error: ", ex)
+
+main()
+
+
+To fix the vulnerability, we need to check if the objects being passed to the `add_numbers` function are not null (None in Python) before attempting to access their 'value' attribute. This can be done by adding an if statement in the `add_numbers` function that checks if both `a` and `b` are not None. If one or both are None, we raise a ValueError with an appropriate error message. This way, code execution won't attempt to access the 'value' attribute of a None variable, preventing the NULL Pointer Dereference vulnerability.
+
+{% highlight python %}
+python
+class Number:
+    def __init__(self, value):
+        self.value = value
+
+def add_numbers(a, b):
+    if a is not None and b is not None:
+        return a.value + b.value
+    else:
+        raise ValueError("One or both values are invalid.")
+
+def main():
+    a = None
+    b = Number(5)
+
+    try:
+        result = add_numbers(a, b)
+        print("Result: ", result)
+    except Exception as ex:
+        print("Error: ", ex)
+
+main()
+
+{% endhighlight %}
