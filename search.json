@@ -1,6 +1,15 @@
 [
   
     {
+      "title"    : "Defending against prompt injection.",
+      "description" : "Welcome to dependency hell.",
+      "category" : "",
+      "tags"     : "reflections",
+      "url"      : "/2023/05/13/promptinjection",
+      "date"     : "2023-05-13 00:00:00 +0100"
+    } ,
+  
+    {
       "title"    : "The value of patience",
       "description" : "No such thing as too late.",
       "category" : "",
