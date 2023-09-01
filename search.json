@@ -1,6 +1,15 @@
 [
   
     {
+      "title"    : "Getting my first CVE",
+      "description" : "The frustrations and thrills of open source code review.",
+      "category" : "",
+      "tags"     : "reflections, tutorials",
+      "url"      : "/2023/09/01/firstcve",
+      "date"     : "2023-09-01 00:00:00 +0100"
+    } ,
+  
+    {
       "title"    : "Defending against prompt injection",
       "description" : "A brief walk through common LLM prompt injection techniques and ways to prevent them.",
       "category" : "",

