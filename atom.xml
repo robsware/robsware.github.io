@@ -4,7 +4,7 @@
  <title>robsware</title>
  <link href="https://robsware.github.io/atom.xml" rel="self"/>
  <link href="https://robsware.github.io/"/>
- <updated>2023-09-01T20:36:27+01:00</updated>
+ <updated>2023-09-01T20:40:18+01:00</updated>
  <id>https://robsware.github.io</id>
  <author>
    <name>gesko</name>
@@ -19,7 +19,7 @@
    <id>https://robsware.github.io/2023/09/01/firstcve</id>
    <content type="html">&lt;p&gt;After passing my OSWE in March and dealing with some long neglected life issues, I decided to put my skills to the test and hunt for a CVE. It felt like a rite of passage for OSWE passers.&lt;/p&gt;
 
-&lt;p&gt;&lt;em&gt;Recon&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Recon&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;My first approach was to find projects written in languages that are easy to make mistakes in but that are also very popular. PHP is the prime candidate here, so I looked up php open source projects on google and quickly discovered sourcecodetester.com among the first results.&lt;/p&gt;
 
@@ -37,7 +37,7 @@
 
 &lt;p&gt;This was good news, it meant that whoever designed this took some authorization considerations into account.&lt;/p&gt;
 
-&lt;p&gt;&lt;em&gt;Exploit Discovery&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Exploit Discovery&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;I took a shortcut here, and instead of following user input paths like I normally do, I went straight to the source code and searched for “query” in an attempt to grab an easy win.&lt;/p&gt;
 
@@ -57,7 +57,7 @@
 
 &lt;p&gt;This meant that any input after the id parameter would pass unfiltered through these 2 lines:&lt;/p&gt;
 &lt;div class=&quot;language-php highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    &lt;span class=&quot;nv&quot;&gt;$conn&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;query&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;UPDATE `inquiry_list` set `status` = 1 where id = &apos;&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$_GET&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;id&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&apos;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;nv&quot;&gt;$qry&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$conn&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;query&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;SELECT *  from `inquiry_list` where id = &apos;&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$_GET&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;id&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&apos;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;nv&quot;&gt;$qry&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$conn&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;query&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;SELECT **  from `inquiry_list` where id = &apos;&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$_GET&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;id&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&apos;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Since view_inquiry.php does not use the session header, it means that we can attack the id parameter without any need for authentication.&lt;/p&gt;
@@ -73,8 +73,10 @@
 
 &lt;p&gt;Let’s experiment with some more payloads and look if there are any differences in the content length.&lt;/p&gt;
 
-&lt;div class=&quot;language-text highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;GET /mpms/admin/?page=inquiries/view_inquiry&amp;amp;id=4&apos;+AND+(ascii(substring((SELECT+password+FROM+mpms_db.users+WHERE+id=1+LIMIT+1),1,1))=48)--+ 
-GET /mpms/admin/?page=inquiries/view_inquiry&amp;amp;id=4&apos;+AND+(ascii(substring((SELECT+password+FROM+mpms_db.users+WHERE+id=1+LIMIT+1),1,1))=47)--+ 
+&lt;div class=&quot;language-text highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;GET /mpms/admin/?page=inquiries/view_inquiry&amp;amp;id=4&apos;+AND+(ascii(substring((SELECT+password+FROM+mpms_db.users+WHERE+id=1+LIMIT
++1),1,1))=48)--+ 
+GET /mpms/admin/?page=inquiries/view_inquiry&amp;amp;id=4&apos;+AND+(ascii(substring((SELECT+password+FROM+mpms_db.users+WHERE+id=1+LIMIT
++1),1,1))=47)--+ 
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;&lt;img src=&quot;/assets/images/fuzz1.png&quot; alt=&quot;&quot; /&gt;
@@ -82,7 +84,7 @@ GET /mpms/admin/?page=inquiries/view_inquiry&amp;amp;id=4&apos;+AND+(ascii(subst
 
 &lt;p&gt;It does look like we get different content lengths when the exploit fails to execute. This means we can start working on an exploit right away.&lt;/p&gt;
 
-&lt;p&gt;&lt;em&gt;The Exploit&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;The Exploit&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;The exploit is actually surprisingly simple. I ended up pruning the GET request of all uneccessary headers to get the request size down, wrote a for loop for the Blind SQL Injection and then a get_token function to store the token. Here it is:&lt;/p&gt;
 
@@ -124,7 +126,7 @@ GET /mpms/admin/?page=inquiries/view_inquiry&amp;amp;id=4&apos;+AND+(ascii(subst
 
 &lt;p&gt;&lt;img src=&quot;/assets/images/source.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;em&gt;The Report&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;The Report&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;With those proofs in hand, I used the CVE MITRE website to complete the form and report the CVE via &lt;a href=&quot;https://www.cve.org/ReportRequest/ReportRequestForNonCNAs&quot;&gt;https://www.cve.org/ReportRequest/ReportRequestForNonCNAs&lt;/a&gt;.&lt;/p&gt;
 
