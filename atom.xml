@@ -4,7 +4,7 @@
  <title>robsware</title>
  <link href="https://robsware.github.io/atom.xml" rel="self"/>
  <link href="https://robsware.github.io/"/>
- <updated>2023-09-01T20:40:18+01:00</updated>
+ <updated>2023-09-01T20:50:31+01:00</updated>
  <id>https://robsware.github.io</id>
  <author>
    <name>gesko</name>
@@ -123,6 +123,8 @@ GET /mpms/admin/?page=inquiries/view_inquiry&amp;amp;id=4&apos;+AND+(ascii(subst
 &lt;p&gt;&lt;img src=&quot;/assets/images/exploit.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Which is exactly the password used in the source page:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/cracked.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/assets/images/source.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
