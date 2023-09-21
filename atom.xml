@@ -4,7 +4,7 @@
  <title>robsware</title>
  <link href="https://robsware.github.io/atom.xml" rel="self"/>
  <link href="https://robsware.github.io/"/>
- <updated>2023-09-21T17:57:04+01:00</updated>
+ <updated>2023-09-21T17:59:04+01:00</updated>
  <id>https://robsware.github.io</id>
  <author>
    <name>gesko</name>
@@ -82,7 +82,7 @@ GET /mpms/admin/?page=inquiries/view_inquiry&amp;amp;id=4&apos;+AND+(ascii(subst
 &lt;p&gt;&lt;img src=&quot;/assets/images/fuzz1.png&quot; alt=&quot;&quot; /&gt;
 &lt;img src=&quot;/assets/images/fuzz2.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;It does look like we get different content lengths when the exploit fails to execute. This means we can start working on an exploit right away.&lt;/p&gt;
+&lt;p&gt;It does look like we get different content lengths when the query fails to execute. This means we can start working on an exploit right away.&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;The Exploit&lt;/strong&gt;&lt;/p&gt;
 
