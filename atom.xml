@@ -4,7 +4,7 @@
  <title>robsware</title>
  <link href="https://robsware.github.io/atom.xml" rel="self"/>
  <link href="https://robsware.github.io/"/>
- <updated>2023-09-01T21:27:45+01:00</updated>
+ <updated>2023-09-21T17:57:04+01:00</updated>
  <id>https://robsware.github.io</id>
  <author>
    <name>gesko</name>
@@ -25,7 +25,7 @@
 
 &lt;p&gt;&lt;img src=&quot;/assets/images/sourcecodetester.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;I started perusing through random projects and downloading them locally to run them. This approach netter me a substantial number of critical findings, but whenever I wanted to report them to MITRE, I would find out that they were already assigned a CVE. Nonetheless, it was a nice confidence booster that I was able to find those vulnerabilities so easily.&lt;/p&gt;
+&lt;p&gt;I started perusing through random projects and downloading them locally to run them. This approach netted me a substantial number of critical findings, but whenever I wanted to report them to MITRE, I would find out that they were already assigned a CVE. Nonetheless, it was a nice confidence booster that I was able to find those vulnerabilities so easily.&lt;/p&gt;
 
 &lt;p&gt;This meant I had to up my game a bit. I had to look for projects that were at least somewhat secure. After a more careful analysis, I found the &lt;a href=&quot;https://www.sourcecodester.com/php/15360/packers-and-movers-management-system-phpoop-free-source-code.html&quot;&gt;Packers and Movers Management system&lt;/a&gt;&lt;/p&gt;
 
