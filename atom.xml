@@ -4,7 +4,7 @@
  <title>robsware</title>
  <link href="https://robsware.github.io/atom.xml" rel="self"/>
  <link href="https://robsware.github.io/"/>
- <updated>2023-11-05T09:43:33+00:00</updated>
+ <updated>2023-11-05T09:47:25+00:00</updated>
  <id>https://robsware.github.io</id>
  <author>
    <name>gesko</name>
@@ -13,7 +13,7 @@
 
  
  <entry>
-   <title>Hacking with AI and LLMs - Giving good AIs bad ideas</title>
+   <title>Hacking with AI and LLMs - Giving good machines bad ideas</title>
    <link href="https://robsware.github.io/2023/11/05/llmhacking"/>
    <updated>2023-11-05T00:00:00+00:00</updated>
    <id>https://robsware.github.io/2023/11/05/llmhacking</id>
