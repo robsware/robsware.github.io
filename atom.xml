@@ -4,7 +4,7 @@
  <title>robsware</title>
  <link href="https://robsware.github.io/atom.xml" rel="self"/>
  <link href="https://robsware.github.io/"/>
- <updated>2023-11-05T09:20:30+00:00</updated>
+ <updated>2023-11-05T09:31:50+00:00</updated>
  <id>https://robsware.github.io</id>
  <author>
    <name>gesko</name>
@@ -21,7 +21,7 @@
 
 &lt;p&gt;Ever since playing Netrunner (the card game) with some friends more than a decade ago and seeing the card Magnum Opus, I have had this fascination of creating a magnum opus of my own. Coupled with my intense love of Sci-Fi, especially Asimov, inevitably led me down the path of Artificial Intelligence. I have been in an out of the AI/ML world for many years and I had built and implemented a few supervised models on some small scale projects, but I never had the math background to truly get deep into the field, and the job prospects were quite slim, so I ended up getting into cyber security, a field which I enjoy and in which I still operate as of today.&lt;/p&gt;
 
-&lt;p&gt;Throughout those years of working both in infosec and dabbling in AI, the thought of crossing them together crossed my head a few times. I had the opportunity to look at many “AI based” red teaming simulators over the years and I never got to see any products remarkable in any particular way. &lt;a href=&quot;https://github.com/robsware/defendy/blob/master/machinelearning/detectAnomalies.py&quot;&gt;I had implemented an Isolation Forest based auto adjusting capability to my home made IDS&lt;/a&gt;, but it would overheat the Raspberry Pi I was using to run it and cause an eventual crash, so it ended up being an optional flag for when I could run it on more powerful hardware. Earlier this year, I also published a blog post on how to defend against LLM prompt injection, way before OWASP or any other big players got into the field.&lt;/p&gt;
+&lt;p&gt;Throughout those years of working both in infosec and dabbling in AI, the thought of crossing them together crossed my head a few times. I had the opportunity to look at many “AI based” red teaming simulators over the years and I never got to see any products remarkable in any particular way. &lt;a href=&quot;https://github.com/robsware/defendy/blob/master/machinelearning/detectAnomalies.py&quot;&gt;I had implemented an Isolation Forest based auto adjusting capability to my home made IDS&lt;/a&gt;, but it would overheat the Raspberry Pi I was using to run it and cause an eventual crash, so it ended up being an optional flag for when I could run it on more powerful hardware. Earlier this year, &lt;a href=&quot;https://robsware.github.io/2023/05/13/promptinjection&quot;&gt;I have also published a blog post on how to defend against LLM prompt injection, way before OWASP or any other big players got into the field.&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;AI Alignment&lt;/strong&gt;&lt;/p&gt;
 
