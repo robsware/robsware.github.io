@@ -1,6 +1,15 @@
 [
   
     {
+      "title"    : "Hacking with AI and LLMs - Giving good AIs bad ideas",
+      "description" : "Teaching LLMs how to help hackers.",
+      "category" : "",
+      "tags"     : "reflections",
+      "url"      : "/2023/11/05/llmhacking",
+      "date"     : "2023-11-05 00:00:00 +0000"
+    } ,
+  
+    {
       "title"    : "Getting my first CVE",
       "description" : "The frustrations and thrills of open source code review.",
       "category" : "",
