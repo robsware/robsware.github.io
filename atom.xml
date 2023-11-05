@@ -4,7 +4,7 @@
  <title>robsware</title>
  <link href="https://robsware.github.io/atom.xml" rel="self"/>
  <link href="https://robsware.github.io/"/>
- <updated>2023-11-05T13:08:37+00:00</updated>
+ <updated>2023-11-05T13:14:02+00:00</updated>
  <id>https://robsware.github.io</id>
  <author>
    <name>gesko</name>
@@ -55,7 +55,7 @@
   &lt;li&gt;This part is arguably the simplest one, where your biggest worry is not running out of memory. &lt;br /&gt;&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;Let’s check out some examples. I have tried to avoid cherry picking either very good answers or very bad ones, and stuck with more of an averaqe quality across 5-10 samples. These results are by no means exhaustive but should be interesting nonetheless.&lt;/p&gt;
+&lt;p&gt;Let’s check out some examples. I have tried to avoid cherry picking either very good answers or very bad ones, and stuck with more of an averaqe quality across 5-10 samples. These results are by no means exhaustive but should be interesting nonetheless!&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;13B:&lt;/strong&gt;&lt;/p&gt;
 
