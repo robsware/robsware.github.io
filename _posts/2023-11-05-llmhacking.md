@@ -25,7 +25,7 @@ Over the years of working as a pentester and the almost dozen certifications I h
 
 **How it works**
 
-I have been running those experiments via google colab, as my GPU is fairly only and only has 8 GBs of VRAM. Google colab offers 16 GBs for free and 40 GBs for about 12 hours/month via a $11 subscription. This is just enough space to experiment with both 13B and 33B models. 
+I have been running those experiments via google colab, as my GPU is fairly old and only has 8 GBs of VRAM. Google colab offers 16 GBs for free and 40 GBs for about 12 hours/month via a $11 subscription. This is just enough space to experiment with both 13B and 33B models. 
 
 As with all LLMs, the overall view is rather simple.<br>
 1. Pick a LLaMa2 model that has been fine tuned to be less morally aligned.<br>
