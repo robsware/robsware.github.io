@@ -169,4 +169,6 @@ Lastly, another huge gain came from increasing the quantized size. 2 bit quantiz
 
 [I have set up a new category on my blog where I’ll be posting more results of my AI experiments.](https://robsware.github.io/llmexamples) My dream would be to build a startup that can provide sysadmins and blue teamers with enough tooling and knowledge to be able to act as a purple team and test their systems. In the future, I intend to add a threat hunting database in order to also help red teamers better learn what gets them caught. 
 
+While this experiment has focused on the operational side of pentest and how attackers might move inside a network, there are also the vulnerability research and the malware development parts of red teaming, as well as more of a focus on stealth. I have some appsec knowledge so I will definitely be exploring that field too in the future, as for maldev and evasion, I still need to catch up a bit.
+
 Lastly, and this may very well be a tall order, perhaps once the AI can master both the Blue and Red sides, it can start generating synthetic data based on its knowledge and push the field of infosec to new heights. The technology is still young, and LLMs have a long way to go in both capability and optimization before this can become a reality, but I do very much intend to pursue this as a startup idea.
