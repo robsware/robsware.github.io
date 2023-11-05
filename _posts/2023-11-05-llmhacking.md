@@ -41,7 +41,7 @@ The catch is that each of those steps can be highly complex.
 4. Prompt Engineering comes into play here, with a lot of back and forth. <br>
 5. This part is arguably the simplest one, where your biggest worry is not running out of memory. <br>
 
-Let’s check out some examples. These results are by no means exhaustive but should be interesting nonetheless.
+Let’s check out some examples. I have tried to avoid cherry picking either very good answers or very bad ones, and stuck with more of an averaqe quality across 5-10 samples. These results are by no means exhaustive but should be interesting nonetheless.
 
 **13B:**
 
