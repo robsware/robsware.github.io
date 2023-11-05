@@ -4,7 +4,7 @@
  <title>robsware</title>
  <link href="https://robsware.github.io/atom.xml" rel="self"/>
  <link href="https://robsware.github.io/"/>
- <updated>2023-11-05T13:52:39+00:00</updated>
+ <updated>2023-11-05T18:14:46+00:00</updated>
  <id>https://robsware.github.io</id>
  <author>
    <name>gesko</name>
@@ -165,7 +165,7 @@ There are several ways to try to bypass Antivirus software, but keep in mind tha
 
 &lt;p&gt;The real gains came from the data loaded in the ChromaDB. The LLMs were perfectly capable of contextualizing the data and commands inside my notes even with my bare bones writing style, or perhaps specifically because of it. When using github repositories, their overt verbosity tended to cause issues. Part of it was because of the way ChromDB handled the “similarity_search” function. For instance, the mimikatz page repeated mimikatz dozens of times, even outside commands, which likely caused the confusion that resulted in the preppended “mimikatz_command” thing.&lt;/p&gt;
 
-&lt;p&gt;Working with local models instead of OpenAI is also a massive hurdle. Langchains is quite obviously designed with the OpenAI API in mind first, and the documentation and s available for local models leave a lot to be desired. That may be in part because the field is still new.&lt;/p&gt;
+&lt;p&gt;Working with local models instead of OpenAI is also a massive hurdle. Langchains is quite obviously designed with the OpenAI API in mind first, and the documentation and tutorials available for local models leave a lot to be desired. That may be in part because the field is still new.&lt;/p&gt;
 
 &lt;p&gt;Lastly, another huge gain came from increasing the quantized size. 2 bit quantization was good for managing to fit the model in under 8 GBs of VRAM, but the quality was abysmal when compared to 5 bit quantization. Although the gains from 5 bit to 6 or 8 bit were a lot less noticeable for how much more VRAM it demanded. 5 bit seems like the sweet spot for now, and 16 GBs of VRAM are just enough to fit a 13B model in 5 bits in memory, while 40 GBs are enough for a 33B model in 5 bits.&lt;/p&gt;
 
