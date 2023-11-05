@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Hacking with AI and LLMs - Giving good AIs bad ideas
+title: Hacking with AI and LLMs - Giving good machines bad ideas
 description: Teaching LLMs how to help hackers.
 summary: There is a lot of potential in ussing LLMs and AI to hack or to help hackers. I explore some of the operational options in this post.
 tags: reflections experiments
