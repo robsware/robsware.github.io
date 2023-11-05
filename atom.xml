@@ -4,7 +4,7 @@
  <title>robsware</title>
  <link href="https://robsware.github.io/atom.xml" rel="self"/>
  <link href="https://robsware.github.io/"/>
- <updated>2023-11-05T09:31:50+00:00</updated>
+ <updated>2023-11-05T09:35:30+00:00</updated>
  <id>https://robsware.github.io</id>
  <author>
    <name>gesko</name>
@@ -167,6 +167,8 @@ There are several ways to try to bypass Antivirus software, but keep in mind tha
 &lt;p&gt;&lt;strong&gt;Next Steps&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://robsware.github.io/llmexamples&quot;&gt;I have set up a new category on my blog where I’ll be posting more results of my AI experiments.&lt;/a&gt; My dream would be to build a startup that can provide sysadmins and blue teamers with enough tooling and knowledge to be able to act as a purple team and test their systems. In the future, I intend to add a threat hunting database in order to also help red teamers better learn what gets them caught.&lt;/p&gt;
+
+&lt;p&gt;While this experiment has focused on the operational side of pentest and how attackers might move inside a network, there are also the vulnerability research and the malware development parts of red teaming, as well as more of a focus on stealth. I have some appsec knowledge so I will definitely be exploring that field too in the future, as for maldev and evasion, I still need to catch up a bit.&lt;/p&gt;
 
 &lt;p&gt;Lastly, and this may very well be a tall order, perhaps once the AI can master both the Blue and Red sides, it can start generating synthetic data based on its knowledge and push the field of infosec to new heights. The technology is still young, and LLMs have a long way to go in both capability and optimization before this can become a reality, but I do very much intend to pursue this as a startup idea.&lt;/p&gt;
 </content>
