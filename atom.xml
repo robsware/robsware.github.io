@@ -4,7 +4,7 @@
  <title>robsware</title>
  <link href="https://robsware.github.io/atom.xml" rel="self"/>
  <link href="https://robsware.github.io/"/>
- <updated>2023-11-05T09:47:25+00:00</updated>
+ <updated>2023-11-05T13:07:21+00:00</updated>
  <id>https://robsware.github.io</id>
  <author>
    <name>gesko</name>
@@ -31,7 +31,7 @@
 
 &lt;p&gt;&lt;strong&gt;Tribal Knowledge&lt;/strong&gt;&lt;/p&gt;
 
-&lt;p&gt;Over the years of working as a pentester and the almost dozen certifications I have passed, including 4 OffSec ones, I have amassed a considerable amount of personal knowledge of the field. Most of it is spread across 2-3 Obsidian notebooks, making them relatively easy to access. The knowledge itself is nothing that one could not find via books and the internet, but it is passed through my own filter, which has been gradually improving over the years. This is often referred to as “Tribal Knowledge”, the kind of knowledge amassed and filtered by individuals over the years. My knowledge is mainly in the web and active directory areas, but I have worked with many other skilled pentesters who had in depth knowledge in fields that I knew very little about. I have often wished to be able to prod this knowledge at length, but time or the lack of an adequate context didn’t make this a possibility. However, I may have found a way to fix this using LLMs.&lt;/p&gt;
+&lt;p&gt;Over the years of working as a pentester and the almost dozen certifications I have passed, including 4 OffSec ones, I have amassed a considerable amount of personal knowledge of the field. Most of it is spread across 2-3 Obsidian notebooks, making them relatively easy to access. The knowledge itself is nothing that one could not find via books and the internet, but it is passed through my own filter, which has been gradually improving over the years. This is often referred to as “Tribal Knowledge”, the kind of abstract knowledge amassed and filtered by individuals or companies over the years which often only ends up shared by word of mouth. My knowledge is mainly in the web and active directory areas, but I have worked with many other skilled pentesters who had in depth knowledge in fields that I knew very little about. I have often wished to be able to prod this knowledge at length, but time or the lack of an adequate context didn’t make this a possibility. However, I may have found a way to fix this using LLMs.&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;How it works&lt;/strong&gt;&lt;/p&gt;
 
@@ -165,9 +165,12 @@ There are several ways to try to bypass Antivirus software, but keep in mind tha
 
 &lt;p&gt;The real gains came from the data loaded in the ChromaDB. The LLMs were perfectly capable of contextualizing the data and commands inside my notes even with my bare bones writing style, or perhaps specifically because of it. When using github repositories, their overly verbosity tended to cause issues. Part of it was because of the way ChromDB handled the “similarity_search” function. For instance, the mimikatz page repeated mimikatz dozens of times, even outside commands, which likely caused the confusion that resulted in the preppended “mimikatz_command” thing.&lt;/p&gt;
 
-&lt;p&gt;Working with local models instead of OpenAI is also a massive hurdle. Langchains is quite obviously designed with the OpenAI API in mind, and the documentation and tutorial available for local models leave a lot to be desired. That may be in part because the field is still new.&lt;/p&gt;
+&lt;p&gt;Working with local models instead of OpenAI is also a massive hurdle. Langchains is quite obviously designed with the OpenAI API in mind first, and the documentation and s available for local models leave a lot to be desired. That may be in part because the field is still new.&lt;/p&gt;
 
-&lt;p&gt;Lastly, another huge gain came from increasing the quantized size. 2 bit quantization was good for managing to fit the model in under 8 GBs of VRAM, but the quality was abysmal when compared to 5 bit quantization. Although the gains from 5 bit to 6 or 8 bit were a lot less noticeable for how much more VRAM it demanded. 5 bit seems like the sweet spot for now.&lt;/p&gt;
+&lt;p&gt;Lastly, another huge gain came from increasing the quantized size. 2 bit quantization was good for managing to fit the model in under 8 GBs of VRAM, but the quality was abysmal when compared to 5 bit quantization. Although the gains from 5 bit to 6 or 8 bit were a lot less noticeable for how much more VRAM it demanded. 5 bit seems like the sweet spot for now, and 16 GBs of VRAM are just enough to fit a 13B model in 5 bits in memory, while 40 GBs are enough for a 33B model in 5 bits.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/16gb.png&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;/assets/images/40gb.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;Next Steps&lt;/strong&gt;&lt;/p&gt;
 
