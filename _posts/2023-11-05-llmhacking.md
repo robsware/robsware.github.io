@@ -27,18 +27,19 @@ Over the years of working as a pentester and the almost dozen certifications I h
 
 I have been running those experiments via google colab, as my GPU is fairly only and only has 8 GBs of VRAM. Google colab offers 16 GBs for free and 40 GBs for about 12 hours/month via a $11 subscription. This is just enough space to experiment with both 13B and 33B models. 
 
-As with all LLMs, the overall view is rather simple.
-Pick a LLaMa2 model that has been fine tuned to be less morally aligned.
-Load your “Tribal Knowledge” via langchains.
-Create a chromadb from this knowledge
-Prepare questions and a context
-Load docs in query and ask questions.
+As with all LLMs, the overall view is rather simple.<br>
+1. Pick a LLaMa2 model that has been fine tuned to be less morally aligned.<br>
+2. Load your “Tribal Knowledge” via langchains.<br>
+3. Create a chromadb from this knowledge<br>
+4. Prepare questions and a context<br>
+5. Load docs in query and ask questions.
 
-The catch is that each of those steps can be highly complex. There are a lot of LLaMa2 models in a lot of formats and an equal amount of ways to load them. I ended up using llama.cpp
-Knowledge is subjective. I had better luck with my notes than with github repos but I am aware there might be some bias caused by my expectations. Langchains is also a bit of a (beautiful) mess in terms of documentation and abstraction and it can be very difficult to figure out why something doesn’t work. I often had to dive into the source code to debug it. 
-Chromadbs have so many ways in which you can tokenize and load documents.
-Prompt Engineering comes into play here, with a lot of back and forth. 
-This part is arguably the simplest one, where your biggest worry is not running out of memory. 
+The catch is that each of those steps can be highly complex. 
+1. There are a lot of LLaMa2 models in a lot of formats and an equal amount of ways to load them. I ended up using llama.cpp <br>
+2. Knowledge is subjective. I had better luck with my notes than with github repos but I am aware there might be some bias caused by my expectations. Langchains is also a bit of a (beautiful) mess in terms of documentation and abstraction and it can be very difficult to figure out why something doesn’t work. I often had to dive into the source code to debug it. <br>
+3. Chromadbs have so many ways in which you can tokenize and load documents. <br>
+4. Prompt Engineering comes into play here, with a lot of back and forth. <br>
+5. This part is arguably the simplest one, where your biggest worry is not running out of memory. <br>
 
 Let’s check out some examples. These results are by no means exhaustive but should be interesting nonetheless.
 
