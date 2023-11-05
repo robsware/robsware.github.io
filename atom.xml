@@ -4,7 +4,7 @@
  <title>robsware</title>
  <link href="https://robsware.github.io/atom.xml" rel="self"/>
  <link href="https://robsware.github.io/"/>
- <updated>2023-11-05T13:24:47+00:00</updated>
+ <updated>2023-11-05T13:46:16+00:00</updated>
  <id>https://robsware.github.io</id>
  <author>
    <name>gesko</name>
@@ -35,7 +35,7 @@
 
 &lt;p&gt;&lt;strong&gt;How it works&lt;/strong&gt;&lt;/p&gt;
 
-&lt;p&gt;I have been running those experiments via google colab, as my GPU is fairly only and only has 8 GBs of VRAM. Google colab offers 16 GBs for free and 40 GBs for about 12 hours/month via a $11 subscription. This is just enough space to experiment with both 13B and 33B models.&lt;/p&gt;
+&lt;p&gt;I have been running those experiments via google colab, as my GPU is fairly old and only has 8 GBs of VRAM. Google colab offers 16 GBs for free and 40 GBs for about 12 hours/month via a $11 subscription. This is just enough space to experiment with both 13B and 33B models.&lt;/p&gt;
 
 &lt;p&gt;As with all LLMs, the overall view is rather simple.&lt;br /&gt;&lt;/p&gt;
 &lt;ol&gt;
