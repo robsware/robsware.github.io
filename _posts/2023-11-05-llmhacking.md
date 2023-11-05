@@ -162,9 +162,12 @@ These are just some examples, but are hopefully enough to get the idea. The diff
 
 The real gains came from the data loaded in the ChromaDB. The LLMs were perfectly capable of contextualizing the data and commands inside my notes even with my bare bones writing style, or perhaps specifically because of it. When using github repositories, their overly verbosity tended to cause issues. Part of it was because of the way ChromDB handled the “similarity_search” function. For instance, the mimikatz page repeated mimikatz dozens of times, even outside commands, which likely caused the confusion that resulted in the preppended “mimikatz_command” thing. 
 
-Working with local models instead of OpenAI is also a massive hurdle. Langchains is quite obviously designed with the OpenAI API in mind, and the documentation and tutorial available for local models leave a lot to be desired. That may be in part because the field is still new. 
+Working with local models instead of OpenAI is also a massive hurdle. Langchains is quite obviously designed with the OpenAI API in mind first, and the documentation and s available for local models leave a lot to be desired. That may be in part because the field is still new. 
 
-Lastly, another huge gain came from increasing the quantized size. 2 bit quantization was good for managing to fit the model in under 8 GBs of VRAM, but the quality was abysmal when compared to 5 bit quantization. Although the gains from 5 bit to 6 or 8 bit were a lot less noticeable for how much more VRAM it demanded. 5 bit seems like the sweet spot for now.
+Lastly, another huge gain came from increasing the quantized size. 2 bit quantization was good for managing to fit the model in under 8 GBs of VRAM, but the quality was abysmal when compared to 5 bit quantization. Although the gains from 5 bit to 6 or 8 bit were a lot less noticeable for how much more VRAM it demanded. 5 bit seems like the sweet spot for now, and 16 GBs of VRAM are just enough to fit a 13B model in 5 bits in memory, while 40 GBs are enough for a 33B model in 5 bits.
+
+![](/assets/images/16gb.png)
+![](/assets/images/40gb.png)
 
 **Next Steps**
 
