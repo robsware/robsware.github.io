@@ -4,7 +4,7 @@
  <title>robsware</title>
  <link href="https://robsware.github.io/atom.xml" rel="self"/>
  <link href="https://robsware.github.io/"/>
- <updated>2023-11-06T12:30:35+00:00</updated>
+ <updated>2023-11-10T15:57:14+00:00</updated>
  <id>https://robsware.github.io</id>
  <author>
    <name>gesko</name>
@@ -13,10 +13,10 @@
 
  
  <entry>
-   <title>Hacking with AI and LLMs - Giving good machines bad ideas</title>
-   <link href="https://robsware.github.io/2023/11/05/llmhacking"/>
+   <title>Pentesting with AI and LLMs - Giving good machines bad ideas</title>
+   <link href="https://robsware.github.io/2023/11/05/llmpentesting"/>
    <updated>2023-11-05T00:00:00+00:00</updated>
-   <id>https://robsware.github.io/2023/11/05/llmhacking</id>
+   <id>https://robsware.github.io/2023/11/05/llmpentesting</id>
    <content type="html">&lt;p&gt;&lt;strong&gt;Background&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;Ever since playing Netrunner (the card game) with some friends more than a decade ago and seeing the card Magnum Opus, I have had this fascination of creating a magnum opus of my own. Coupled with my intense love of Sci-Fi, especially Asimov, inevitably led me down the path of Artificial Intelligence. I have been in and out of the AI/ML world for many years and I had built and implemented a few supervised models on some small scale projects, but I never had the math background to truly get deep into the field, and the job prospects were quite slim, so I ended up getting into cyber security, a field which I enjoy and in which I still operate as of today.&lt;/p&gt;

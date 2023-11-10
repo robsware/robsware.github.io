@@ -1,11 +1,11 @@
 [
   
     {
-      "title"    : "Hacking with AI and LLMs - Giving good machines bad ideas",
-      "description" : "Teaching LLMs how to help hackers.",
+      "title"    : "Pentesting with AI and LLMs - Giving good machines bad ideas",
+      "description" : "Teaching LLMs how to help pentesters.",
       "category" : "",
       "tags"     : "reflections, experiments",
-      "url"      : "/2023/11/05/llmhacking",
+      "url"      : "/2023/11/05/llmpentesting",
       "date"     : "2023-11-05 00:00:00 +0000"
     } ,
   
