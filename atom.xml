@@ -4,7 +4,7 @@
  <title>robsware</title>
  <link href="https://robsware.github.io/atom.xml" rel="self"/>
  <link href="https://robsware.github.io/"/>
- <updated>2024-05-16T10:07:04+01:00</updated>
+ <updated>2024-05-16T10:17:47+01:00</updated>
  <id>https://robsware.github.io</id>
  <author>
    <name>gesko</name>
@@ -62,7 +62,7 @@
 
 &lt;p&gt;I woke up and decided to revisit and test my solution and found it out it was deeply flawed. Turns out I had made maybe 10% progress into the solution. I spent the next 6-8 hours tinkering with it and managed to come with a few different approaches, out of which one finally worked. Then I was able to implement my previous solution from last night and it got me about 50% through the challenge. I got lunch and then despaired as I got truly stuck on the remaining half. It took another 10 hours to get about 80% through the solution, but I got really stuck on one aspect and I realized that the PDF only briefly explained it in about 2 short paragraphs, so I went back and re-read them really, really carefully. After some experimenting it finally clicked and I was able to complete the exercise with about 6 hours left in my exam time. I decided to go to sleep and maybe look at the 3rd exercise in the morning. I slept for about 4 hours, woke up and decided to not even bother with it and just make sure I have a solid report with enough screenshots instead.&lt;/p&gt;
 
-&lt;p&gt;I submitted my exam and about 3 days later I got the pass email and I well deserved sigh of relief.&lt;/p&gt;
+&lt;p&gt;I submitted my report and about 3 days later I got the pass email and a well deserved sigh of relief.&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;Complaints&lt;/strong&gt;&lt;/p&gt;
 
@@ -85,8 +85,9 @@ I have played this a while back, but the psuedo assembly language used in the ga
 &lt;p&gt;&lt;a href=&quot;https://github.com/mrtouch93/OSED-Notes/tree/main&quot;&gt;https://github.com/mrtouch93/OSED-Notes/tree/main&lt;/a&gt;
 This repo has a lot of examples for all the relevant modules that are really useful for getting a more thorough understanding of the concepts.&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://github.com/bmdyy/signatus&quot;&gt;https://github.com/bmdyy/signatus&lt;/a&gt;
-&lt;a href=&quot;https://github.com/stephenbradshaw/vulnserver&quot;&gt;https://github.com/stephenbradshaw/vulnserver&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/bmdyy/signatus&quot;&gt;https://github.com/bmdyy/signatus&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/stephenbradshaw/vulnserver&quot;&gt;https://github.com/stephenbradshaw/vulnserver&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;These are great practice for ROP and ASLR once you finish the labs.&lt;/p&gt;
 </content>
