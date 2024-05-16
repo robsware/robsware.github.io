@@ -1,6 +1,15 @@
 [
   
     {
+      "title"    : "OSED Review - an intellectual pursuit",
+      "description" : "Course review and study tips",
+      "category" : "",
+      "tags"     : "offsec, certs, rants",
+      "url"      : "/2024/05/16/osed",
+      "date"     : "2024-05-16 00:00:00 +0100"
+    } ,
+  
+    {
       "title"    : "Pentesting with AI and LLMs - Giving good machines bad ideas",
       "description" : "Teaching LLMs how to help pentesters.",
       "category" : "",
