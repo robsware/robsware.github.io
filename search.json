@@ -1,6 +1,15 @@
 [
   
     {
+      "title"    : "OSCE3 Thoughts",
+      "description" : "OSCE3 short review and future plans",
+      "category" : "",
+      "tags"     : "offsec, certs, rants",
+      "url"      : "/2024/05/26/osce3",
+      "date"     : "2024-05-26 00:00:00 +0100"
+    } ,
+  
+    {
       "title"    : "OSED Review - an intellectual pursuit",
       "description" : "Course review and study tips",
       "category" : "",
