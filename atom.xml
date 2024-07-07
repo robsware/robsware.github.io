@@ -4,7 +4,7 @@
  <title>robsware</title>
  <link href="https://robsware.github.io/atom.xml" rel="self"/>
  <link href="https://robsware.github.io/"/>
- <updated>2024-07-07T18:28:46+01:00</updated>
+ <updated>2024-07-07T18:32:41+01:00</updated>
  <id>https://robsware.github.io</id>
  <author>
    <name>gesko</name>
@@ -194,7 +194,7 @@ Let’s get into how it works.&lt;/p&gt;
 &lt;span class=&quot;c1&quot;&gt;#extract_htb_data()
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;This script is a bit messier because of the way I wanted the data structured, but it works out great. Minor caveat is that some of 0xdf’s really old writeups do not quite follow his more recent format so some data got lost.&lt;/p&gt;
+&lt;p&gt;This script is a bit messier because of the way I wanted the data structured, but it works out great. Minor caveat is that some of 0xdf’s really old writeups do not quite follow his more recent format so some data got lost. Turns out that you can improve the quality of the answers you get considerably by using well structured data!&lt;/p&gt;
 
 &lt;h2 id=&quot;building-the-chroma-database&quot;&gt;Building the chroma database&lt;/h2&gt;
 
