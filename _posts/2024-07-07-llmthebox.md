@@ -185,7 +185,7 @@ def extract_htb_data():
 #extract_htb_data()
 ```
 
-This script is a bit messier because of the way I wanted the data structured, but it works out great. Minor caveat is that some of 0xdf's really old writeups do not quite follow his more recent format so some data got lost.
+This script is a bit messier because of the way I wanted the data structured, but it works out great. Minor caveat is that some of 0xdf's really old writeups do not quite follow his more recent format so some data got lost. Turns out that you can improve the quality of the answers you get considerably by using well structured data!
 
 ## Building the chroma database
 
