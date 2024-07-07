@@ -1,6 +1,15 @@
 [
   
     {
+      "title"    : "LLMTheBox - Using LLMs to learn from writeups",
+      "description" : "LLMs can be applied to gleam understanding from numerous writeups.",
+      "category" : "",
+      "tags"     : "experiments, writeups",
+      "url"      : "/2024/07/07/llmthebox",
+      "date"     : "2024-07-07 00:00:00 +0100"
+    } ,
+  
+    {
       "title"    : "OSCE3 Thoughts",
       "description" : "OSCE3 short review and future plans",
       "category" : "",
