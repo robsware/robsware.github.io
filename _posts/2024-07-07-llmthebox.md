@@ -1,7 +1,7 @@
 ---
 layout: post
 title: LLMTheBox - Using LLMs to learn from writeups
-description: LLMs can be applied to gleam understanding from numerous writeups.
+description: LLMs can be applied to glean an understanding from numerous writeups.
 summary: Thaks to open source data, we can chreate a chroma DB with enbeddings and use GPT4 to query it for insignt.
 tags: experiments writeups
 ---
