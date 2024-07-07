@@ -2,7 +2,7 @@
   
     {
       "title"    : "LLMTheBox - Using LLMs to learn from writeups",
-      "description" : "LLMs can be applied to gleam understanding from numerous writeups.",
+      "description" : "LLMs can be applied to glean an understanding from numerous writeups.",
       "category" : "",
       "tags"     : "experiments, writeups",
       "url"      : "/2024/07/07/llmthebox",
