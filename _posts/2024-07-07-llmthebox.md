@@ -235,7 +235,7 @@ def initialize_chroma_db(file_path, persist_directory, collection_name):
 
 This creates a persistent DB that can be accessed later. Since my source data doesn't change much, there was no reason to keep an ephemeral one.
 
-**The query function**
+## The query function
 
 Finally, the real meat of this weekend project, the main script that calls all the other ones and actually initializes the database into an OpneAI call. Thankfully, it's also quite short, even though a tad overengineered - I got carried away with some TDD ideas!
 
