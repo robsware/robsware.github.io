@@ -188,7 +188,7 @@
 
 <span class="c1"># Example of how to call the function
 # chroma_db = initialize_chroma_db("data/htbtext_short.txt", "data", "htb_small_db")
-</span></code></pre></div></div><p>This creates a persistent DB that can be accessed later. Since my source data doesn’t change much, there was no reason to keep an ephemeral one.</p><p><strong>The query function</strong></p><p>Finally, the real meat of this weekend project, the main script that calls all the other ones and actually initializes the database into an OpneAI call. Thankfully, it’s also quite short, even though a tad overengineered - I got carried away with some TDD ideas!</p><div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># langchain_ask.py
+</span></code></pre></div></div><p>This creates a persistent DB that can be accessed later. Since my source data doesn’t change much, there was no reason to keep an ephemeral one.</p><h2 id="the-query-function"> The query function <a href="#the-query-function">#</a></h2><p>Finally, the real meat of this weekend project, the main script that calls all the other ones and actually initializes the database into an OpneAI call. Thankfully, it’s also quite short, even though a tad overengineered - I got carried away with some TDD ideas!</p><div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># langchain_ask.py
 </span>
 <span class="kn">import</span> <span class="nn">os</span>
 <span class="kn">from</span> <span class="nn">langchain.chains</span> <span class="kn">import</span> <span class="n">RetrievalQA</span>

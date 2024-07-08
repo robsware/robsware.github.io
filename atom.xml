@@ -4,7 +4,7 @@
  <title>robsware</title>
  <link href="https://robsware.github.io/atom.xml" rel="self"/>
  <link href="https://robsware.github.io/"/>
- <updated>2024-07-07T18:32:41+01:00</updated>
+ <updated>2024-07-08T07:59:32+01:00</updated>
  <id>https://robsware.github.io</id>
  <author>
    <name>gesko</name>
@@ -242,7 +242,7 @@ The code isn’t too complicated and more or less follows a template. I used Ope
 
 &lt;p&gt;This creates a persistent DB that can be accessed later. Since my source data doesn’t change much, there was no reason to keep an ephemeral one.&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;The query function&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&quot;the-query-function&quot;&gt;The query function&lt;/h2&gt;
 
 &lt;p&gt;Finally, the real meat of this weekend project, the main script that calls all the other ones and actually initializes the database into an OpneAI call. Thankfully, it’s also quite short, even though a tad overengineered - I got carried away with some TDD ideas!&lt;/p&gt;
 
