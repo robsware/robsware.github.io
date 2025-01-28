@@ -1,6 +1,15 @@
 [
   
     {
+      "title"    : "Predictions2025",
+      "description" : "",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/2025/01/22/predictions2025",
+      "date"     : "2025-01-22 00:00:00 +0000"
+    } ,
+  
+    {
       "title"    : "LLMTheBox - Using LLMs to learn from writeups",
       "description" : "LLMs can be applied to glean an understanding from numerous writeups.",
       "category" : "",
