@@ -4,7 +4,7 @@
  <title>robsware</title>
  <link href="https://robsware.github.io/atom.xml" rel="self"/>
  <link href="https://robsware.github.io/"/>
- <updated>2025-01-28T21:25:03+00:00</updated>
+ <updated>2025-01-28T21:28:24+00:00</updated>
  <id>https://robsware.github.io</id>
  <author>
    <name>gesko</name>
@@ -13,13 +13,11 @@
 
  
  <entry>
-   <title>Predictions2025</title>
+   <title>Predictions for 2025</title>
    <link href="https://robsware.github.io/2025/01/22/predictions2025"/>
    <updated>2025-01-22T00:00:00+00:00</updated>
    <id>https://robsware.github.io/2025/01/22/predictions2025</id>
-   <content type="html">&lt;h1 id=&quot;predictions-for-2025&quot;&gt;Predictions for 2025&lt;/h1&gt;
-
-&lt;p&gt;I haven’t written anything in a while due to various reasons, so I am starting 2025 by making a few lukewarm predictions related to AI, cybersecurity, robots, and some geopolitics.&lt;/p&gt;
+   <content type="html">&lt;p&gt;I haven’t written anything in a while due to various reasons, so I am starting 2025 by making a few lukewarm predictions related to AI, cybersecurity, robots, and some geopolitics.&lt;/p&gt;
 
 &lt;h2 id=&quot;ai&quot;&gt;AI&lt;/h2&gt;
 
