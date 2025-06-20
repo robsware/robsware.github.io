@@ -1,6 +1,15 @@
 [
   
     {
+      "title"    : "March 5th, 2030",
+      "description" : "I like my robot.",
+      "category" : "",
+      "tags"     : "reflections",
+      "url"      : "/2025/06/20/welcometo2030",
+      "date"     : "2025-06-20 00:00:00 +0100"
+    } ,
+  
+    {
       "title"    : "AI Agent Security",
       "description" : "More autonomy, more risk!",
       "category" : "",
