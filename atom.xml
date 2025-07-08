@@ -4,7 +4,7 @@
  <title>robsware</title>
  <link href="https://robsware.github.io/atom.xml" rel="self"/>
  <link href="https://robsware.github.io/"/>
- <updated>2025-07-07T22:37:02+01:00</updated>
+ <updated>2025-07-08T03:55:46+01:00</updated>
  <id>https://robsware.github.io</id>
  <author>
    <name>gesko</name>
@@ -416,7 +416,7 @@ html[data-theme=&quot;dark&quot;] .mobile-timeline {
         &lt;div class=&quot;unemployment-stats&quot;&gt;
             &lt;div class=&quot;main-stat&quot;&gt;
                 &lt;div class=&quot;stat-label&quot;&gt;Unemployment Rate&lt;/div&gt;
-                &lt;div class=&quot;stat-value&quot;&gt;5.2%&lt;/div&gt;
+                &lt;div class=&quot;stat-value&quot;&gt;4.5%&lt;/div&gt;
             &lt;/div&gt;
             
             &lt;div class=&quot;change-indicator&quot;&gt;
@@ -459,106 +459,109 @@ html[data-theme=&quot;dark&quot;] .mobile-timeline {
 
 &lt;h2 id=&quot;section-2025&quot;&gt;2025: The Beginning of Change&lt;/h2&gt;
 
-&lt;p&gt;In this pivotal year, AI agents become mainstream across industries. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. The unemployment rate reaches 5.2%, marking the first significant uptick in a generation.&lt;/p&gt;
+&lt;p&gt;You are here. The tech world is just now experimenting with agents that go beyond RAG. There is still a lot of debate over what AGI means, how long it will take to reach it and if it’s even reachable. There are layoffs, particularly in tech, primarily caused by overhiring during covid, but also due to economic uncertainty and LLM usage. Right now most affected are people just out of college with computer science graduates sitting at 6.1% unemployment&lt;sup&gt;&lt;a href=&quot;#ref1&quot;&gt;[1]&lt;/a&gt;&lt;/sup&gt;, among the highest.&lt;/p&gt;
 
-&lt;p&gt;Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Early adopters in manufacturing and logistics begin to see substantial productivity gains while simultaneously reducing their human workforce.&lt;/p&gt;
+&lt;p&gt;Releases from big labs and companies are starting to take longer and the improvements are less spectacular. Even within the field of programming LLMs are exceedingly good at certain verifiable tasks (backend programming) and do quite poorly on other tasks (front end work). MCP servers are popping up left and right and all the big models have adopted the protocol, which has caused certain tasks to become exceedingly fast. LaurieWired created a GhidraMCP implementation which can tackle malware reverse engineering up to an intermediate level with great ease&lt;sup&gt;&lt;a href=&quot;#ref2&quot;&gt;[2]&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
+
+&lt;p&gt;YCombinator had its AI Startup School event, which highlights that we are entering a ballistic trajectory for AI related startups. Subtle foreshadowing. There is a lot of hype around AI and LLMs, and reasoning has been an impressive breakthrough in achieving higher performance and reducing hallucinations. The Apple paper on AI dampened the hype wave a little bit, but everyone moved on. Dario Amodei posted about how about 50% of entry level white collar jobs are at risk in the next 5 years&lt;sup&gt;&lt;a href=&quot;#ref3&quot;&gt;[3]&lt;/a&gt;&lt;/sup&gt;, and a few weeks later Claude went bankrupt trying to run a vending machine&lt;sup&gt;&lt;a href=&quot;#ref4&quot;&gt;[4]&lt;/a&gt;&lt;/sup&gt;. We are in the experimentation phase and a lot of companies are holding their breath as they try to strategize about the future. ChatGPT 5 will come out this year, and it will likely wrap up the release of big models for 2025. AI datacenters have started being built quite aggressively and we&apos;ll see some crude robots come out, mainly as a novelty.&lt;/p&gt;
 
 &lt;div class=&quot;highlight-section&quot;&gt;
     &lt;h3&gt;Key Development: AI Agents Go Mainstream&lt;/h3&gt;
     &lt;p&gt;The year 2025 marks the inflection point where AI agents transition from experimental technology to essential business infrastructure. Companies across all sectors begin implementing autonomous systems for customer service, data analysis, and routine administrative tasks.&lt;/p&gt;
 &lt;/div&gt;
 
-&lt;h2 id=&quot;section-2026&quot;&gt;2026: Early Adoption Phase&lt;/h2&gt;
+&lt;h2 id=&quot;section-2026&quot;&gt;2026: The Year of Iteration&lt;/h2&gt;
 
-&lt;p&gt;The first wave of job displacement begins in earnest. Unemployment climbs to 6.8% as automation spreads beyond manufacturing into retail, hospitality, and basic administrative roles. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.&lt;/p&gt;
+&lt;p&gt;This is the year of incremental increases. There may be some new big models coming out, but I mostly expect a lot of .5 and .7 versions of things. Iterative improvements on the existing models. The plateau for multimodal models and the text based thinking is starting to be felt. LLMs have a certain kind of intelligence that is not applicable 1:1 to human processes. Agents will keep evolving, but will struggle with an internet created for human eyes. Attempting to book and plan a full trip using LLMs will result in similar results to what we’ve seen in 2025; mostly work, but wrong often enough to not be worth it&lt;sup&gt;&lt;a href=&quot;#ref5&quot;&gt;[5]&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
 
-&lt;p&gt;Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Small and medium businesses start adopting AI solutions that were previously available only to large corporations, accelerating the pace of change.&lt;/p&gt;
+&lt;p&gt;We’ll start seeing more noise about wearables from Meta, OpenAI and Google. They will try to package it in a way that is useful and promise some AR features, but nothing will come out in 2026.&lt;/p&gt;
 
-&lt;p&gt;Social tensions begin to emerge as affected workers struggle to find equivalent employment. Early retraining programs show mixed results, highlighting the magnitude of the challenge ahead.&lt;/p&gt;
+&lt;p&gt;Computer usage, which represents the great roadblock for the mass automation of white collar jobs, will become more of a talking point, but everyone is still focusing on raw intelligence and reasoning for models. One crucial development I expect in 2026 is further improvements in reasoning and building world models, which will be particularly useful for image and video generations, which will get cheaper to do as datacenters expand. There will be posts and articles from big companies exploring how they are using LLMs and agents in certain segments of their business, but adoption will be relatively slow due to the jagged knowledge of LLMs. More research of intelligence sweet spots and context prompting will come out and unlock new efficiencies.&lt;/p&gt;
 
-&lt;h2 id=&quot;section-2027&quot;&gt;2027: The Acceleration&lt;/h2&gt;
+&lt;p&gt;Overall, it will not be a terribly exciting year for most people. Datacenters are still being built, robots are still a novelty but there’s more of them.&lt;/p&gt;
 
-&lt;p&gt;Manufacturing automation reaches its peak efficiency, with unemployment rising sharply to 9.1%. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.&lt;/p&gt;
+&lt;h2 id=&quot;section-2027&quot;&gt;2027: Agents, agents, agents!&lt;/h2&gt;
 
-&lt;p&gt;The automotive, textiles, and electronics industries undergo massive restructuring. Entire assembly lines operate with minimal human oversight, while AI systems handle quality control, logistics, and even basic maintenance scheduling.&lt;/p&gt;
+&lt;p&gt;2 years from now, agents will start hitting their stride. Within certain restrictions, agents will be able to operate at super human capability. Back end and infrastructure code will have dozens of options for using agents to manage and develop things. A lot of foundational companies, such as Stripe, Vercel and some cloud providers have or will have LLM friendly ways of interacting with them. A lot of builders will be able to sit down, prompt an agentic framework to  “build a prototype for an app that uses LLM vision and search to identify local artists from a work of art”, or a similarly complex idea, leave for a few hours, and come back to a fully build app, including payment processing, mailing list, and authentication, ready to be tested and submitted to the mobile stores. Planning a full trip or doing your taxes will still be error prone, but agents will know when to fail gracefully and call a human in the loop.&lt;/p&gt;
 
-&lt;div class=&quot;highlight-section&quot;&gt;
-    &lt;h3&gt;Critical Point: The Manufacturing Revolution&lt;/h3&gt;
-    &lt;p&gt;This year represents the culmination of decades of automation trends. Factories that once employed thousands now operate with skeleton crews of highly skilled technicians and engineers. The ripple effects extend far beyond manufacturing, affecting trucking, warehousing, and retail distribution.&lt;/p&gt;
-&lt;/div&gt;
+&lt;p&gt;The level of intelligence isn’t quite at the level where mass automation can happen, and web navigation is improving in part thanks to the massive amount of compute that is coming online around 2027. China’s total compute may reach quite close to the US’s around this time as they have invested heavily into infrastructure and can support gigantic data centers. Unemployment actually goes down as some companies give up on the promised AI future.&lt;/p&gt;
 
-&lt;h2 id=&quot;section-2028&quot;&gt;2028: Knowledge Work Disruption&lt;/h2&gt;
+&lt;p&gt;The improvements in reasoning and image generation allowed for mock websites and applications to be generated that resemble real world ones in complexity. This technique will be used for synthetic data training, which will also happen quite quickly given the above mentioned compute power. The computer usage rankings will start improving a lot. 2027 results will still be a bit shoddy, but the trajectory is clearly upwards. Reward modelling can be done on any kind of data&lt;sup&gt;&lt;a href=&quot;#ref6&quot;&gt;[6]&lt;/a&gt;&lt;/sup&gt;, so once the original kinks are ironed out, things will pick up speed.&lt;/p&gt;
 
-&lt;p&gt;The disruption spreads to white-collar jobs as unemployment reaches 12.4%. Advanced AI systems begin handling legal research, financial analysis, medical diagnostics, and even creative tasks. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.&lt;/p&gt;
+&lt;p&gt;A new wave of frontier models will come out this year, setting the baseline for computer usage. Wearables will be more prominent although actual releases might not happen this year. We will see a lot of demos and hype creation from large orgs and startups alike.&lt;/p&gt;
 
-&lt;p&gt;Professional services firms dramatically reduce their headcount. Junior lawyers, financial analysts, and entry-level consultants find their career paths fundamentally altered. The traditional corporate ladder begins to crumble as AI handles many intermediate-level tasks.&lt;/p&gt;
+&lt;h2 id=&quot;section-2028&quot;&gt;2028: The Junior&lt;/h2&gt;
 
-&lt;p&gt;Educational institutions struggle to adapt curricula fast enough. Students question the value of degrees in fields increasingly dominated by artificial intelligence.&lt;/p&gt;
+&lt;p&gt;Agents can now do a good chunk of office jobs, especially at entry level. Suddenly, Dario’s warning starts making sense. We are starting to see a lot of demos of AI doing relatively complex entry level jobs. Companies are on board now. The hiring freeze is back and layoffs start climbing again. New models, specialized on computer usage come out that accelerate this process even further. For the first time since 2020, when GPT3 was released to the public, after 8 years of the tech world going from hype to doom and gloom, and then back to hype, every day people are starting to feel the impact.&lt;/p&gt;
 
-&lt;h2 id=&quot;section-2029&quot;&gt;2029: Economic Ripple Effects&lt;/h2&gt;
+&lt;p&gt;The agents that developers have been building over the past years are the perfect scaffolding for this new generation of models. New agents start appearing, and new startups are born that attempt to automate the holy grail of knowledge, research and development.&lt;/p&gt;
 
-&lt;p&gt;Unemployment reaches 15.7% as the economic ripple effects intensify. Consumer spending drops significantly, creating a feedback loop that accelerates business closures and further job losses. At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti.&lt;/p&gt;
+&lt;p&gt;The results are mixed. As with GPT 3.5, a lot of people overestimate the capability of new models even with decent computer usage capabilities. But the knowledge of previous years and experiments compounds, and by the end of the year we start seeing LLM agents capable enough to act as internet personas, capable of relatively complex interaction. This timeline also matches with Dwarkesh’s feelings&lt;sup&gt;&lt;a href=&quot;#ref7&quot;&gt;[7]&lt;/a&gt;&lt;/sup&gt;, and is even more optimistic.&lt;/p&gt;
 
-&lt;p&gt;Social safety nets strain under unprecedented demand. Traditional unemployment insurance systems, designed for temporary economic downturns, prove inadequate for this technological transformation. Public assistance programs face funding crises as tax revenues decline alongside employment.&lt;/p&gt;
+&lt;p&gt;This year we’re also finally seeing the release of XR devices. Meta and Google glasses, and OpenAI’s magic gizmo alongside dozens more products from startups and smaller companies all hit the market or are close to. Synthetic data was a crutch that worked so far, but for LLMs to move beyond the realm of the digital, real, spatial data is needed and those gadgets will collect it.&lt;/p&gt;
 
-&lt;p&gt;Political pressure mounts for decisive government intervention. Protests and social unrest become commonplace in regions most affected by automation. The social contract between technology, capital, and labor faces its greatest test.&lt;/p&gt;
+&lt;h2 id=&quot;section-2029&quot;&gt;2029: The Office Worker&lt;/h2&gt;
 
-&lt;h2 id=&quot;section-2030&quot;&gt;2030: The New Normal&lt;/h2&gt;
+&lt;p&gt;All the development, research, scaffolding, circuit analysis, computer usage and state of the art models culminate into creating packaged agents that are extremely easy to run and can do most entry level jobs and some intermediate level ones. The agents are able to act and receive visual feedback which can be processed back in a way that allows them to learn on the job. There is some friction because all new agents will effectively need to be on-boarded and have a human show them how to work and verify their results for a while, but the effects on the job market are starting to be felt.&lt;/p&gt;
 
-&lt;p&gt;Unemployment peaks at 18.2% as society grapples with what many economists term &quot;the new normal.&quot; Similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Policy responses finally begin to emerge at national and international levels.&lt;/p&gt;
+&lt;p&gt;The explosion of startups is unprecedented, with dozens of new companies being created on a daily basis. Partly because of the opportunities of AI, partly because of the laid off people needing an income, and partly because people will try to have an agent create and run an entire startup. Many end up in flames, but the ones that succeed only exacerbate the impact of automation as people figure out how to create agents fine tuned for any job they have intimate knowledge of with varying levels of success. Companies are still largely staffed by humans as a lot of jobs aren’t verifiable in a way that works with LLMs, but new about layoffs start becoming more frequent and the glut of new startups isn’t enough to absorb it.&lt;/p&gt;
 
-&lt;p&gt;Universal Basic Income pilot programs launch in several countries. Public-private partnerships form to create new models of human-AI collaboration. The concept of traditional employment starts to evolve toward more flexible, project-based work arrangements.&lt;/p&gt;
+&lt;p&gt;As spatial data is being collected and processed, the need for datacenters increases again, and with that the need for electricity. Countries and governments finally start investing into major power generation projects, but the difficulty and complexity of such projects means that compute increase slows down significantly. In 2029, the best way to increase performance is to increase the wafer size instead of trying to make transistors even smaller, so new datacenters are designed to take advantage of the upcoming power projects and of a truly titanic size. Other aspects, such as robots, receive marginal upgrades year by year. Much like with agents, there are improvements in the supply chain that will be critical later.&lt;/p&gt;
 
-&lt;div class=&quot;highlight-section&quot;&gt;
-    &lt;h3&gt;Turning Point: Policy Responses Emerge&lt;/h3&gt;
-    &lt;p&gt;This year marks the beginning of coordinated policy responses to AI displacement. Governments finally acknowledge that market forces alone cannot solve the unemployment crisis. Comprehensive social programs and economic restructuring initiatives begin to take shape.&lt;/p&gt;
-&lt;/div&gt;
+&lt;h2 id=&quot;section-2030&quot;&gt;2030: The first impact&lt;/h2&gt;
 
-&lt;h2 id=&quot;section-2031&quot;&gt;2031: Adaptation Begins&lt;/h2&gt;
+&lt;p&gt;Office worker agents are quite good by now. They can do over 50% of all entry level jobs and about 30% of intermediate level jobs. Better ways to package, deliver and integrate those agents are developed by large companies and startups alike. After experimenting for the past 2 years, forward looking companies start adopting a workforce geared towards automation. There is a mix of both wonder and discontentment among the general population as they see AI being able to do their job, but also do all the frustrating things in life such as dealing with government documentation and doing taxes. Mistakes are very rare at this level.&lt;/p&gt;
 
-&lt;p&gt;The unemployment rate reaches 19.8%, but the rate of increase slows significantly. Large-scale reskilling programs finally gain traction, focusing on uniquely human capabilities like emotional intelligence, creative problem-solving, and complex interpersonal communication.&lt;/p&gt;
+&lt;p&gt;XR devices start experimenting with endless context windows that are able to always listen and retain knowledge from previous activities. Each of those devices will build an accurate and complex simulacrum of its owner and it will use that data whenever it is called upon. This may make some privacy advocates uncomfortable, but a lot of normal people will find it tremendously useful. XR starts becoming an industry again as AI project plateaus temporarily. People are able to rely on those devices to do things around the house, including housework and repairs. All this time, those devices also transmit data to their parent companies.&lt;/p&gt;
 
-&lt;p&gt;New industries begin to emerge around human-AI collaboration. Roles such as AI trainers, algorithm auditors, and human-machine interface designers create employment opportunities that didn&apos;t exist a decade earlier.&lt;/p&gt;
+&lt;p&gt;No significant improvements in robotics, but everyone who could assemble a robot by this point has caught the wind of a solution to the spatial data problem and they’re trying to be the first ones ready to take advantage of it.&lt;/p&gt;
 
-&lt;p&gt;Educational systems undergo fundamental transformation. Lifelong learning becomes the norm as workers adapt to rapidly changing technological landscapes. Micro-credentials and skill-based certifications gain prominence over traditional degrees.&lt;/p&gt;
+&lt;h2 id=&quot;section-2031&quot;&gt;2031: Your friend, Data&lt;/h2&gt;
 
-&lt;h2 id=&quot;section-2032&quot;&gt;2032: Strategic Responses&lt;/h2&gt;
+&lt;p&gt;Research papers about spatial data training, usage and generation start being published. It’s still an ongoing project, but Google level companies are showing off interesting demos of robots being capable helpers around the house. A lot of them are early prototypes, but a vision of actual sci-fi level robots is starting to take place.&lt;/p&gt;
 
-&lt;p&gt;Unemployment reaches its peak at 20.5%, but strategic responses begin to show promise. UBI pilot programs expand, providing economic security while enabling people to pursue education, entrepreneurship, or caregiving roles that were previously economically unfeasible.&lt;/p&gt;
+&lt;p&gt;Small datacenters are built wherever there’s space and power availability. The big ones are still some years away. The processing continues, the needs only going up. A new emergent behaviour from LLM, as they keep increasing in size and finesse, enters the scene: actual, genuine creativity. It feels less that a stochastic parrot and more an actual intelligence now. This phenomenon, of course, hits the job market hard. The number of entry level jobs done by AI goes up to 70%, and intermediate jobs to 40% with senior jobs being affected too.&lt;/p&gt;
 
-&lt;p&gt;Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat. Worker cooperatives and platform collaboratives emerge as alternatives to traditional employment structures.&lt;/p&gt;
+&lt;p&gt;This high level of unemployment is starting to seriously affect governments and politics, as they scramble and bicker for the most optimal solution. Different solutions are proposed and implemented according to the economic and cultural factors of each country/economic zone.&lt;/p&gt;
 
-&lt;p&gt;The four-day work week becomes standard in many industries, spreading available work among more people. Job-sharing arrangements and flexible scheduling help maintain employment levels while accommodating automated processes.&lt;/p&gt;
+&lt;p&gt;There is still ongoing research and publishing on how to make LLM and agents feel less like newborns every time you start a new conversation, and knowledge sets for specific tasks are developed as well as effective knowledge sharing between agents. With the increased level of knowledge and creativity, now entire mini departments can be made entirely of agents.&lt;/p&gt;
+
+&lt;h2 id=&quot;section-2032&quot;&gt;2032: The tidal wave&lt;/h2&gt;
+
+&lt;p&gt;Companies and startups alike are quick to capitalize on this new level of intelligence and creativity. Fine tuned models and large models alike start being released and are ready to be plugged into existing flows. At this point, 80% of all office entry level jobs are done by LLMs and unemployment among recent graduates is close to 20%. More than half of intermediate jobs and a quarter of senior jobs are now done by machines too. A lot of people get involved in the construction, wiring and networking of new data centers and power plants, both of which are now significant industries. While data centers don’t take a lot of manpower to run, they are very labor intensive to build. This reduces the effect of unemployment to a degree. Many people decide to go into content creation, and are able to rely on LLMs to do all the boring parts. LLMs are used to both do and teach, and a lot of people finally find a time efficient way to explore their hobbies.&lt;/p&gt;
+
+&lt;p&gt;The mood about the future is uncertain, and people are divided into doomers and bloomers. Entertainment is really accessible now, and some people are content with that. Others worry that we will end up as biological machines that will be instructed by our AI overlords. The contract political back and forth gives the impression that solutions are being evaluated, at least. More robot showcases occur in which they seem remarkably capable, but production chains and testing takes a long time so no noteworthy releases occur.&lt;/p&gt;
+
+&lt;p&gt;Reinforcement learning is back on the table and used to train LLMs where not enough examples exist and where speed is essential. The average person can go for days without seeing content handcrafted by another human being.&lt;/p&gt;
 
 &lt;h2 id=&quot;section-2033&quot;&gt;2033: Stabilization&lt;/h2&gt;
 
-&lt;p&gt;For the first time in nearly a decade, unemployment slightly decreases to 19.9%. New economic models begin to demonstrate viability. The concept of &quot;post-work society&quot; transitions from theoretical to practical as communities experiment with alternative value creation and distribution systems.&lt;/p&gt;
-
-&lt;p&gt;Temporal autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Social entrepreneurship flourishes as people freed from traditional employment pursue mission-driven work.&lt;/p&gt;
-
-&lt;p&gt;Intergenerational programs pair experienced workers with AI systems, creating hybrid teams that leverage both human wisdom and machine efficiency. These partnerships prove more effective than pure automation in many contexts.&lt;/p&gt;
+&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&lt;/p&gt;
 
 &lt;h2 id=&quot;section-2034&quot;&gt;2034: Recovery Phase&lt;/h2&gt;
 
-&lt;p&gt;Unemployment drops to 17.3% as human-AI collaboration models mature. The economy begins to stabilize around new principles of value creation that account for both productivity and human welfare. Lorem ipsum dolor sit amet, consectetur adipiscing elit.&lt;/p&gt;
-
-&lt;p&gt;Creative industries experience a renaissance as people have more time for artistic pursuits. The care economy expands dramatically, with increased focus on elder care, child development, and mental health services—areas where human connection remains irreplaceable.&lt;/p&gt;
-
-&lt;div class=&quot;ai-quote&quot;&gt;
-    &quot;The question is not whether AI will change the job market, but how quickly we can adapt to the changes it brings.&quot;
-&lt;/div&gt;
+&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&lt;/p&gt;
 
 &lt;h2 id=&quot;section-2035&quot;&gt;2035: The Transformed Economy&lt;/h2&gt;
 
-&lt;p&gt;Unemployment settles at 14.1%, representing a sustainable equilibrium in the transformed economy. While still higher than pre-crisis levels, this figure reflects a fundamental redefinition of work rather than a failure of the economic system.&lt;/p&gt;
-
-&lt;p&gt;Society has adapted to a new paradigm where human value is measured not just by economic productivity but by creativity, care, community building, and the uniquely human capacity for meaning-making. The decade of disruption has ended, but the transformed world that emerges is barely recognizable from the one that existed in 2024.&lt;/p&gt;
-
-&lt;p&gt;Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. The great AI unemployment wave has passed, leaving behind a society that has fundamentally reimagined the relationship between technology, work, and human purpose.&lt;/p&gt;
+&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&lt;/p&gt;
 
 &lt;div class=&quot;conclusion-padding&quot;&gt;
     &lt;h2&gt;A Final Thought&lt;/h2&gt;
     &lt;p&gt;The decade of disruption was a crucible, forging a new relationship between humanity and its intelligent creations. The challenges were immense, but they forced a global conversation about value, purpose, and the future of society itself. The road ahead remains uncertain, but it is one we now walk with a deeper understanding of our own resilience and adaptability.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;references&quot;&gt;
+    &lt;h2 id=&quot;references&quot;&gt;References&lt;/h2&gt;
+    &lt;ol&gt;
+        &lt;li id=&quot;ref1&quot;&gt;Entrepreneur. (2024). College Majors With the Lowest Unemployment Rates. Retrieved from &lt;a href=&quot;https://www.entrepreneur.com/business-news/college-majors-with-the-lowest-unemployment-rates-report/491781&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;https://www.entrepreneur.com/business-news/college-majors-with-the-lowest-unemployment-rates-report/491781&lt;/a&gt;&lt;/li&gt;
+        &lt;li id=&quot;ref2&quot;&gt;LaurieWired. (2024). GhidraMCP Ghidra Reverse Engineering with AI. Retrieved from &lt;a href=&quot;https://www.youtube.com/watch?v=u2vQapLAW88&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;https://www.youtube.com/watch?v=u2vQapLAW88&lt;/a&gt;&lt;/li&gt;
+        &lt;li id=&quot;ref3&quot;&gt;Axios. (2025). AI could put 50% of entry-level white-collar jobs at risk in 5 years. Retrieved from &lt;a href=&quot;https://www.axios.com/2025/05/28/ai-jobs-white-collar-unemployment-anthropic&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;https://www.axios.com/2025/05/28/ai-jobs-white-collar-unemployment-anthropic&lt;/a&gt;&lt;/li&gt;
+        &lt;li id=&quot;ref4&quot;&gt;Anthropic. (2025). Project Vend: A Study in Autonomous Agent Failure. Retrieved from &lt;a href=&quot;https://www.anthropic.com/research/project-vend-1&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;https://www.anthropic.com/research/project-vend-1&lt;/a&gt;&lt;/li&gt;
+        &lt;li id=&quot;ref5&quot;&gt;Wired. (2023). I Let AI Agents Plan My Vacation—and It Wasn’t Terrible. Retrieved from &lt;a href=&quot;https://www.wired.com/story/i-let-ai-agents-plan-my-vacation-and-it-wasnt-terrible/&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;https://www.wired.com/story/i-let-ai-agents-plan-my-vacation-and-it-wasnt-terrible/&lt;/a&gt;&lt;/li&gt;
+        &lt;li id=&quot;ref6&quot;&gt;arXiv. (2025). Reward modeling from the experts in your pocket. Retrieved from &lt;a href=&quot;https://arxiv.org/abs/2506.21718&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;https://arxiv.org/abs/2506.21718&lt;/a&gt;&lt;/li&gt;
+        &lt;li id=&quot;ref7&quot;&gt;Dwarkesh Patel. (2025). Timelines, June 2025. Retrieved from &lt;a href=&quot;https://www.dwarkesh.com/p/timelines-june-2025&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;https://www.dwarkesh.com/p/timelines-june-2025&lt;/a&gt;&lt;/li&gt;
+    &lt;/ol&gt;
 &lt;/div&gt;
 
 &lt;script&gt;
@@ -566,14 +569,14 @@ html[data-theme=&quot;dark&quot;] .mobile-timeline {
     &apos;use strict&apos;;
     
     const yearData = {
-        &apos;2025&apos;: { title: &apos;The Beginning of Change&apos;, unemploymentRate: &apos;5.2%&apos;, change: &apos;+0.5%&apos;, changeLabel: &apos;Change from 2024&apos;, keyDevelopment: &apos;AI agents become mainstream&apos; },
-        &apos;2026&apos;: { title: &apos;Early Adoption Phase&apos;, unemploymentRate: &apos;6.8%&apos;, change: &apos;+1.6%&apos;, changeLabel: &apos;Change from 2025&apos;, keyDevelopment: &apos;First wave of job displacement&apos; },
-        &apos;2027&apos;: { title: &apos;The Acceleration&apos;, unemploymentRate: &apos;9.1%&apos;, change: &apos;+2.3%&apos;, changeLabel: &apos;Change from 2026&apos;, keyDevelopment: &apos;Manufacturing automation peaks&apos; },
-        &apos;2028&apos;: { title: &apos;Knowledge Work Disruption&apos;, unemploymentRate: &apos;12.4%&apos;, change: &apos;+3.3%&apos;, changeLabel: &apos;Change from 2027&apos;, keyDevelopment: &apos;White collar jobs affected&apos; },
-        &apos;2029&apos;: { title: &apos;Economic Ripple Effects&apos;, unemploymentRate: &apos;15.7%&apos;, change: &apos;+3.3%&apos;, changeLabel: &apos;Change from 2028&apos;, keyDevelopment: &apos;Social safety nets strain&apos; },
-        &apos;2030&apos;: { title: &apos;The New Normal&apos;, unemploymentRate: &apos;18.2%&apos;, change: &apos;+2.5%&apos;, changeLabel: &apos;Change from 2029&apos;, keyDevelopment: &apos;Policy responses emerge&apos; },
-        &apos;2031&apos;: { title: &apos;Adaptation Begins&apos;, unemploymentRate: &apos;19.8%&apos;, change: &apos;+1.6%&apos;, changeLabel: &apos;Change from 2030&apos;, keyDevelopment: &apos;Reskilling programs scale&apos; },
-        &apos;2032&apos;: { title: &apos;Strategic Responses&apos;, unemploymentRate: &apos;20.5%&apos;, change: &apos;+0.7%&apos;, changeLabel: &apos;Change from 2031&apos;, keyDevelopment: &apos;UBI pilot programs&apos; },
+        &apos;2025&apos;: { title: &apos;The Beginning of Change&apos;, unemploymentRate: &apos;4.5%&apos;, change: &apos;+0.5%&apos;, changeLabel: &apos;Change from 2024&apos;, keyDevelopment: &apos;AI agents become mainstream&apos; },
+        &apos;2026&apos;: { title: &apos;The Year of Iteration&apos;, unemploymentRate: &apos;5.0%&apos;, change: &apos;+0.5%&apos;, changeLabel: &apos;Change from 2025&apos;, keyDevelopment: &apos;Incremental model improvements&apos; },
+        &apos;2027&apos;: { title: &apos;Agents, agents, agents!&apos;, unemploymentRate: &apos;4.7%&apos;, change: &apos;-0.3%&apos;, changeLabel: &apos;Change from 2026&apos;, keyDevelopment: &apos;Agents begin to hit their stride&apos; },
+        &apos;2028&apos;: { title: &apos;The Junior&apos;, unemploymentRate: &apos;6.0%&apos;, change: &apos;+1.3%&apos;, changeLabel: &apos;Change from 2027&apos;, keyDevelopment: &apos;Entry-level office jobs automated&apos; },
+        &apos;2029&apos;: { title: &apos;The Office Worker&apos;, unemploymentRate: &apos;6.5%&apos;, change: &apos;+0.5%&apos;, changeLabel: &apos;Change from 2028&apos;, keyDevelopment: &apos;Packaged agents emerge&apos; },
+        &apos;2030&apos;: { title: &apos;The first impact&apos;, unemploymentRate: &apos;7.5%&apos;, change: &apos;+1.0%&apos;, changeLabel: &apos;Change from 2029&apos;, keyDevelopment: &apos;Office worker agents become highly capable&apos; },
+        &apos;2031&apos;: { title: &apos;Your friend, Data&apos;, unemploymentRate: &apos;8.5%&apos;, change: &apos;+1.0%&apos;, changeLabel: &apos;Change from 2030&apos;, keyDevelopment: &apos;Genuine creativity in AI emerges&apos; },
+        &apos;2032&apos;: { title: &apos;The tidal wave&apos;, unemploymentRate: &apos;10%&apos;, change: &apos;+1.5%&apos;, changeLabel: &apos;Change from 2031&apos;, keyDevelopment: &apos;80% of entry-level office jobs automated&apos; },
         &apos;2033&apos;: { title: &apos;Stabilization&apos;, unemploymentRate: &apos;19.9%&apos;, change: &apos;-0.6%&apos;, changeLabel: &apos;Change from 2032&apos;, keyDevelopment: &apos;New economy models&apos; },
         &apos;2034&apos;: { title: &apos;Recovery Phase&apos;, unemploymentRate: &apos;17.3%&apos;, change: &apos;-2.6%&apos;, changeLabel: &apos;Change from 2033&apos;, keyDevelopment: &apos;Human-AI collaboration&apos; },
         &apos;2035&apos;: { title: &apos;The Transformed Economy&apos;, unemploymentRate: &apos;14.1%&apos;, change: &apos;-3.2%&apos;, changeLabel: &apos;Change from 2034&apos;, keyDevelopment: &apos;Sustainable new equilibrium&apos; }
