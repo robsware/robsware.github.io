@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "The Great AI Unemployment Wave: A Decade of Disruption"
+title: The Great AI Reconfiguration - A look at unemployment over the next 10 years
 description: A year by year overview at AI and employment
 tags: ai unemployment economics future predictions
 ---
