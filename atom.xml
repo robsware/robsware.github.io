@@ -4,7 +4,7 @@
  <title>robsware</title>
  <link href="https://robsware.github.io/atom.xml" rel="self"/>
  <link href="https://robsware.github.io/"/>
- <updated>2025-07-10T01:54:20+01:00</updated>
+ <updated>2025-07-10T04:35:16+01:00</updated>
  <id>https://robsware.github.io</id>
  <author>
    <name>gesko</name>
@@ -639,7 +639,7 @@ html[data-theme=&quot;dark&quot;] .mobile-timeline {
         &apos;2032&apos;: { title: &apos;The Great Implementation&apos;, unemploymentRate: &apos;10%&apos;, change: &apos;+1.5%&apos;, changeLabel: &apos;Change from 2031&apos;, keyDevelopment: `After years of experimentation, large corporations begin &quot;The Great Implementation,&quot; systematically integrating the mature digital workforce across their organizations. The goal is no longer marginal efficiency but a fundamental restructuring of their workforce towards a 50:50 human-AI split. The societal impact is no longer theoretical; it&apos;s a tidal wave.` },
         &apos;2033&apos;: { title: &apos;The Death of the Turing Test&apos;, unemploymentRate: &apos;12%&apos;, change: &apos;+2.0%&apos;, changeLabel: &apos;Change from 2032&apos;, keyDevelopment: `The combination of advanced reasoning, long-term memory, and sophisticated agentic frameworks makes AI personas indistinguishable from humans in any digital context. The concept of the Turing Test becomes obsolete. This breakthrough leads to claims of machine consciousness and the creation of the first true digital friendships and relationships, forever blurring the line between human and artificial interaction.` },
         &apos;2034&apos;: { title: &apos;The Ivory Tower and the Digital Proletariat&apos;, unemploymentRate: &apos;15%&apos;, change: &apos;+3.0%&apos;, changeLabel: &apos;Change from 2033&apos;, keyDevelopment: `The economy bifurcates completely. The vast majority of cognitive work is performed by a &quot;digital proletariat&quot; of AI agents. The few remaining human office workers reside in a virtual &quot;ivory tower,&quot; overseeing vast agentic systems. A white-collar job is no longer a path to the middle class, but a luxury status symbol.` },
-        &apos;2035&apos;: { title: &apos;The Utopia Promise and the Scarcity Reality&apos;, unemploymentRate: &apos;19%&apos;, change: &apos;+3.0%&apos;, changeLabel: &apos;Change from 2034&apos;, keyDevelopment: `Society is held together by two opposing forces. From the top comes the &quot;Utopia Promise&quot;: a constant stream of cheap entertainment and government subsidies, fueled by promises of a future robotic abundance. On the ground is the &quot;Scarcity Reality&quot;: mass unemployment, a crisis of purpose, and the gnawing fear that the hardware and energy required for that utopia are still decades away.` }
+        &apos;2035&apos;: { title: &apos;The Utopia Promise and the Scarcity Reality&apos;, unemploymentRate: &apos;18%&apos;, change: &apos;+3.0%&apos;, changeLabel: &apos;Change from 2034&apos;, keyDevelopment: `Society is held together by two opposing forces. From the top comes the &quot;Utopia Promise&quot;: a constant stream of cheap entertainment and government subsidies, fueled by promises of a future robotic abundance. On the ground is the &quot;Scarcity Reality&quot;: mass unemployment, a crisis of purpose, and the gnawing fear that the hardware and energy required for that utopia are still decades away.` }
     };
     
     const elements = {
