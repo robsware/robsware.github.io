@@ -1,6 +1,15 @@
 [
   
     {
+      "title"    : "Short Story - Gary the Operator",
+      "description" : "A short nightmare about the future",
+      "category" : "",
+      "tags"     : "story",
+      "url"      : "/2025/07/14/gary",
+      "date"     : "2025-07-14 00:00:00 +0100"
+    } ,
+  
+    {
       "title"    : "The Great AI Reconfiguration - A look at unemployment over the next 10 years",
       "description" : "A year by year overview at AI and employment",
       "category" : "",
