@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Those who lift in Omelas
+title: Short Story - Those who lift in Omelas
 description: Shilosophical phitposting.
 summary: What if you could choose to lift?
 tags: reflections
